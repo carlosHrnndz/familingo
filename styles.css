@@ -1,0 +1,124 @@
+/* ============================================================
+   DeutschLernen — estilos complementarios a Tailwind
+   ============================================================ */
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- Botones estilo Duolingo (efecto 3D) ---------- */
+.btn3d {
+  border-bottom-width: 4px;
+  transition: filter 0.15s ease, transform 0.05s ease;
+  user-select: none;
+  letter-spacing: 0.06em;
+}
+.btn3d:not(:disabled):hover {
+  filter: brightness(1.08);
+}
+.btn3d:not(:disabled):active {
+  transform: translateY(3px);
+  border-bottom-width: 1px;
+}
+.btn3d:disabled {
+  cursor: not-allowed;
+}
+
+/* ---------- Nodos del árbol ---------- */
+.node-btn {
+  transition: transform 0.1s ease, filter 0.15s ease;
+}
+.node-btn:not(.node-locked):hover {
+  transform: scale(1.07);
+  filter: brightness(1.05);
+}
+.node-btn:not(.node-locked):active {
+  transform: scale(0.96);
+}
+.node-locked {
+  cursor: not-allowed;
+}
+.node-active {
+  animation: nodePulse 1.6s ease-in-out infinite;
+}
+@keyframes nodePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(88, 204, 2, 0.55); }
+  50% { box-shadow: 0 0 0 14px rgba(88, 204, 2, 0); }
+}
+
+/* ---------- Opciones y fichas de palabras ---------- */
+.opt-btn, .chip-btn {
+  border-bottom-width: 4px;
+  transition: transform 0.05s ease, background 0.15s ease,
+    border-color 0.15s ease, color 0.15s ease;
+  user-select: none;
+}
+.opt-btn:not(:disabled):active, .chip-btn:not(:disabled):active {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+}
+.opt-selected {
+  background: #202f36 !important;
+  border-color: #1cb0f6 !important;
+  color: #1cb0f6 !important;
+}
+.chip-enter {
+  animation: chipPop 0.15s ease;
+}
+@keyframes chipPop {
+  from { transform: scale(0.7); opacity: 0.4; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ---------- Barra de feedback inferior ---------- */
+.feedback-bar {
+  animation: slideUp 0.22s ease;
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* ---------- Animaciones varias ---------- */
+.shake {
+  animation: shake 0.4s ease;
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-7px); }
+  50% { transform: translateX(7px); }
+  75% { transform: translateX(-4px); }
+}
+.pop-in {
+  animation: popIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes popIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.heart-lost {
+  animation: heartLost 0.5s ease;
+}
+@keyframes heartLost {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+/* ---------- Barra de progreso ---------- */
+.progress-fill {
+  transition: width 0.35s ease;
+}
+
+/* ---------- Input de traducción ---------- */
+.answer-input:focus {
+  outline: none;
+  border-color: #1cb0f6;
+}
+
+/* ---------- Scrollbar discreta ---------- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #131f24; }
+::-webkit-scrollbar-thumb { background: #37464f; border-radius: 4px; }
