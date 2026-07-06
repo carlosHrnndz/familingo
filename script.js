@@ -1,9 +1,17 @@
 "use strict";
 /* ============================================================================
-   DeutschLernen — Clon de Duolingo para aprender alemán (ES -> DE)
-   HTML5 + Tailwind (CDN) + JavaScript Vanilla. Sin backend.
-   Progreso, XP y vidas persisten en localStorage.
-   ============================================================================
+   Familingo — Clon de Duolingo para aprender alemán (ES -> DE)
+   HTML5 + Tailwind (CDN) + JavaScript Vanilla + Supabase (nube, tiempo real).
+
+   ARQUITECTURA DE DATOS
+   - 4 perfiles fijos (Antón, Pepa, Lázaro, Carlos), sin login.
+   - Fuente de verdad: tabla `user_progress` en Supabase (ver setup.sql).
+   - Caché offline: localStorage por usuario. Si Supabase no está configurado
+     o no hay red, la app funciona igualmente en modo local.
+   - Tiempo real: cambios hechos en otro dispositivo llegan por el canal
+     `postgres_changes` y refrescan la pantalla.
+   - Cada unidad se corona al completar LESSONS_PER_UNIT lecciones (1-5),
+     que es lo que refleja la columna `current_lesson`.
 
    TIPOS DE PREGUNTA:
    - { t:'mc', q, a, opts }   -> opción múltiple (a = respuesta correcta,
@@ -292,57 +300,60 @@ const CURRICULUM = [
   },
 ];
 
-/* =============================== ESTADO ================================= */
-const STORAGE_KEY = "deutschlernen_state_v1";
+/* =========================== CONFIG / PERFILES =========================== */
 const MAX_HEARTS = 5;
+const LESSONS_PER_UNIT = 5; // lecciones para coronar cada unidad (1-5)
+const USERS = [
+  { name: "Antón",  icon: "🦁", color: "#58cc02" },
+  { name: "Pepa",   icon: "🦄", color: "#ff86d0" },
+  { name: "Lázaro", icon: "🦊", color: "#ff9600" },
+  { name: "Carlos", icon: "🐻", color: "#1cb0f6" },
+];
+// Identifica este dispositivo/pestaña para no procesar los ecos del realtime
+const CLIENT_ID = Math.random().toString(36).slice(2) + Date.now().toString(36);
+
+/* =============================== ESTADO ================================== */
+let currentUser = null;   // {name, icon, color}
+let state = null;         // {hearts, xp, streak, lastActive, units:{"l-u":n}}
+let cloudOK = false;      // conexión con Supabase operativa
+let channel = null;       // suscripción realtime activa
+let pendingRemote = null; // cambio remoto recibido durante una lección
+let session = null;       // lección en curso
+let activeLevel = 0;
 
 function defaultState() {
-  return { hearts: MAX_HEARTS, xp: 0, completed: {} }; // completed: {"0-0": true}
+  return { hearts: MAX_HEARTS, xp: 0, streak: 0, lastActive: null, units: {} };
 }
+function lsKey(name) { return "familingo_u_" + name; }
 
-function loadState() {
+function loadLocal(name) {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return defaultState();
-    const s = JSON.parse(raw);
-    return {
-      hearts: typeof s.hearts === "number" ? Math.max(0, Math.min(MAX_HEARTS, s.hearts)) : MAX_HEARTS,
-      xp: typeof s.xp === "number" ? s.xp : 0,
-      completed: s.completed && typeof s.completed === "object" ? s.completed : {},
-    };
-  } catch (e) {
-    return defaultState();
-  }
+    const raw = localStorage.getItem(lsKey(name));
+    return raw ? Object.assign(defaultState(), JSON.parse(raw)) : defaultState();
+  } catch (e) { return defaultState(); }
+}
+function saveLocal() {
+  if (currentUser) localStorage.setItem(lsKey(currentUser.name), JSON.stringify(state));
 }
 
-let state = loadState();
-
-function saveState() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-}
-
-/* ====================== DESBLOQUEO SECUENCIAL ============================ */
+/* ====================== PROGRESO / DESBLOQUEO ============================ */
 function unitKey(l, u) { return l + "-" + u; }
-function isCompleted(l, u) { return !!state.completed[unitKey(l, u)]; }
+function lessonsDone(l, u) { return state.units[unitKey(l, u)] || 0; }
+function isCompleted(l, u) { return lessonsDone(l, u) >= LESSONS_PER_UNIT; }
 
-// Lista aplanada de unidades en orden global
 const FLAT_UNITS = [];
 CURRICULUM.forEach((lvl, l) => lvl.units.forEach((_, u) => FLAT_UNITS.push([l, u])));
 
 function flatIndexOf(l, u) {
   return FLAT_UNITS.findIndex(([a, b]) => a === l && b === u);
 }
-
 function isUnlocked(l, u) {
   const idx = flatIndexOf(l, u);
   if (idx === 0) return true;
   const [pl, pu] = FLAT_UNITS[idx - 1];
   return isCompleted(pl, pu);
 }
-
-function isLevelUnlocked(l) {
-  return isUnlocked(l, 0);
-}
+function isLevelUnlocked(l) { return isUnlocked(l, 0); }
 
 function levelProgress(l) {
   const total = CURRICULUM[l].units.length;
@@ -351,7 +362,114 @@ function levelProgress(l) {
   return { done, total };
 }
 
-/* ============================ UTILIDADES ================================ */
+// Posición actual del usuario (para las columnas de la tabla)
+function computeDerived() {
+  for (const [l, u] of FLAT_UNITS) {
+    if (!isCompleted(l, u)) {
+      return { level: l + 1, unit: u + 1, lesson: Math.min(LESSONS_PER_UNIT, lessonsDone(l, u) + 1) };
+    }
+  }
+  const [l, u] = FLAT_UNITS[FLAT_UNITS.length - 1];
+  return { level: l + 1, unit: u + 1, lesson: LESSONS_PER_UNIT };
+}
+
+function touchStreak() {
+  const today = new Date().toISOString().slice(0, 10);
+  if (state.lastActive === today) return;
+  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+  state.streak = state.lastActive === yesterday ? state.streak + 1 : 1;
+  state.lastActive = today;
+}
+
+/* ============================ CAPA DE NUBE =============================== */
+function rowToState(row) {
+  const p = row.progress || {};
+  return {
+    hearts: typeof row.hearts === "number" ? Math.max(0, Math.min(MAX_HEARTS, row.hearts)) : MAX_HEARTS,
+    xp: row.xp_total || 0,
+    streak: row.streak_count || 0,
+    lastActive: row.last_active || null,
+    units: (p && p.units) || {},
+  };
+}
+
+async function cloudLoad(name) {
+  const sb = window.supabaseClient;
+  if (!sb) return null;
+  const { data, error } = await sb
+    .from("user_progress").select("*").eq("user_name", name).maybeSingle();
+  if (error) throw error;
+  if (data) return data;
+  // Primera vez de este usuario: crear su fila
+  const { data: created, error: e2 } = await sb
+    .from("user_progress")
+    .upsert({ user_name: name }, { onConflict: "user_name" })
+    .select().single();
+  if (e2) throw e2;
+  return created;
+}
+
+async function cloudSave() {
+  const sb = window.supabaseClient;
+  if (!sb || !currentUser) return;
+  const d = computeDerived();
+  try {
+    const { error } = await sb.from("user_progress").upsert({
+      user_name: currentUser.name,
+      current_level: d.level,
+      current_unit: d.unit,
+      current_lesson: d.lesson,
+      streak_count: state.streak,
+      xp_total: state.xp,
+      hearts: state.hearts,
+      last_active: state.lastActive,
+      progress: { units: state.units },
+      last_client: CLIENT_ID,
+      updated_at: new Date().toISOString(),
+    }, { onConflict: "user_name" });
+    if (error) throw error;
+    cloudOK = true;
+  } catch (e) {
+    console.warn("[Familingo] No se pudo guardar en la nube:", e.message || e);
+    cloudOK = false;
+  }
+}
+
+// Guarda siempre en local y, en segundo plano, en la nube
+function persist() {
+  saveLocal();
+  cloudSave();
+}
+
+function subscribeRealtime(name) {
+  const sb = window.supabaseClient;
+  if (!sb) return;
+  if (channel) { sb.removeChannel(channel); channel = null; }
+  channel = sb
+    .channel("progress-" + name)
+    .on("postgres_changes",
+      { event: "UPDATE", schema: "public", table: "user_progress", filter: "user_name=eq." + name },
+      (payload) => {
+        const row = payload.new;
+        if (!row || row.last_client === CLIENT_ID) return; // eco propio
+        const remote = rowToState(row);
+        if (session) {
+          pendingRemote = remote; // no interrumpir la lección en curso
+        } else {
+          state = remote;
+          saveLocal();
+          renderDashboard();
+        }
+      })
+    .subscribe();
+}
+
+function unsubscribeRealtime() {
+  const sb = window.supabaseClient;
+  if (sb && channel) { sb.removeChannel(channel); channel = null; }
+}
+
+/* ============================ UTILIDADES ================================= */
 const app = document.getElementById("app");
 
 function shuffle(arr) {
@@ -368,9 +486,8 @@ function esc(s) {
     .replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
 
-// Normaliza texto para comparar traducciones escritas.
-// Genera dos formas: base (ä->a) y expandida (ä->ae) para aceptar
-// respuestas con o sin diéresis.
+// Normaliza texto para comparar traducciones escritas: admite escribir
+// ae/oe/ue/ss en lugar de ä/ö/ü/ß, ignora mayúsculas y puntuación.
 function normForms(s) {
   let t = String(s).toLowerCase().trim()
     .replace(/ß/g, "ss")
@@ -399,19 +516,97 @@ function heartsHTML(size) {
   return `<span id="hearts" class="flex items-center gap-0.5">${out}</span>`;
 }
 
-/* ============================ DASHBOARD ================================= */
-let activeLevel = 0;
+function cloudBadge() {
+  if (!window.supabaseClient) return `<span title="Modo local (Supabase sin configurar)" class="text-xs">📴</span>`;
+  return cloudOK
+    ? `<span title="Sincronizado en la nube" class="text-xs">☁️</span>`
+    : `<span title="Sin conexión: guardando en este dispositivo" class="text-xs">📴</span>`;
+}
 
-// Al abrir, situarse en el primer nivel con unidades pendientes
-(function initActiveLevel() {
+/* ====================== PANTALLA: SELECCIÓN DE PERFIL ==================== */
+function renderProfileSelect() {
+  unsubscribeRealtime();
+  currentUser = null;
+  session = null;
+
+  app.innerHTML = `
+    <main class="scroll-area flex-1 flex flex-col items-center justify-center px-6 py-10 text-center">
+      <div class="text-6xl mb-3 pop-in">🦉</div>
+      <h1 class="text-3xl font-extrabold mb-1" style="color:#58cc02">Familingo</h1>
+      <p class="text-[#8a9ba5] font-bold mb-8">¿Quién va a practicar alemán?</p>
+      <div class="grid grid-cols-2 gap-4 w-full max-w-sm">
+        ${USERS.map((u, i) => `
+          <button data-i="${i}" class="profile-btn btn3d rounded-3xl border-2 p-5 flex flex-col items-center gap-2 bg-[#202f36]"
+            style="border-color:${u.color};border-bottom-color:${u.color}">
+            <span class="text-5xl">${u.icon}</span>
+            <span class="font-extrabold text-lg" style="color:${u.color}">${esc(u.name)}</span>
+            <span class="text-xs font-bold text-[#8a9ba5]" data-stats="${esc(u.name)}">&nbsp;</span>
+          </button>`).join("")}
+      </div>
+      <p class="mt-8 text-xs text-[#52656d] font-semibold max-w-xs">
+        El progreso de cada perfil se guarda en la nube y se sincroniza entre todos los dispositivos.
+      </p>
+    </main>`;
+
+  app.querySelectorAll(".profile-btn").forEach((b) =>
+    b.addEventListener("click", () => selectUser(USERS[+b.dataset.i]))
+  );
+
+  // Estadísticas de cada perfil (mejor esfuerzo, sin bloquear la UI)
+  const sb = window.supabaseClient;
+  if (sb) {
+    sb.from("user_progress").select("user_name,xp_total,streak_count")
+      .then(({ data, error }) => {
+        if (error || !data) return;
+        data.forEach((row) => {
+          const el = app.querySelector(`[data-stats="${CSS.escape(row.user_name)}"]`);
+          if (el) el.textContent = `⚡ ${row.xp_total} XP · 🔥 ${row.streak_count}`;
+        });
+      });
+  }
+}
+
+async function selectUser(u) {
+  currentUser = u;
+  state = loadLocal(u.name); // arranque inmediato con la caché local
+  cloudOK = false;
+
+  app.innerHTML = `
+    <main class="flex-1 flex flex-col items-center justify-center gap-4">
+      <div class="text-6xl">${u.icon}</div>
+      <div class="font-extrabold text-[#8a9ba5]">Cargando el progreso de ${esc(u.name)}…</div>
+    </main>`;
+
+  if (window.supabaseClient) {
+    try {
+      const row = await cloudLoad(u.name);
+      if (row) {
+        state = rowToState(row); // la nube manda (multidispositivo)
+        saveLocal();
+        cloudOK = true;
+        subscribeRealtime(u.name);
+      }
+    } catch (e) {
+      console.warn("[Familingo] Nube no disponible, modo local:", e.message || e);
+      cloudOK = false;
+    }
+  }
+
+  // Situarse en el primer nivel con unidades pendientes
+  activeLevel = CURRICULUM.length - 1;
   for (let l = 0; l < CURRICULUM.length; l++) {
     const p = levelProgress(l);
-    if (p.done < p.total) { activeLevel = l; return; }
+    if (p.done < p.total) { activeLevel = l; break; }
   }
-  activeLevel = CURRICULUM.length - 1;
-})();
+  renderDashboard();
+}
 
+/* ============================ DASHBOARD ================================== */
 function renderDashboard() {
+  if (!currentUser) { renderProfileSelect(); return; }
+  if (pendingRemote) { state = pendingRemote; pendingRemote = null; saveLocal(); }
+  session = null;
+
   const lvl = CURRICULUM[activeLevel];
   const prog = levelProgress(activeLevel);
   const offsets = [0, -70, -110, -70, 0, 70, 110, 70];
@@ -430,6 +625,7 @@ function renderDashboard() {
     const completed = isCompleted(activeLevel, u);
     const unlocked = isUnlocked(activeLevel, u);
     const isNext = unlocked && !completed;
+    const done = lessonsDone(activeLevel, u);
     const off = offsets[u % offsets.length];
 
     let circleStyle, inner, extraCls = "";
@@ -448,7 +644,7 @@ function renderDashboard() {
 
     return `
       <div class="flex flex-col items-center" style="transform:translateX(${off}px)">
-        ${isNext ? `<div class="pop-in mb-1 text-xs font-extrabold uppercase tracking-wide px-3 py-1 rounded-xl border-2 border-[#37464f] bg-[#131f24]" style="color:${lvl.color}">Empezar</div>` : ""}
+        ${isNext ? `<div class="pop-in mb-1 text-xs font-extrabold uppercase tracking-wide px-3 py-1 rounded-xl border-2 border-[#37464f] bg-[#131f24]" style="color:${lvl.color}">${done > 0 ? `Lección ${done + 1}/${LESSONS_PER_UNIT}` : "Empezar"}</div>` : ""}
         <button data-l="${activeLevel}" data-u="${u}"
           class="node-btn ${extraCls} w-[74px] h-[74px] rounded-full border-b-8 border-2 flex items-center justify-center text-3xl"
           style="${circleStyle}" ${unlocked ? "" : "disabled"}>
@@ -459,18 +655,24 @@ function renderDashboard() {
   }).join('<div class="h-5"></div>');
 
   app.innerHTML = `
-    <header class="sticky top-0 z-10 bg-[#131f24]/95 backdrop-blur border-b-2 border-[#37464f] px-4 py-3">
-      <div class="flex items-center justify-between">
-        <div class="text-2xl font-extrabold" style="color:#58cc02">🦉 DeutschLernen</div>
-        <div class="flex items-center gap-4">
-          <div class="flex items-center gap-1 font-extrabold text-[#ffc800]">⚡ ${state.xp} XP</div>
+    <header class="shrink-0 bg-[#131f24] border-b-2 border-[#37464f] px-4 py-3">
+      <div class="flex items-center justify-between gap-2">
+        <button id="userChip" title="Cambiar de perfil"
+          class="flex items-center gap-2 rounded-2xl border-2 border-[#37464f] bg-[#202f36] px-3 py-1.5 font-extrabold">
+          <span class="text-xl">${currentUser.icon}</span>
+          <span style="color:${currentUser.color}">${esc(currentUser.name)}</span>
+          ${cloudBadge()}
+        </button>
+        <div class="flex items-center gap-3">
+          <span class="font-extrabold text-[#ff9600]">🔥 ${state.streak}</span>
+          <span class="font-extrabold text-[#ffc800]">⚡ ${state.xp}</span>
           ${heartsHTML("sm")}
         </div>
       </div>
       <div class="flex gap-2 mt-3">${tabs}</div>
     </header>
 
-    <main class="flex-1 px-4 pb-16">
+    <main class="scroll-area flex-1 px-4 pb-16">
       <section class="mt-4 rounded-2xl p-4 border-2" style="background:${lvl.color}18;border-color:${lvl.color}55">
         <div class="flex items-center justify-between">
           <div>
@@ -488,10 +690,11 @@ function renderDashboard() {
       <section class="mt-8 flex flex-col items-center">${nodes}</section>
 
       <div class="mt-10 text-center">
-        <button id="resetBtn" class="text-xs font-bold text-[#52656d] underline">Reiniciar todo el progreso</button>
+        <button id="resetBtn" class="text-xs font-bold text-[#52656d] underline">Reiniciar el progreso de ${esc(currentUser.name)}</button>
       </div>
     </main>`;
 
+  document.getElementById("userChip").addEventListener("click", renderProfileSelect);
   app.querySelectorAll(".tab-btn").forEach((b) =>
     b.addEventListener("click", () => { activeLevel = +b.dataset.level; renderDashboard(); })
   );
@@ -499,27 +702,27 @@ function renderDashboard() {
     b.addEventListener("click", () => startLesson(+b.dataset.l, +b.dataset.u))
   );
   document.getElementById("resetBtn").addEventListener("click", () => {
-    if (confirm("¿Seguro que quieres borrar todo el progreso, el XP y las vidas?")) {
+    if (confirm(`¿Borrar todo el progreso de ${currentUser.name} (también en la nube)?`)) {
       state = defaultState();
-      saveState();
+      persist();
       activeLevel = 0;
       renderDashboard();
     }
   });
 }
 
-/* ============================== LECCIÓN ================================= */
-let session = null;
-
+/* ============================== LECCIÓN ================================== */
 function startLesson(l, u) {
   if (state.hearts <= 0) { renderGameOver(); return; }
+  const done = lessonsDone(l, u);
   session = {
     l, u,
     queue: shuffle(CURRICULUM[l].units[u].questions),
     idx: 0,
     correct: 0,
     wrong: 0,
-    review: isCompleted(l, u),
+    review: done >= LESSONS_PER_UNIT,
+    lessonNo: Math.min(LESSONS_PER_UNIT, done + 1),
   };
   renderQuestion();
 }
@@ -555,7 +758,7 @@ function renderQuestion() {
   }
 
   app.innerHTML = `
-    <header class="px-4 pt-4 pb-2 flex items-center gap-3">
+    <header class="shrink-0 px-4 pt-4 pb-2 flex items-center gap-3">
       <button id="quitBtn" class="text-[#52656d] hover:text-white text-2xl font-bold px-1" title="Salir">✕</button>
       <div class="flex-1 h-4 rounded-full bg-[#37464f] overflow-hidden">
         <div class="progress-fill h-full rounded-full" style="width:${pct}%;background:${lvl.color}"></div>
@@ -563,14 +766,15 @@ function renderQuestion() {
       ${heartsHTML("sm")}
     </header>
 
-    <main class="flex-1 px-5 py-6 max-w-xl w-full mx-auto" id="qArea">
+    <main class="scroll-area flex-1 px-5 py-6 max-w-xl w-full mx-auto" id="qArea">
       <div class="text-xs font-extrabold uppercase tracking-widest mb-2" style="color:${lvl.color}">
-        ${esc(lvl.tag)} · ${esc(CURRICULUM[session.l].units[session.u].name)}${session.review ? " · Repaso" : ""}
+        ${esc(lvl.tag)} · ${esc(CURRICULUM[session.l].units[session.u].name)} ·
+        ${session.review ? "Repaso" : `Lección ${session.lessonNo}/${LESSONS_PER_UNIT}`}
       </div>
       ${body}
     </main>
 
-    <footer id="footer" class="border-t-2 border-[#37464f] px-5 py-4">
+    <footer id="footer" class="app-footer border-t-2 border-[#37464f] px-5 pt-4">
       <div class="max-w-xl mx-auto flex justify-end">
         <button id="checkBtn" disabled
           class="btn3d rounded-2xl px-8 py-3 font-extrabold uppercase text-[#131f24] bg-[#58cc02] border-[#46a302] disabled:bg-[#37464f] disabled:border-[#2b3940] disabled:text-[#52656d]">
@@ -584,7 +788,6 @@ function renderQuestion() {
     if (confirm("¿Salir de la lección? Perderás el progreso de esta lección.")) renderDashboard();
   });
 
-  // --- Interacciones por tipo ---
   let getAnswer = null;
 
   if (q.t === "mc") {
@@ -611,7 +814,7 @@ function renderQuestion() {
   } else { // 'or'
     const answerArea = document.getElementById("answerArea");
     const bankArea = document.getElementById("bankArea");
-    let chosen = []; // [{word, id}]
+    let chosen = [];
     let bank = shuffle(q.w.map((word, i) => ({ word, id: i, used: false })));
 
     function chipHTML(item, zone) {
@@ -666,7 +869,6 @@ function renderQuestion() {
 }
 
 function showFeedback(correct, solution) {
-  // Bloquear entradas
   app.querySelectorAll(".opt-btn, .chip-btn").forEach((b) => (b.disabled = true));
   const input = document.getElementById("trInput");
   if (input) input.disabled = true;
@@ -676,7 +878,7 @@ function showFeedback(correct, solution) {
   } else {
     session.wrong++;
     state.hearts = Math.max(0, state.hearts - 1);
-    saveState();
+    persist();
     const hearts = document.getElementById("hearts");
     if (hearts) {
       hearts.outerHTML = heartsHTML("sm");
@@ -686,7 +888,7 @@ function showFeedback(correct, solution) {
   }
 
   const footer = document.getElementById("footer");
-  footer.className = "feedback-bar border-t-2 px-5 py-4 " +
+  footer.className = "app-footer feedback-bar border-t-2 px-5 pt-4 " +
     (correct ? "bg-[#d7ffb8] border-[#a5ed6e]" : "bg-[#ffdfe0] border-[#ffb2b2]");
   footer.innerHTML = `
     <div class="max-w-xl mx-auto flex flex-col sm:flex-row sm:items-center gap-3">
@@ -720,21 +922,33 @@ function advance() {
 
 /* ====================== LECCIÓN COMPLETADA / GAME OVER =================== */
 function finishLesson() {
+  const k = unitKey(session.l, session.u);
+  const before = state.units[k] || 0;
+  const crownedNow = !session.review && before + 1 >= LESSONS_PER_UNIT;
+  if (!session.review) state.units[k] = Math.min(LESSONS_PER_UNIT, before + 1);
+
   const gained = session.review ? 5 : 10 + Math.max(0, 5 - session.wrong);
   state.xp += gained;
-  state.completed[unitKey(session.l, session.u)] = true;
-  saveState();
+  touchStreak();
+  persist();
 
   const total = session.correct + session.wrong;
   const accuracy = total ? Math.round((session.correct / total) * 100) : 100;
   const lvl = CURRICULUM[session.l];
+  const unitName = lvl.units[session.u].name;
+  const doneNow = state.units[k] || 0;
 
   app.innerHTML = `
-    <main class="flex-1 flex flex-col items-center justify-center px-6 text-center">
-      <div class="pop-in text-7xl mb-4">🎉</div>
-      <h1 class="text-3xl font-extrabold mb-2" style="color:${lvl.color}">¡Lección completada!</h1>
-      <p class="text-[#8a9ba5] font-bold mb-8">${esc(lvl.tag)} · ${esc(lvl.units[session.u].name)}</p>
-      <div class="flex gap-4 mb-10">
+    <main class="scroll-area flex-1 flex flex-col items-center justify-center px-6 py-8 text-center">
+      <div class="pop-in text-7xl mb-4">${crownedNow ? "👑" : "🎉"}</div>
+      <h1 class="text-3xl font-extrabold mb-2" style="color:${lvl.color}">
+        ${crownedNow ? "¡Unidad completada!" : "¡Lección completada!"}
+      </h1>
+      <p class="text-[#8a9ba5] font-bold mb-2">${esc(lvl.tag)} · ${esc(unitName)}</p>
+      ${session.review
+        ? `<p class="text-[#8a9ba5] font-bold mb-8">Repaso terminado 💪</p>`
+        : `<p class="text-[#8a9ba5] font-bold mb-8">Lecciones de la unidad: ${doneNow}/${LESSONS_PER_UNIT}</p>`}
+      <div class="flex gap-4 mb-6">
         <div class="rounded-2xl border-2 border-[#ffc800] px-6 py-4">
           <div class="text-xs font-extrabold uppercase text-[#ffc800]">XP ganados</div>
           <div class="text-2xl font-extrabold text-[#ffc800]">⚡ +${gained}</div>
@@ -744,6 +958,7 @@ function finishLesson() {
           <div class="text-2xl font-extrabold text-[#58cc02]">${accuracy}%</div>
         </div>
       </div>
+      <div class="mb-8 font-extrabold text-[#ff9600]">🔥 Racha: ${state.streak} ${state.streak === 1 ? "día" : "días"}</div>
       <button id="contBtn" class="btn3d w-full max-w-xs rounded-2xl px-8 py-3 font-extrabold uppercase text-[#131f24] bg-[#58cc02] border-[#46a302]">
         Continuar
       </button>
@@ -752,8 +967,9 @@ function finishLesson() {
 }
 
 function renderGameOver() {
+  session = null;
   app.innerHTML = `
-    <main class="flex-1 flex flex-col items-center justify-center px-6 text-center">
+    <main class="scroll-area flex-1 flex flex-col items-center justify-center px-6 py-8 text-center">
       <div class="pop-in text-7xl mb-4">💔</div>
       <h1 class="text-3xl font-extrabold text-[#ff4b4b] mb-2">¡Te has quedado sin vidas!</h1>
       <p class="text-[#8a9ba5] font-bold mb-8 max-w-sm">
@@ -770,11 +986,11 @@ function renderGameOver() {
     </main>`;
   document.getElementById("refillBtn").addEventListener("click", () => {
     state.hearts = MAX_HEARTS;
-    saveState();
+    persist();
     renderDashboard();
   });
   document.getElementById("homeBtn").addEventListener("click", renderDashboard);
 }
 
 /* ================================ INICIO ================================= */
-renderDashboard();
+renderProfileSelect();

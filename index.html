@@ -2,15 +2,21 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DeutschLernen — Aprende alemán</title>
-  <meta name="description" content="Aplicación gratuita para aprender alemán: niveles A1, A2, B1 y B2 con lecciones interactivas." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Familingo — Aprende alemán</title>
+  <meta name="description" content="Aplicación para aprender alemán: niveles A1, A2, B1 y B2 con lecciones interactivas y progreso en la nube." />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦉</text></svg>" />
 </head>
-<body class="bg-[#131f24] text-white min-h-screen antialiased">
-  <div id="app" class="max-w-2xl mx-auto min-h-screen flex flex-col"></div>
+<body class="bg-[#131f24] text-white antialiased">
+  <div id="app" class="app-shell max-w-2xl mx-auto w-full flex flex-col"></div>
+
+  <!-- Cliente de Supabase (CDN, expone window.supabase) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Tus credenciales -->
+  <script src="supabase-config.js"></script>
+  <!-- Aplicación -->
   <script src="script.js"></script>
 </body>
 </html>

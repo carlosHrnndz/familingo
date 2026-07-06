@@ -8,6 +8,26 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* ---------- Layout móvil: 100dvh + zonas de scroll independientes ---------- */
+html, body {
+  height: 100%;
+  overscroll-behavior: none;
+}
+.app-shell {
+  height: 100vh;      /* fallback para navegadores antiguos */
+  height: 100dvh;     /* viewport dinámico: correcto en móviles */
+  overflow: hidden;   /* solo hacen scroll las .scroll-area internas */
+}
+.scroll-area {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  min-height: 0;      /* imprescindible para que flex permita el scroll */
+}
+.app-footer {
+  flex-shrink: 0;
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+}
+
 /* ---------- Botones estilo Duolingo (efecto 3D) ---------- */
 .btn3d {
   border-bottom-width: 4px;
