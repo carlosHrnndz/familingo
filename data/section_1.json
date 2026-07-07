@@ -21,11 +21,57 @@
             "title": "Hola y adiós",
             "kind": "exercises",
             "exercises": [
-              { "type": "listening_match", "prompt": "Escucha y elige lo que oyes", "tts": "Hallo", "options": ["Hallo", "Hose", "Haus"], "answer": "Hallo" },
-              { "type": "translate_direct", "prompt": "Traduce: «Buenas noches»", "answer": "Gute Nacht", "accepted": ["gute nacht"] },
-              { "type": "word_bank", "prompt": "Construye: «Hola, ¿cómo estás?»", "words": ["Hallo", "wie", "geht", "es", "dir"], "distractors": ["Haus", "und"] },
-              { "type": "listening_match", "prompt": "Escucha y elige lo que oyes", "tts": "Tschüss", "options": ["Tschüss", "Tisch", "Tasche"], "answer": "Tschüss" },
-              { "type": "translate_direct", "prompt": "Traduce: «Buenos días» (por la mañana)", "answer": "Guten Morgen", "accepted": [] }
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Hallo",
+                "options": [
+                  "Hallo",
+                  "Hose",
+                  "Haus"
+                ],
+                "answer": "Hallo"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Buenas noches»",
+                "answer": "Gute Nacht",
+                "accepted": [
+                  "gute nacht"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Hola, ¿cómo estás?»",
+                "words": [
+                  "Hallo",
+                  "wie",
+                  "geht",
+                  "es",
+                  "dir"
+                ],
+                "distractors": [
+                  "Haus",
+                  "und"
+                ]
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Tschüss",
+                "options": [
+                  "Tschüss",
+                  "Tisch",
+                  "Tasche"
+                ],
+                "answer": "Tschüss"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Buenos días» (por la mañana)",
+                "answer": "Guten Morgen",
+                "accepted": []
+              }
             ]
           },
           {
@@ -34,11 +80,58 @@
             "title": "Me presento",
             "kind": "exercises",
             "exercises": [
-              { "type": "word_bank", "prompt": "Construye: «Me llamo Ana»", "words": ["Ich", "heiße", "Ana"], "distractors": ["bin", "du"] },
-              { "type": "translate_direct", "prompt": "Traduce: «Yo vengo de España»", "answer": "Ich komme aus Spanien", "accepted": [] },
-              { "type": "listening_match", "prompt": "Escucha y elige lo que oyes", "tts": "Wie heißt du?", "options": ["Wie heißt du?", "Wie alt bist du?", "Wer bist du?"], "answer": "Wie heißt du?" },
-              { "type": "word_bank", "prompt": "Construye: «Yo tengo diez años»", "words": ["Ich", "bin", "zehn", "Jahre", "alt"], "distractors": ["habe"] },
-              { "type": "translate_direct", "prompt": "Traduce: «¿De dónde vienes?»", "answer": "Woher kommst du?", "accepted": ["woher kommst du"] }
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Me llamo Ana»",
+                "words": [
+                  "Ich",
+                  "heiße",
+                  "Ana"
+                ],
+                "distractors": [
+                  "bin",
+                  "du"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Yo vengo de España»",
+                "answer": "Ich komme aus Spanien",
+                "accepted": []
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Wie heißt du?",
+                "options": [
+                  "Wie heißt du?",
+                  "Wie alt bist du?",
+                  "Wer bist du?"
+                ],
+                "answer": "Wie heißt du?"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Yo tengo diez años»",
+                "words": [
+                  "Ich",
+                  "bin",
+                  "zehn",
+                  "Jahre",
+                  "alt"
+                ],
+                "distractors": [
+                  "habe"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «¿De dónde vienes?»",
+                "answer": "Woher kommst du?",
+                "accepted": [
+                  "woher kommst du"
+                ]
+              }
             ]
           },
           {
@@ -47,26 +140,109 @@
             "title": "Gente y cosas",
             "kind": "exercises",
             "exercises": [
-              { "type": "select_image", "prompt": "Selecciona: «el hombre»", "options": [
-                { "id": "a", "image": "👨", "label": "der Mann" },
-                { "id": "b", "image": "👩", "label": "die Frau" },
-                { "id": "c", "image": "🧒", "label": "das Kind" },
-                { "id": "d", "image": "🐶", "label": "der Hund" }
-              ], "correct": "a" },
-              { "type": "select_image", "prompt": "Selecciona: «el perro»", "options": [
-                { "id": "a", "image": "🐱", "label": "die Katze" },
-                { "id": "b", "image": "🐶", "label": "der Hund" },
-                { "id": "c", "image": "🐦", "label": "der Vogel" },
-                { "id": "d", "image": "🐴", "label": "das Pferd" }
-              ], "correct": "b" },
-              { "type": "translate_direct", "prompt": "Traduce con artículo: «el agua»", "answer": "das Wasser", "accepted": ["wasser"] },
-              { "type": "word_bank", "prompt": "Construye: «Eso es un libro»", "words": ["Das", "ist", "ein", "Buch"], "distractors": ["eine", "Hund"] },
-              { "type": "select_image", "prompt": "Selecciona: «la casa»", "options": [
-                { "id": "a", "image": "🚗", "label": "das Auto" },
-                { "id": "b", "image": "🌳", "label": "der Baum" },
-                { "id": "c", "image": "🏠", "label": "das Haus" },
-                { "id": "d", "image": "🪑", "label": "der Stuhl" }
-              ], "correct": "c" }
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el hombre»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "👨",
+                    "label": "der Mann"
+                  },
+                  {
+                    "id": "b",
+                    "image": "👩",
+                    "label": "die Frau"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🧒",
+                    "label": "das Kind"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🐶",
+                    "label": "der Hund"
+                  }
+                ],
+                "correct": "a"
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el perro»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🐱",
+                    "label": "die Katze"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🐶",
+                    "label": "der Hund"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🐦",
+                    "label": "der Vogel"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🐴",
+                    "label": "das Pferd"
+                  }
+                ],
+                "correct": "b"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «el agua»",
+                "answer": "das Wasser",
+                "accepted": [
+                  "wasser"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Eso es un libro»",
+                "words": [
+                  "Das",
+                  "ist",
+                  "ein",
+                  "Buch"
+                ],
+                "distractors": [
+                  "eine",
+                  "Hund"
+                ]
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «la casa»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🚗",
+                    "label": "das Auto"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🌳",
+                    "label": "der Baum"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🏠",
+                    "label": "das Haus"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🪑",
+                    "label": "der Stuhl"
+                  }
+                ],
+                "correct": "c"
+              }
             ]
           },
           {
@@ -75,16 +251,78 @@
             "title": "Primeras frases",
             "kind": "exercises",
             "exercises": [
-              { "type": "word_bank", "prompt": "Construye: «Yo tengo un perro»", "words": ["Ich", "habe", "einen", "Hund"], "distractors": ["bin", "Katze"] },
-              { "type": "translate_direct", "prompt": "Traduce: «nosotros somos»", "answer": "wir sind", "accepted": [] },
-              { "type": "listening_match", "prompt": "Escucha y elige lo que oyes", "tts": "Danke", "options": ["Danke", "Decke", "Denken"], "answer": "Danke" },
-              { "type": "select_image", "prompt": "Selecciona: «la manzana»", "options": [
-                { "id": "a", "image": "🍎", "label": "der Apfel" },
-                { "id": "b", "image": "🍌", "label": "die Banane" },
-                { "id": "c", "image": "🍞", "label": "das Brot" },
-                { "id": "d", "image": "🧀", "label": "der Käse" }
-              ], "correct": "a" },
-              { "type": "word_bank", "prompt": "Construye: «Ella tiene un libro»", "words": ["Sie", "hat", "ein", "Buch"], "distractors": ["er", "hast"] }
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Yo tengo un perro»",
+                "words": [
+                  "Ich",
+                  "habe",
+                  "einen",
+                  "Hund"
+                ],
+                "distractors": [
+                  "bin",
+                  "Katze"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «nosotros somos»",
+                "answer": "wir sind",
+                "accepted": []
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Danke",
+                "options": [
+                  "Danke",
+                  "Decke",
+                  "Denken"
+                ],
+                "answer": "Danke"
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «la manzana»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🍎",
+                    "label": "der Apfel"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🍌",
+                    "label": "die Banane"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🍞",
+                    "label": "das Brot"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🧀",
+                    "label": "der Käse"
+                  }
+                ],
+                "correct": "a"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Ella tiene un libro»",
+                "words": [
+                  "Sie",
+                  "hat",
+                  "ein",
+                  "Buch"
+                ],
+                "distractors": [
+                  "er",
+                  "hast"
+                ]
+              }
             ]
           },
           {
@@ -93,12 +331,30 @@
             "title": "Minijuego: parejas",
             "kind": "match_game",
             "pairs": [
-              { "de": "Hallo", "es": "Hola" },
-              { "de": "Tschüss", "es": "Adiós" },
-              { "de": "Danke", "es": "Gracias" },
-              { "de": "Bitte", "es": "Por favor" },
-              { "de": "Ja", "es": "Sí" },
-              { "de": "Nein", "es": "No" }
+              {
+                "de": "Hallo",
+                "es": "Hola"
+              },
+              {
+                "de": "Tschüss",
+                "es": "Adiós"
+              },
+              {
+                "de": "Danke",
+                "es": "Gracias"
+              },
+              {
+                "de": "Bitte",
+                "es": "Por favor"
+              },
+              {
+                "de": "Ja",
+                "es": "Sí"
+              },
+              {
+                "de": "Nein",
+                "es": "No"
+              }
             ]
           }
         ]
@@ -116,21 +372,91 @@
             "title": "Del uno al cinco",
             "kind": "exercises",
             "exercises": [
-              { "type": "listening_match", "prompt": "Escucha y elige lo que oyes", "tts": "drei", "options": ["drei", "zwei", "dreißig"], "answer": "drei" },
-              { "type": "select_image", "prompt": "Selecciona: «el número tres»", "options": [
-                { "id": "a", "image": "1️⃣", "label": "eins" },
-                { "id": "b", "image": "3️⃣", "label": "drei" },
-                { "id": "c", "image": "5️⃣", "label": "fünf" },
-                { "id": "d", "image": "2️⃣", "label": "zwei" }
-              ], "correct": "b" },
-              { "type": "translate_direct", "prompt": "Traduce el número: «dos»", "answer": "zwei", "accepted": [] },
-              { "type": "word_bank", "prompt": "Construye: «Yo tengo dos hermanos»", "words": ["Ich", "habe", "zwei", "Brüder"], "distractors": ["drei", "Schwester"] },
-              { "type": "select_image", "prompt": "Selecciona: «el número cinco»", "options": [
-                { "id": "a", "image": "4️⃣", "label": "vier" },
-                { "id": "b", "image": "6️⃣", "label": "sechs" },
-                { "id": "c", "image": "5️⃣", "label": "fünf" },
-                { "id": "d", "image": "8️⃣", "label": "acht" }
-              ], "correct": "c" }
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "drei",
+                "options": [
+                  "drei",
+                  "zwei",
+                  "dreißig"
+                ],
+                "answer": "drei"
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el número tres»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "1️⃣",
+                    "label": "eins"
+                  },
+                  {
+                    "id": "b",
+                    "image": "3️⃣",
+                    "label": "drei"
+                  },
+                  {
+                    "id": "c",
+                    "image": "5️⃣",
+                    "label": "fünf"
+                  },
+                  {
+                    "id": "d",
+                    "image": "2️⃣",
+                    "label": "zwei"
+                  }
+                ],
+                "correct": "b"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce el número: «dos»",
+                "answer": "zwei",
+                "accepted": []
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Yo tengo dos hermanos»",
+                "words": [
+                  "Ich",
+                  "habe",
+                  "zwei",
+                  "Brüder"
+                ],
+                "distractors": [
+                  "drei",
+                  "Schwester"
+                ]
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el número cinco»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "4️⃣",
+                    "label": "vier"
+                  },
+                  {
+                    "id": "b",
+                    "image": "6️⃣",
+                    "label": "sechs"
+                  },
+                  {
+                    "id": "c",
+                    "image": "5️⃣",
+                    "label": "fünf"
+                  },
+                  {
+                    "id": "d",
+                    "image": "8️⃣",
+                    "label": "acht"
+                  }
+                ],
+                "correct": "c"
+              }
             ]
           },
           {
@@ -139,16 +465,70 @@
             "title": "Del seis al diez",
             "kind": "exercises",
             "exercises": [
-              { "type": "listening_match", "prompt": "Escucha y elige lo que oyes", "tts": "sieben", "options": ["sieben", "neun", "zehn"], "answer": "sieben" },
-              { "type": "select_image", "prompt": "Selecciona: «el número ocho»", "options": [
-                { "id": "a", "image": "8️⃣", "label": "acht" },
-                { "id": "b", "image": "9️⃣", "label": "neun" },
-                { "id": "c", "image": "7️⃣", "label": "sieben" },
-                { "id": "d", "image": "6️⃣", "label": "sechs" }
-              ], "correct": "a" },
-              { "type": "translate_direct", "prompt": "Traduce el número: «nueve»", "answer": "neun", "accepted": [] },
-              { "type": "word_bank", "prompt": "Construye: «Nosotros tenemos diez dedos»", "words": ["Wir", "haben", "zehn", "Finger"], "distractors": ["neun", "Hände"] },
-              { "type": "translate_direct", "prompt": "Traduce el número: «siete»", "answer": "sieben", "accepted": [] }
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "sieben",
+                "options": [
+                  "sieben",
+                  "neun",
+                  "zehn"
+                ],
+                "answer": "sieben"
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el número ocho»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "8️⃣",
+                    "label": "acht"
+                  },
+                  {
+                    "id": "b",
+                    "image": "9️⃣",
+                    "label": "neun"
+                  },
+                  {
+                    "id": "c",
+                    "image": "7️⃣",
+                    "label": "sieben"
+                  },
+                  {
+                    "id": "d",
+                    "image": "6️⃣",
+                    "label": "sechs"
+                  }
+                ],
+                "correct": "a"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce el número: «nueve»",
+                "answer": "neun",
+                "accepted": []
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Nosotros tenemos diez dedos»",
+                "words": [
+                  "Wir",
+                  "haben",
+                  "zehn",
+                  "Finger"
+                ],
+                "distractors": [
+                  "neun",
+                  "Hände"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce el número: «siete»",
+                "answer": "sieben",
+                "accepted": []
+              }
             ]
           },
           {
@@ -157,21 +537,93 @@
             "title": "Colores básicos",
             "kind": "exercises",
             "exercises": [
-              { "type": "select_image", "prompt": "Selecciona: «rojo»", "options": [
-                { "id": "a", "image": "🔵", "label": "blau" },
-                { "id": "b", "image": "🔴", "label": "rot" },
-                { "id": "c", "image": "🟢", "label": "grün" },
-                { "id": "d", "image": "🟡", "label": "gelb" }
-              ], "correct": "b" },
-              { "type": "listening_match", "prompt": "Escucha y elige lo que oyes", "tts": "blau", "options": ["blau", "braun", "grau"], "answer": "blau" },
-              { "type": "translate_direct", "prompt": "Traduce el color: «verde»", "answer": "grün", "accepted": ["gruen"] },
-              { "type": "word_bank", "prompt": "Construye: «El coche es negro»", "words": ["Das", "Auto", "ist", "schwarz"], "distractors": ["weiß", "rot"] },
-              { "type": "select_image", "prompt": "Selecciona: «amarillo»", "options": [
-                { "id": "a", "image": "🟠", "label": "orange" },
-                { "id": "b", "image": "⚪", "label": "weiß" },
-                { "id": "c", "image": "🟡", "label": "gelb" },
-                { "id": "d", "image": "🟣", "label": "lila" }
-              ], "correct": "c" }
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «rojo»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🔵",
+                    "label": "blau"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🔴",
+                    "label": "rot"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🟢",
+                    "label": "grün"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🟡",
+                    "label": "gelb"
+                  }
+                ],
+                "correct": "b"
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "blau",
+                "options": [
+                  "blau",
+                  "braun",
+                  "grau"
+                ],
+                "answer": "blau"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce el color: «verde»",
+                "answer": "grün",
+                "accepted": [
+                  "gruen"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «El coche es negro»",
+                "words": [
+                  "Das",
+                  "Auto",
+                  "ist",
+                  "schwarz"
+                ],
+                "distractors": [
+                  "weiß",
+                  "rot"
+                ]
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «amarillo»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🟠",
+                    "label": "orange"
+                  },
+                  {
+                    "id": "b",
+                    "image": "⚪",
+                    "label": "weiß"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🟡",
+                    "label": "gelb"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🟣",
+                    "label": "lila"
+                  }
+                ],
+                "correct": "c"
+              }
             ]
           },
           {
@@ -180,16 +632,81 @@
             "title": "Frases con colores y números",
             "kind": "exercises",
             "exercises": [
-              { "type": "word_bank", "prompt": "Construye: «El cielo es azul»", "words": ["Der", "Himmel", "ist", "blau"], "distractors": ["grün", "die"] },
-              { "type": "translate_direct", "prompt": "Traduce el color: «blanco»", "answer": "weiß", "accepted": ["weiss"] },
-              { "type": "select_image", "prompt": "Selecciona: «negro»", "options": [
-                { "id": "a", "image": "⚫", "label": "schwarz" },
-                { "id": "b", "image": "⚪", "label": "weiß" },
-                { "id": "c", "image": "🟤", "label": "braun" },
-                { "id": "d", "image": "🔴", "label": "rot" }
-              ], "correct": "a" },
-              { "type": "listening_match", "prompt": "Escucha y elige lo que oyes", "tts": "vier", "options": ["vier", "für", "wir"], "answer": "vier" },
-              { "type": "word_bank", "prompt": "Construye: «La flor es roja y amarilla»", "words": ["Die", "Blume", "ist", "rot", "und", "gelb"], "distractors": ["blau"] }
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «El cielo es azul»",
+                "words": [
+                  "Der",
+                  "Himmel",
+                  "ist",
+                  "blau"
+                ],
+                "distractors": [
+                  "grün",
+                  "die"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce el color: «blanco»",
+                "answer": "weiß",
+                "accepted": [
+                  "weiss"
+                ]
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «negro»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "⚫",
+                    "label": "schwarz"
+                  },
+                  {
+                    "id": "b",
+                    "image": "⚪",
+                    "label": "weiß"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🟤",
+                    "label": "braun"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🔴",
+                    "label": "rot"
+                  }
+                ],
+                "correct": "a"
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "vier",
+                "options": [
+                  "vier",
+                  "für",
+                  "wir"
+                ],
+                "answer": "vier"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «La flor es roja y amarilla»",
+                "words": [
+                  "Die",
+                  "Blume",
+                  "ist",
+                  "rot",
+                  "und",
+                  "gelb"
+                ],
+                "distractors": [
+                  "blau"
+                ]
+              }
             ]
           },
           {
@@ -198,24 +715,3036 @@
             "title": "Minijuego: parejas",
             "kind": "match_game",
             "pairs": [
-              { "de": "eins", "es": "uno" },
-              { "de": "zwei", "es": "dos" },
-              { "de": "drei", "es": "tres" },
-              { "de": "rot", "es": "rojo" },
-              { "de": "blau", "es": "azul" },
-              { "de": "grün", "es": "verde" }
+              {
+                "de": "eins",
+                "es": "uno"
+              },
+              {
+                "de": "zwei",
+                "es": "dos"
+              },
+              {
+                "de": "drei",
+                "es": "tres"
+              },
+              {
+                "de": "rot",
+                "es": "rojo"
+              },
+              {
+                "de": "blau",
+                "es": "azul"
+              },
+              {
+                "de": "grün",
+                "es": "verde"
+              }
             ]
           }
         ]
       },
-      { "id": "s1_u3",  "index": 3,  "title": "Familia",          "icon": "👨‍👩‍👧", "status": "coming_soon", "lessons": [] },
-      { "id": "s1_u4",  "index": 4,  "title": "Comida y bebida",  "icon": "🍞", "status": "coming_soon", "lessons": [] },
-      { "id": "s1_u5",  "index": 5,  "title": "Animales",         "icon": "🐶", "status": "coming_soon", "lessons": [] },
-      { "id": "s1_u6",  "index": 6,  "title": "La casa",          "icon": "🏠", "status": "coming_soon", "lessons": [] },
-      { "id": "s1_u7",  "index": 7,  "title": "Días y meses",     "icon": "📅", "status": "coming_soon", "lessons": [] },
-      { "id": "s1_u8",  "index": 8,  "title": "Verbos básicos",   "icon": "⚡", "status": "coming_soon", "lessons": [] },
-      { "id": "s1_u9",  "index": 9,  "title": "Rutina diaria",    "icon": "⏰", "status": "coming_soon", "lessons": [] },
-      { "id": "s1_u10", "index": 10, "title": "Repaso final A1",  "icon": "🏆", "status": "coming_soon", "lessons": [] }
+      {
+        "id": "s1_u3",
+        "index": 3,
+        "title": "Familia",
+        "icon": "👨‍👩‍👧",
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s1_u3_l1",
+            "index": 1,
+            "title": "La familia cercana",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «la madre»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "👩",
+                    "label": "die Mutter"
+                  },
+                  {
+                    "id": "b",
+                    "image": "👨",
+                    "label": "der Vater"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🧒",
+                    "label": "das Kind"
+                  },
+                  {
+                    "id": "d",
+                    "image": "👶",
+                    "label": "das Baby"
+                  }
+                ],
+                "correct": "a"
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "die Schwester",
+                "options": [
+                  "die Schwester",
+                  "der Bruder",
+                  "die Mutter"
+                ],
+                "answer": "die Schwester"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «el hermano»",
+                "answer": "der Bruder",
+                "accepted": [
+                  "bruder"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Mi madre se llama Marta»",
+                "words": [
+                  "Meine",
+                  "Mutter",
+                  "heißt",
+                  "Marta"
+                ],
+                "distractors": [
+                  "Mein",
+                  "Vater"
+                ]
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el bebé»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🧒",
+                    "label": "das Kind"
+                  },
+                  {
+                    "id": "b",
+                    "image": "👶",
+                    "label": "das Baby"
+                  },
+                  {
+                    "id": "c",
+                    "image": "👵",
+                    "label": "die Oma"
+                  },
+                  {
+                    "id": "d",
+                    "image": "👴",
+                    "label": "der Opa"
+                  }
+                ],
+                "correct": "b"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «la hermana»",
+                "answer": "die Schwester",
+                "accepted": [
+                  "schwester"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u3_l2",
+            "index": 2,
+            "title": "Abuelos y familia grande",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "die Großeltern",
+                "options": [
+                  "die Großeltern",
+                  "die Eltern",
+                  "die Geschwister"
+                ],
+                "answer": "die Großeltern"
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el abuelo»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "👵",
+                    "label": "die Oma"
+                  },
+                  {
+                    "id": "b",
+                    "image": "👨",
+                    "label": "der Vater"
+                  },
+                  {
+                    "id": "c",
+                    "image": "👴",
+                    "label": "der Opa"
+                  },
+                  {
+                    "id": "d",
+                    "image": "👦",
+                    "label": "der Junge"
+                  }
+                ],
+                "correct": "c"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «los padres»",
+                "answer": "die Eltern",
+                "accepted": [
+                  "eltern"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Mi abuela es muy simpática»",
+                "words": [
+                  "Meine",
+                  "Oma",
+                  "ist",
+                  "sehr",
+                  "nett"
+                ],
+                "distractors": [
+                  "Opa"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «la tía»",
+                "answer": "die Tante",
+                "accepted": [
+                  "tante"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Tengo dos hermanos y una hermana»",
+                "words": [
+                  "Ich",
+                  "habe",
+                  "zwei",
+                  "Brüder",
+                  "und",
+                  "eine",
+                  "Schwester"
+                ],
+                "distractors": []
+              }
+            ]
+          },
+          {
+            "id": "s1_u3_l3",
+            "index": 3,
+            "title": "Mein y dein",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Mi padre trabaja mucho»",
+                "words": [
+                  "Mein",
+                  "Vater",
+                  "arbeitet",
+                  "viel"
+                ],
+                "distractors": [
+                  "Meine",
+                  "Dein"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «mi hermano»",
+                "answer": "mein Bruder",
+                "accepted": []
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Wie heißt deine Mutter?",
+                "options": [
+                  "Wie heißt deine Mutter?",
+                  "Wie heißt dein Vater?",
+                  "Wo ist deine Mutter?"
+                ],
+                "answer": "Wie heißt deine Mutter?"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Cómo se llama tu padre?»",
+                "words": [
+                  "Wie",
+                  "heißt",
+                  "dein",
+                  "Vater"
+                ],
+                "distractors": [
+                  "deine",
+                  "Mutter"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «tu hermana»",
+                "answer": "deine Schwester",
+                "accepted": []
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Mi familia es grande»",
+                "words": [
+                  "Meine",
+                  "Familie",
+                  "ist",
+                  "groß"
+                ],
+                "distractors": [
+                  "Mein"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u3_l4",
+            "index": 4,
+            "title": "Hablando de la familia",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "der Onkel",
+                "options": [
+                  "der Onkel",
+                  "die Tante",
+                  "der Opa"
+                ],
+                "answer": "der Onkel"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «el primo»",
+                "answer": "der Cousin",
+                "accepted": [
+                  "cousin"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Mi tío vive en Berlín»",
+                "words": [
+                  "Mein",
+                  "Onkel",
+                  "wohnt",
+                  "in",
+                  "Berlin"
+                ],
+                "distractors": [
+                  "Tante"
+                ]
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «la familia»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "👨‍👩‍👧",
+                    "label": "die Familie"
+                  },
+                  {
+                    "id": "b",
+                    "image": "👶",
+                    "label": "das Baby"
+                  },
+                  {
+                    "id": "c",
+                    "image": "👴",
+                    "label": "der Opa"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🏠",
+                    "label": "das Haus"
+                  }
+                ],
+                "correct": "a"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Tienes hermanos?»",
+                "words": [
+                  "Hast",
+                  "du",
+                  "Geschwister"
+                ],
+                "distractors": [
+                  "Bruder",
+                  "dein"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Mi hija se llama Lena»",
+                "answer": "Meine Tochter heißt Lena",
+                "accepted": [
+                  "meine tochter heisst lena"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u3_l5",
+            "index": 5,
+            "title": "Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "die Mutter",
+                "es": "la madre"
+              },
+              {
+                "de": "der Vater",
+                "es": "el padre"
+              },
+              {
+                "de": "der Bruder",
+                "es": "el hermano"
+              },
+              {
+                "de": "die Schwester",
+                "es": "la hermana"
+              },
+              {
+                "de": "die Oma",
+                "es": "la abuela"
+              },
+              {
+                "de": "der Opa",
+                "es": "el abuelo"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s1_u4",
+        "index": 4,
+        "title": "Comida y bebida",
+        "icon": "🍞",
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s1_u4_l1",
+            "index": 1,
+            "title": "Alimentos básicos",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el pan»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🧀",
+                    "label": "der Käse"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🍞",
+                    "label": "das Brot"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🥚",
+                    "label": "das Ei"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🍎",
+                    "label": "der Apfel"
+                  }
+                ],
+                "correct": "b"
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "der Käse",
+                "options": [
+                  "der Käse",
+                  "der Kuchen",
+                  "die Küche"
+                ],
+                "answer": "der Käse"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «la leche»",
+                "answer": "die Milch",
+                "accepted": [
+                  "milch"
+                ]
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el huevo»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🥚",
+                    "label": "das Ei"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🍗",
+                    "label": "das Hähnchen"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🥔",
+                    "label": "die Kartoffel"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🍞",
+                    "label": "das Brot"
+                  }
+                ],
+                "correct": "a"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «El pan está rico»",
+                "words": [
+                  "Das",
+                  "Brot",
+                  "ist",
+                  "lecker"
+                ],
+                "distractors": [
+                  "Käse"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «el queso»",
+                "answer": "der Käse",
+                "accepted": [
+                  "kaese",
+                  "käse"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u4_l2",
+            "index": 2,
+            "title": "Bebidas",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el agua»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🥛",
+                    "label": "die Milch"
+                  },
+                  {
+                    "id": "b",
+                    "image": "☕",
+                    "label": "der Kaffee"
+                  },
+                  {
+                    "id": "c",
+                    "image": "💧",
+                    "label": "das Wasser"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🧃",
+                    "label": "der Saft"
+                  }
+                ],
+                "correct": "c"
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "der Saft",
+                "options": [
+                  "der Saft",
+                  "die Suppe",
+                  "der Salat"
+                ],
+                "answer": "der Saft"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «el té»",
+                "answer": "der Tee",
+                "accepted": [
+                  "tee"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Yo bebo agua»",
+                "words": [
+                  "Ich",
+                  "trinke",
+                  "Wasser"
+                ],
+                "distractors": [
+                  "esse",
+                  "Milch"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «el zumo»",
+                "answer": "der Saft",
+                "accepted": [
+                  "saft"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Bebes café o té?»",
+                "words": [
+                  "Trinkst",
+                  "du",
+                  "Kaffee",
+                  "oder",
+                  "Tee"
+                ],
+                "distractors": [
+                  "Wasser"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u4_l3",
+            "index": 3,
+            "title": "El verbo möchten",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Quisiera un café, por favor»",
+                "words": [
+                  "Ich",
+                  "möchte",
+                  "einen",
+                  "Kaffee",
+                  "bitte"
+                ],
+                "distractors": [
+                  "trinke"
+                ]
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Was möchtest du essen?",
+                "options": [
+                  "Was möchtest du essen?",
+                  "Was möchtest du trinken?",
+                  "Was isst du gern?"
+                ],
+                "answer": "Was möchtest du essen?"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Quisiera una pizza»",
+                "answer": "Ich möchte eine Pizza",
+                "accepted": [
+                  "ich moechte eine pizza"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Él quiere un helado»",
+                "words": [
+                  "Er",
+                  "möchte",
+                  "ein",
+                  "Eis"
+                ],
+                "distractors": [
+                  "möchtest"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «¿Qué quieres beber?»",
+                "answer": "Was möchtest du trinken?",
+                "accepted": [
+                  "was moechtest du trinken"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Nosotros queremos pagar»",
+                "words": [
+                  "Wir",
+                  "möchten",
+                  "zahlen"
+                ],
+                "distractors": [
+                  "möchte",
+                  "essen"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u4_l4",
+            "index": 4,
+            "title": "Comer y beber",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «la sopa»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🥗",
+                    "label": "der Salat"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🍕",
+                    "label": "die Pizza"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🍰",
+                    "label": "der Kuchen"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🍲",
+                    "label": "die Suppe"
+                  }
+                ],
+                "correct": "d"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Tengo hambre»",
+                "answer": "Ich habe Hunger",
+                "accepted": [
+                  "ich bin hungrig"
+                ]
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Guten Appetit",
+                "options": [
+                  "Guten Appetit",
+                  "Guten Abend",
+                  "Gute Nacht"
+                ],
+                "answer": "Guten Appetit"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Yo como una manzana»",
+                "words": [
+                  "Ich",
+                  "esse",
+                  "einen",
+                  "Apfel"
+                ],
+                "distractors": [
+                  "trinke"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Tengo sed»",
+                "answer": "Ich habe Durst",
+                "accepted": []
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «El pastel es muy dulce»",
+                "words": [
+                  "Der",
+                  "Kuchen",
+                  "ist",
+                  "sehr",
+                  "süß"
+                ],
+                "distractors": [
+                  "sauer"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u4_l5",
+            "index": 5,
+            "title": "Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "das Brot",
+                "es": "el pan"
+              },
+              {
+                "de": "der Käse",
+                "es": "el queso"
+              },
+              {
+                "de": "die Milch",
+                "es": "la leche"
+              },
+              {
+                "de": "das Wasser",
+                "es": "el agua"
+              },
+              {
+                "de": "der Apfel",
+                "es": "la manzana"
+              },
+              {
+                "de": "der Kuchen",
+                "es": "el pastel"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s1_u5",
+        "index": 5,
+        "title": "Animales",
+        "icon": "🐶",
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s1_u5_l1",
+            "index": 1,
+            "title": "Mascotas",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el gato»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🐶",
+                    "label": "der Hund"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🐱",
+                    "label": "die Katze"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🐹",
+                    "label": "der Hamster"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🐦",
+                    "label": "der Vogel"
+                  }
+                ],
+                "correct": "b"
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "der Hund",
+                "options": [
+                  "der Hund",
+                  "der Hut",
+                  "die Hand"
+                ],
+                "answer": "der Hund"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «el pájaro»",
+                "answer": "der Vogel",
+                "accepted": [
+                  "vogel"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Mi perro se llama Rex»",
+                "words": [
+                  "Mein",
+                  "Hund",
+                  "heißt",
+                  "Rex"
+                ],
+                "distractors": [
+                  "Katze"
+                ]
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el pez»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🐢",
+                    "label": "die Schildkröte"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🐰",
+                    "label": "das Kaninchen"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🐟",
+                    "label": "der Fisch"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🐹",
+                    "label": "der Hamster"
+                  }
+                ],
+                "correct": "c"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «el conejo»",
+                "answer": "das Kaninchen",
+                "accepted": [
+                  "kaninchen"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u5_l2",
+            "index": 2,
+            "title": "En la granja",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «la vaca»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🐮",
+                    "label": "die Kuh"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🐷",
+                    "label": "das Schwein"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🐴",
+                    "label": "das Pferd"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🐑",
+                    "label": "das Schaf"
+                  }
+                ],
+                "correct": "a"
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "das Pferd",
+                "options": [
+                  "das Pferd",
+                  "das Schwein",
+                  "der Vogel"
+                ],
+                "answer": "das Pferd"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «el cerdo»",
+                "answer": "das Schwein",
+                "accepted": [
+                  "schwein"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «La gallina pone huevos»",
+                "words": [
+                  "Das",
+                  "Huhn",
+                  "legt",
+                  "Eier"
+                ],
+                "distractors": [
+                  "Kuh"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «la oveja»",
+                "answer": "das Schaf",
+                "accepted": [
+                  "schaf"
+                ]
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el caballo»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🐮",
+                    "label": "die Kuh"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🐐",
+                    "label": "die Ziege"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🐑",
+                    "label": "das Schaf"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🐴",
+                    "label": "das Pferd"
+                  }
+                ],
+                "correct": "d"
+              }
+            ]
+          },
+          {
+            "id": "s1_u5_l3",
+            "index": 3,
+            "title": "Der, die o das",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "die Maus",
+                "options": [
+                  "die Maus",
+                  "der Mund",
+                  "die Mütze"
+                ],
+                "answer": "die Maus"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «el ratón»",
+                "answer": "die Maus",
+                "accepted": [
+                  "maus"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye con el artículo correcto: «El gato es pequeño»",
+                "words": [
+                  "Die",
+                  "Katze",
+                  "ist",
+                  "klein"
+                ],
+                "distractors": [
+                  "Der",
+                  "Das"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye con el artículo correcto: «El perro es grande»",
+                "words": [
+                  "Der",
+                  "Hund",
+                  "ist",
+                  "groß"
+                ],
+                "distractors": [
+                  "Die",
+                  "Das"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «el caballo»",
+                "answer": "das Pferd",
+                "accepted": [
+                  "pferd"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «El pájaro canta bonito»",
+                "words": [
+                  "Der",
+                  "Vogel",
+                  "singt",
+                  "schön"
+                ],
+                "distractors": [
+                  "Die"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u5_l4",
+            "index": 4,
+            "title": "Animales salvajes",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el león»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🐯",
+                    "label": "der Tiger"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🦁",
+                    "label": "der Löwe"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🐻",
+                    "label": "der Bär"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🐘",
+                    "label": "der Elefant"
+                  }
+                ],
+                "correct": "b"
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "der Elefant",
+                "options": [
+                  "der Elefant",
+                  "der Affe",
+                  "die Ente"
+                ],
+                "answer": "der Elefant"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «el oso»",
+                "answer": "der Bär",
+                "accepted": [
+                  "baer",
+                  "bär"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «El mono come plátanos»",
+                "words": [
+                  "Der",
+                  "Affe",
+                  "isst",
+                  "Bananen"
+                ],
+                "distractors": [
+                  "Löwe"
+                ]
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el pingüino»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🦅",
+                    "label": "der Adler"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🦉",
+                    "label": "die Eule"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🐧",
+                    "label": "der Pinguin"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🦆",
+                    "label": "die Ente"
+                  }
+                ],
+                "correct": "c"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Los animales viven en el zoo»",
+                "answer": "Die Tiere leben im Zoo",
+                "accepted": [
+                  "die tiere wohnen im zoo"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u5_l5",
+            "index": 5,
+            "title": "Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "der Hund",
+                "es": "el perro"
+              },
+              {
+                "de": "die Katze",
+                "es": "el gato"
+              },
+              {
+                "de": "das Pferd",
+                "es": "el caballo"
+              },
+              {
+                "de": "die Kuh",
+                "es": "la vaca"
+              },
+              {
+                "de": "der Vogel",
+                "es": "el pájaro"
+              },
+              {
+                "de": "der Fisch",
+                "es": "el pez"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s1_u6",
+        "index": 6,
+        "title": "La casa",
+        "icon": "🏠",
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s1_u6_l1",
+            "index": 1,
+            "title": "Las habitaciones",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «la cocina»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🍳",
+                    "label": "die Küche"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🛏️",
+                    "label": "das Schlafzimmer"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🛁",
+                    "label": "das Badezimmer"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🛋️",
+                    "label": "das Wohnzimmer"
+                  }
+                ],
+                "correct": "a"
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "das Badezimmer",
+                "options": [
+                  "das Badezimmer",
+                  "das Schlafzimmer",
+                  "das Wohnzimmer"
+                ],
+                "answer": "das Badezimmer"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «el salón»",
+                "answer": "das Wohnzimmer",
+                "accepted": [
+                  "wohnzimmer"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «La cocina es pequeña»",
+                "words": [
+                  "Die",
+                  "Küche",
+                  "ist",
+                  "klein"
+                ],
+                "distractors": [
+                  "groß"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «el dormitorio»",
+                "answer": "das Schlafzimmer",
+                "accepted": [
+                  "schlafzimmer"
+                ]
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el jardín»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🚪",
+                    "label": "die Tür"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🌳",
+                    "label": "der Garten"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🪟",
+                    "label": "das Fenster"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🏠",
+                    "label": "das Haus"
+                  }
+                ],
+                "correct": "b"
+              }
+            ]
+          },
+          {
+            "id": "s1_u6_l2",
+            "index": 2,
+            "title": "Muebles",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el sofá»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🛏️",
+                    "label": "das Bett"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🪑",
+                    "label": "der Stuhl"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🛋️",
+                    "label": "das Sofa"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🚪",
+                    "label": "die Tür"
+                  }
+                ],
+                "correct": "c"
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "der Schrank",
+                "options": [
+                  "der Schrank",
+                  "der Stuhl",
+                  "der Strand"
+                ],
+                "answer": "der Schrank"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «la cama»",
+                "answer": "das Bett",
+                "accepted": [
+                  "bett"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «La mesa está en la cocina»",
+                "words": [
+                  "Der",
+                  "Tisch",
+                  "ist",
+                  "in",
+                  "der",
+                  "Küche"
+                ],
+                "distractors": []
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «la silla»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🪑",
+                    "label": "der Stuhl"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🛋️",
+                    "label": "das Sofa"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🛏️",
+                    "label": "das Bett"
+                  },
+                  {
+                    "id": "d",
+                    "image": "💡",
+                    "label": "die Lampe"
+                  }
+                ],
+                "correct": "a"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «la lámpara»",
+                "answer": "die Lampe",
+                "accepted": [
+                  "lampe"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u6_l3",
+            "index": 3,
+            "title": "Negación con nicht",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «La casa no es grande»",
+                "words": [
+                  "Das",
+                  "Haus",
+                  "ist",
+                  "nicht",
+                  "groß"
+                ],
+                "distractors": [
+                  "kein"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Yo no vivo aquí»",
+                "answer": "Ich wohne nicht hier",
+                "accepted": [
+                  "ich wohne hier nicht"
+                ]
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Das ist nicht mein Zimmer",
+                "options": [
+                  "Das ist nicht mein Zimmer",
+                  "Das ist mein Zimmer",
+                  "Das ist dein Zimmer"
+                ],
+                "answer": "Das ist nicht mein Zimmer"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «El baño no está arriba»",
+                "words": [
+                  "Das",
+                  "Badezimmer",
+                  "ist",
+                  "nicht",
+                  "oben"
+                ],
+                "distractors": [
+                  "kein"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "¿Qué palabra niega un verbo o un adjetivo?",
+                "answer": "nicht",
+                "accepted": []
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «La lámpara no funciona»",
+                "words": [
+                  "Die",
+                  "Lampe",
+                  "funktioniert",
+                  "nicht"
+                ],
+                "distractors": [
+                  "kein"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u6_l4",
+            "index": 4,
+            "title": "Negación con kein",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «No tengo coche»",
+                "words": [
+                  "Ich",
+                  "habe",
+                  "kein",
+                  "Auto"
+                ],
+                "distractors": [
+                  "nicht",
+                  "ein"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «No tenemos jardín»",
+                "answer": "Wir haben keinen Garten",
+                "accepted": [
+                  "wir haben kein garten"
+                ]
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Ich habe keine Zeit",
+                "options": [
+                  "Ich habe keine Zeit",
+                  "Ich habe keine Katze",
+                  "Ich habe kein Eis"
+                ],
+                "answer": "Ich habe keine Zeit"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Eso no es una mesa»",
+                "words": [
+                  "Das",
+                  "ist",
+                  "kein",
+                  "Tisch"
+                ],
+                "distractors": [
+                  "nicht",
+                  "keine"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «No tengo hermanos»",
+                "answer": "Ich habe keine Geschwister",
+                "accepted": []
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «No hay ninguna ventana»",
+                "words": [
+                  "Es",
+                  "gibt",
+                  "kein",
+                  "Fenster"
+                ],
+                "distractors": [
+                  "nicht"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u6_l5",
+            "index": 5,
+            "title": "Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "die Küche",
+                "es": "la cocina"
+              },
+              {
+                "de": "das Bett",
+                "es": "la cama"
+              },
+              {
+                "de": "der Stuhl",
+                "es": "la silla"
+              },
+              {
+                "de": "das Fenster",
+                "es": "la ventana"
+              },
+              {
+                "de": "die Tür",
+                "es": "la puerta"
+              },
+              {
+                "de": "der Garten",
+                "es": "el jardín"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s1_u7",
+        "index": 7,
+        "title": "Días y meses",
+        "icon": "📅",
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s1_u7_l1",
+            "index": 1,
+            "title": "Los días de la semana",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Montag",
+                "options": [
+                  "Montag",
+                  "Sonntag",
+                  "Morgen"
+                ],
+                "answer": "Montag"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce el día: «miércoles»",
+                "answer": "Mittwoch",
+                "accepted": []
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Hoy es viernes»",
+                "words": [
+                  "Heute",
+                  "ist",
+                  "Freitag"
+                ],
+                "distractors": [
+                  "Morgen"
+                ]
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Donnerstag",
+                "options": [
+                  "Donnerstag",
+                  "Dienstag",
+                  "Samstag"
+                ],
+                "answer": "Donnerstag"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce el día: «domingo»",
+                "answer": "Sonntag",
+                "accepted": []
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Mañana es sábado»",
+                "words": [
+                  "Morgen",
+                  "ist",
+                  "Samstag"
+                ],
+                "distractors": [
+                  "Heute"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u7_l2",
+            "index": 2,
+            "title": "Los meses y estaciones",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Januar",
+                "options": [
+                  "Januar",
+                  "Juni",
+                  "Juli"
+                ],
+                "answer": "Januar"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce el mes: «mayo»",
+                "answer": "Mai",
+                "accepted": []
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Mi cumpleaños es en agosto»",
+                "words": [
+                  "Mein",
+                  "Geburtstag",
+                  "ist",
+                  "im",
+                  "August"
+                ],
+                "distractors": [
+                  "Mai"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce el mes: «diciembre»",
+                "answer": "Dezember",
+                "accepted": []
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "der Sommer",
+                "options": [
+                  "der Sommer",
+                  "der Samstag",
+                  "die Sonne"
+                ],
+                "answer": "der Sommer"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «En invierno nieva»",
+                "words": [
+                  "Im",
+                  "Winter",
+                  "schneit",
+                  "es"
+                ],
+                "distractors": [
+                  "Sommer"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u7_l3",
+            "index": 3,
+            "title": "¿Qué hora es?",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Wie spät ist es?",
+                "options": [
+                  "Wie spät ist es?",
+                  "Wie alt bist du?",
+                  "Wie geht es dir?"
+                ],
+                "answer": "Wie spät ist es?"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «¿Qué hora es?»",
+                "answer": "Wie spät ist es?",
+                "accepted": [
+                  "wie spaet ist es",
+                  "wie viel uhr ist es",
+                  "wieviel uhr ist es"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Son las tres»",
+                "words": [
+                  "Es",
+                  "ist",
+                  "drei",
+                  "Uhr"
+                ],
+                "distractors": [
+                  "um"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «La clase empieza a las ocho»",
+                "words": [
+                  "Der",
+                  "Unterricht",
+                  "beginnt",
+                  "um",
+                  "acht",
+                  "Uhr"
+                ],
+                "distractors": []
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «a las diez»",
+                "answer": "um zehn Uhr",
+                "accepted": [
+                  "um zehn"
+                ]
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Es ist halb vier",
+                "options": [
+                  "Es ist halb vier",
+                  "Es ist vier Uhr",
+                  "Es ist halb sechs"
+                ],
+                "answer": "Es ist halb vier"
+              }
+            ]
+          },
+          {
+            "id": "s1_u7_l4",
+            "index": 4,
+            "title": "Preguntas con Wann y Wie",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Cuándo es tu cumpleaños?»",
+                "words": [
+                  "Wann",
+                  "ist",
+                  "dein",
+                  "Geburtstag"
+                ],
+                "distractors": [
+                  "Wie",
+                  "Wo"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «¿cuándo?»",
+                "answer": "wann",
+                "accepted": []
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Wann kommst du?",
+                "options": [
+                  "Wann kommst du?",
+                  "Wann gehst du?",
+                  "Wo wohnst du?"
+                ],
+                "answer": "Wann kommst du?"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Cómo estás?»",
+                "words": [
+                  "Wie",
+                  "geht",
+                  "es",
+                  "dir"
+                ],
+                "distractors": [
+                  "Wann"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «¿Cuántos años tienes?»",
+                "answer": "Wie alt bist du?",
+                "accepted": []
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Cuándo empieza la película?»",
+                "words": [
+                  "Wann",
+                  "beginnt",
+                  "der",
+                  "Film"
+                ],
+                "distractors": [
+                  "Wie"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u7_l5",
+            "index": 5,
+            "title": "Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "Montag",
+                "es": "lunes"
+              },
+              {
+                "de": "Freitag",
+                "es": "viernes"
+              },
+              {
+                "de": "Sonntag",
+                "es": "domingo"
+              },
+              {
+                "de": "Januar",
+                "es": "enero"
+              },
+              {
+                "de": "der Sommer",
+                "es": "el verano"
+              },
+              {
+                "de": "heute",
+                "es": "hoy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s1_u8",
+        "index": 8,
+        "title": "Verbos básicos",
+        "icon": "⚡",
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s1_u8_l1",
+            "index": 1,
+            "title": "Sein y haben",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Yo soy de Madrid»",
+                "words": [
+                  "Ich",
+                  "bin",
+                  "aus",
+                  "Madrid"
+                ],
+                "distractors": [
+                  "bist"
+                ]
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Wir sind müde",
+                "options": [
+                  "Wir sind müde",
+                  "Wir sind hier",
+                  "Ihr seid müde"
+                ],
+                "answer": "Wir sind müde"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Conjuga «sein»: «tú eres»",
+                "answer": "du bist",
+                "accepted": [
+                  "bist"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Ella tiene un gato»",
+                "words": [
+                  "Sie",
+                  "hat",
+                  "eine",
+                  "Katze"
+                ],
+                "distractors": [
+                  "habe"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Conjuga «haben»: «vosotros tenéis»",
+                "answer": "ihr habt",
+                "accepted": [
+                  "habt"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Ellos son simpáticos»",
+                "words": [
+                  "Sie",
+                  "sind",
+                  "nett"
+                ],
+                "distractors": [
+                  "ist",
+                  "seid"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u8_l2",
+            "index": 2,
+            "title": "Verbos regulares",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "translate_direct",
+                "prompt": "Conjuga «lernen»: «yo aprendo»",
+                "answer": "ich lerne",
+                "accepted": [
+                  "lerne"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Nosotros jugamos al fútbol»",
+                "words": [
+                  "Wir",
+                  "spielen",
+                  "Fußball"
+                ],
+                "distractors": [
+                  "spielt"
+                ]
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Er wohnt in Hamburg",
+                "options": [
+                  "Er wohnt in Hamburg",
+                  "Er kommt aus Hamburg",
+                  "Er arbeitet in Hamburg"
+                ],
+                "answer": "Er wohnt in Hamburg"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Ella escucha música»",
+                "answer": "Sie hört Musik",
+                "accepted": [
+                  "sie hoert musik"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Trabajas hoy?»",
+                "words": [
+                  "Arbeitest",
+                  "du",
+                  "heute"
+                ],
+                "distractors": [
+                  "Arbeitet"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «nosotros vivimos»",
+                "answer": "wir wohnen",
+                "accepted": [
+                  "wir leben"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u8_l3",
+            "index": 3,
+            "title": "Cambios vocálicos: e → i / ie",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Él habla alemán»",
+                "words": [
+                  "Er",
+                  "spricht",
+                  "Deutsch"
+                ],
+                "distractors": [
+                  "sprecht",
+                  "spreche"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Conjuga «essen»: «él come»",
+                "answer": "er isst",
+                "accepted": [
+                  "isst"
+                ]
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Sie liest ein Buch",
+                "options": [
+                  "Sie liest ein Buch",
+                  "Sie sieht ein Buch",
+                  "Sie isst einen Kuchen"
+                ],
+                "answer": "Sie liest ein Buch"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Ves la tele?»",
+                "words": [
+                  "Siehst",
+                  "du",
+                  "fern"
+                ],
+                "distractors": [
+                  "Sehe"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Conjuga «lesen»: «él lee»",
+                "answer": "er liest",
+                "accepted": [
+                  "liest"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Ella toma el autobús»",
+                "words": [
+                  "Sie",
+                  "nimmt",
+                  "den",
+                  "Bus"
+                ],
+                "distractors": [
+                  "nehmt"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u8_l4",
+            "index": 4,
+            "title": "Cambios vocálicos: a → ä",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Él duerme mucho»",
+                "words": [
+                  "Er",
+                  "schläft",
+                  "viel"
+                ],
+                "distractors": [
+                  "schlafe"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Conjuga «fahren»: «ella conduce»",
+                "answer": "sie fährt",
+                "accepted": [
+                  "sie faehrt",
+                  "faehrt",
+                  "fährt"
+                ]
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Er läuft schnell",
+                "options": [
+                  "Er läuft schnell",
+                  "Er kauft schnell",
+                  "Er schläft viel"
+                ],
+                "answer": "Er läuft schnell"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Hablas alemán?»",
+                "words": [
+                  "Sprichst",
+                  "du",
+                  "Deutsch"
+                ],
+                "distractors": [
+                  "Spricht"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Conjuga «helfen»: «él ayuda»",
+                "answer": "er hilft",
+                "accepted": [
+                  "hilft"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Mi padre conduce al trabajo»",
+                "words": [
+                  "Mein",
+                  "Vater",
+                  "fährt",
+                  "zur",
+                  "Arbeit"
+                ],
+                "distractors": [
+                  "fahre"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u8_l5",
+            "index": 5,
+            "title": "Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "sein",
+                "es": "ser"
+              },
+              {
+                "de": "haben",
+                "es": "tener"
+              },
+              {
+                "de": "essen",
+                "es": "comer"
+              },
+              {
+                "de": "schlafen",
+                "es": "dormir"
+              },
+              {
+                "de": "lesen",
+                "es": "leer"
+              },
+              {
+                "de": "sprechen",
+                "es": "hablar"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s1_u9",
+        "index": 9,
+        "title": "Rutina diaria",
+        "icon": "⏰",
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s1_u9_l1",
+            "index": 1,
+            "title": "Por la mañana",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Me levanto a las siete»",
+                "words": [
+                  "Ich",
+                  "stehe",
+                  "um",
+                  "sieben",
+                  "Uhr",
+                  "auf"
+                ],
+                "distractors": []
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Ich frühstücke um acht",
+                "options": [
+                  "Ich frühstücke um acht",
+                  "Ich stehe um acht auf",
+                  "Ich schlafe bis acht"
+                ],
+                "answer": "Ich frühstücke um acht"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Me ducho»",
+                "answer": "Ich dusche mich",
+                "accepted": [
+                  "ich dusche"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Me lavo los dientes»",
+                "words": [
+                  "Ich",
+                  "putze",
+                  "mir",
+                  "die",
+                  "Zähne"
+                ],
+                "distractors": []
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce el verbo: «desayunar»",
+                "answer": "frühstücken",
+                "accepted": [
+                  "fruehstuecken"
+                ]
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el despertador»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🛏️",
+                    "label": "das Bett"
+                  },
+                  {
+                    "id": "b",
+                    "image": "⏰",
+                    "label": "der Wecker"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🪥",
+                    "label": "die Zahnbürste"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🚿",
+                    "label": "die Dusche"
+                  }
+                ],
+                "correct": "b"
+              }
+            ]
+          },
+          {
+            "id": "s1_u9_l2",
+            "index": 2,
+            "title": "Durante el día",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Voy al colegio en bici»",
+                "words": [
+                  "Ich",
+                  "fahre",
+                  "mit",
+                  "dem",
+                  "Rad",
+                  "zur",
+                  "Schule"
+                ],
+                "distractors": []
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Ich mache Hausaufgaben",
+                "options": [
+                  "Ich mache Hausaufgaben",
+                  "Ich mache das Essen",
+                  "Ich mache Sport"
+                ],
+                "answer": "Ich mache Hausaufgaben"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Yo cocino»",
+                "answer": "ich koche",
+                "accepted": [
+                  "koche"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Por la tarde juego al fútbol»",
+                "words": [
+                  "Am",
+                  "Nachmittag",
+                  "spiele",
+                  "ich",
+                  "Fußball"
+                ],
+                "distractors": []
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «almorzar (comer al mediodía)»",
+                "answer": "zu Mittag essen",
+                "accepted": [
+                  "mittagessen"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Después hago los deberes»",
+                "words": [
+                  "Danach",
+                  "mache",
+                  "ich",
+                  "die",
+                  "Hausaufgaben"
+                ],
+                "distractors": []
+              }
+            ]
+          },
+          {
+            "id": "s1_u9_l3",
+            "index": 3,
+            "title": "Verbos separables",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye (aufmachen): «La tienda abre a las nueve»",
+                "words": [
+                  "Der",
+                  "Laden",
+                  "macht",
+                  "um",
+                  "neun",
+                  "auf"
+                ],
+                "distractors": []
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Ich rufe dich an",
+                "options": [
+                  "Ich rufe dich an",
+                  "Ich hole dich ab",
+                  "Ich sehe dich an"
+                ],
+                "answer": "Ich rufe dich an"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce (einkaufen): «Yo hago la compra»",
+                "answer": "ich kaufe ein",
+                "accepted": [
+                  "einkaufen"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye (abfahren): «El tren sale a las dos»",
+                "words": [
+                  "Der",
+                  "Zug",
+                  "fährt",
+                  "um",
+                  "zwei",
+                  "Uhr",
+                  "ab"
+                ],
+                "distractors": []
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye (abholen): «Te recojo a las seis»",
+                "words": [
+                  "Ich",
+                  "hole",
+                  "dich",
+                  "um",
+                  "sechs",
+                  "ab"
+                ],
+                "distractors": []
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce (fernsehen): «Yo veo la tele»",
+                "answer": "ich sehe fern",
+                "accepted": [
+                  "fernsehen"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u9_l4",
+            "index": 4,
+            "title": "Por la noche",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Ceno a las ocho»",
+                "words": [
+                  "Ich",
+                  "esse",
+                  "um",
+                  "acht",
+                  "zu",
+                  "Abend"
+                ],
+                "distractors": []
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Ich gehe ins Bett",
+                "options": [
+                  "Ich gehe ins Bett",
+                  "Ich gehe ins Kino",
+                  "Ich gehe nach Hause"
+                ],
+                "answer": "Ich gehe ins Bett"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Me acuesto temprano»",
+                "answer": "Ich gehe früh ins Bett",
+                "accepted": [
+                  "ich gehe frueh ins bett"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Por la noche leo un libro»",
+                "words": [
+                  "Am",
+                  "Abend",
+                  "lese",
+                  "ich",
+                  "ein",
+                  "Buch"
+                ],
+                "distractors": []
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce el verbo: «dormir»",
+                "answer": "schlafen",
+                "accepted": []
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye (ausmachen): «Apago la luz»",
+                "words": [
+                  "Ich",
+                  "mache",
+                  "das",
+                  "Licht",
+                  "aus"
+                ],
+                "distractors": [
+                  "an"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u9_l5",
+            "index": 5,
+            "title": "Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "aufstehen",
+                "es": "levantarse"
+              },
+              {
+                "de": "frühstücken",
+                "es": "desayunar"
+              },
+              {
+                "de": "einkaufen",
+                "es": "hacer la compra"
+              },
+              {
+                "de": "fernsehen",
+                "es": "ver la tele"
+              },
+              {
+                "de": "schlafen",
+                "es": "dormir"
+              },
+              {
+                "de": "kochen",
+                "es": "cocinar"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s1_u10",
+        "index": 10,
+        "title": "Repaso final A1",
+        "icon": "🏆",
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s1_u10_l1",
+            "index": 1,
+            "title": "Repaso: saludos y familia",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Guten Tag",
+                "options": [
+                  "Guten Tag",
+                  "Guten Morgen",
+                  "Gute Nacht"
+                ],
+                "answer": "Guten Tag"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Me llamo Ana y tengo diez años»",
+                "words": [
+                  "Ich",
+                  "heiße",
+                  "Ana",
+                  "und",
+                  "bin",
+                  "zehn",
+                  "Jahre",
+                  "alt"
+                ],
+                "distractors": []
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «mi madre y mi padre»",
+                "answer": "meine Mutter und mein Vater",
+                "accepted": []
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «la abuela»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "👵",
+                    "label": "die Oma"
+                  },
+                  {
+                    "id": "b",
+                    "image": "👴",
+                    "label": "der Opa"
+                  },
+                  {
+                    "id": "c",
+                    "image": "👩",
+                    "label": "die Mutter"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🧒",
+                    "label": "das Kind"
+                  }
+                ],
+                "correct": "a"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «¿Cómo te llamas?»",
+                "answer": "Wie heißt du?",
+                "accepted": [
+                  "wie heisst du"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Vengo de España»",
+                "words": [
+                  "Ich",
+                  "komme",
+                  "aus",
+                  "Spanien"
+                ],
+                "distractors": [
+                  "wohne"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u10_l2",
+            "index": 2,
+            "title": "Repaso: comida y animales",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «la manzana»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🍌",
+                    "label": "die Banane"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🍞",
+                    "label": "das Brot"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🍎",
+                    "label": "der Apfel"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🧀",
+                    "label": "der Käse"
+                  }
+                ],
+                "correct": "c"
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Ich möchte Wasser trinken",
+                "options": [
+                  "Ich möchte Wasser trinken",
+                  "Ich möchte Milch trinken",
+                  "Ich möchte Wasser haben"
+                ],
+                "answer": "Ich möchte Wasser trinken"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «El perro bebe agua»",
+                "words": [
+                  "Der",
+                  "Hund",
+                  "trinkt",
+                  "Wasser"
+                ],
+                "distractors": [
+                  "isst"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Quisiera un té»",
+                "answer": "Ich möchte einen Tee",
+                "accepted": [
+                  "ich moechte einen tee"
+                ]
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «el pez»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🐦",
+                    "label": "der Vogel"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🐟",
+                    "label": "der Fisch"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🐱",
+                    "label": "die Katze"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🐶",
+                    "label": "der Hund"
+                  }
+                ],
+                "correct": "b"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «La vaca es grande»",
+                "answer": "Die Kuh ist groß",
+                "accepted": [
+                  "die kuh ist gross"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u10_l3",
+            "index": 3,
+            "title": "Repaso: casa y tiempo",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «La cocina no es grande»",
+                "words": [
+                  "Die",
+                  "Küche",
+                  "ist",
+                  "nicht",
+                  "groß"
+                ],
+                "distractors": [
+                  "kein"
+                ]
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Wie spät ist es?",
+                "options": [
+                  "Wie spät ist es?",
+                  "Wann kommst du?",
+                  "Wie geht es dir?"
+                ],
+                "answer": "Wie spät ist es?"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Hoy es lunes»",
+                "answer": "Heute ist Montag",
+                "accepted": []
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «No tengo lámpara»",
+                "words": [
+                  "Ich",
+                  "habe",
+                  "keine",
+                  "Lampe"
+                ],
+                "distractors": [
+                  "nicht"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Son las cinco»",
+                "answer": "Es ist fünf Uhr",
+                "accepted": [
+                  "es ist fuenf uhr"
+                ]
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «la cama»",
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🪑",
+                    "label": "der Stuhl"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🛋️",
+                    "label": "das Sofa"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🚪",
+                    "label": "die Tür"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🛏️",
+                    "label": "das Bett"
+                  }
+                ],
+                "correct": "d"
+              }
+            ]
+          },
+          {
+            "id": "s1_u10_l4",
+            "index": 4,
+            "title": "Repaso: verbos y rutina",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Por la noche él lee un libro»",
+                "words": [
+                  "Am",
+                  "Abend",
+                  "liest",
+                  "er",
+                  "ein",
+                  "Buch"
+                ],
+                "distractors": []
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Conjuga «schlafen»: «él duerme»",
+                "answer": "er schläft",
+                "accepted": [
+                  "er schlaeft",
+                  "schlaeft",
+                  "schläft"
+                ]
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Ich stehe um sieben Uhr auf",
+                "options": [
+                  "Ich stehe um sieben Uhr auf",
+                  "Ich schlafe um sieben Uhr",
+                  "Ich frühstücke um sieben Uhr"
+                ],
+                "answer": "Ich stehe um sieben Uhr auf"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Ella habla alemán y español»",
+                "words": [
+                  "Sie",
+                  "spricht",
+                  "Deutsch",
+                  "und",
+                  "Spanisch"
+                ],
+                "distractors": [
+                  "sprecht"
+                ]
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Vemos la tele por la noche»",
+                "answer": "Wir sehen am Abend fern",
+                "accepted": [
+                  "am abend sehen wir fern"
+                ]
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Cuándo te levantas?»",
+                "words": [
+                  "Wann",
+                  "stehst",
+                  "du",
+                  "auf"
+                ],
+                "distractors": [
+                  "Wie"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u10_l5",
+            "index": 5,
+            "title": "Minijuego final: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "Guten Tag",
+                "es": "buenos días"
+              },
+              {
+                "de": "die Familie",
+                "es": "la familia"
+              },
+              {
+                "de": "das Wasser",
+                "es": "el agua"
+              },
+              {
+                "de": "das Haus",
+                "es": "la casa"
+              },
+              {
+                "de": "der Hund",
+                "es": "el perro"
+              },
+              {
+                "de": "schlafen",
+                "es": "dormir"
+              }
+            ]
+          }
+        ]
+      }
     ]
   }
 }

@@ -2,9 +2,49 @@
   "schema_version": 1,
   "app": "Familingo",
   "sections": [
-    { "id": "s1", "index": 1, "tag": "A1", "title": "Principiante",    "color": "#58cc02", "dark": "#46a302", "file": "section_1.json", "units_total": 10, "ready_units": 2 },
-    { "id": "s2", "index": 2, "tag": "A2", "title": "Elemental",       "color": "#1cb0f6", "dark": "#1899d6", "file": "section_2.json", "units_total": 14, "ready_units": 0 },
-    { "id": "s3", "index": 3, "tag": "B1", "title": "Intermedio Bajo", "color": "#ce82ff", "dark": "#a568cc", "file": "section_3.json", "units_total": 14, "ready_units": 0 },
-    { "id": "s4", "index": 4, "tag": "B2", "title": "Intermedio",      "color": "#ff9600", "dark": "#cc7800", "file": "section_4.json", "units_total": 14, "ready_units": 0 }
+    {
+      "id": "s1",
+      "index": 1,
+      "tag": "A1",
+      "title": "Principiante",
+      "color": "#58cc02",
+      "dark": "#46a302",
+      "file": "section_1.json",
+      "units_total": 10,
+      "ready_units": 10
+    },
+    {
+      "id": "s2",
+      "index": 2,
+      "tag": "A2",
+      "title": "Elemental",
+      "color": "#1cb0f6",
+      "dark": "#1899d6",
+      "file": "section_2.json",
+      "units_total": 14,
+      "ready_units": 0
+    },
+    {
+      "id": "s3",
+      "index": 3,
+      "tag": "B1",
+      "title": "Intermedio Bajo",
+      "color": "#ce82ff",
+      "dark": "#a568cc",
+      "file": "section_3.json",
+      "units_total": 14,
+      "ready_units": 0
+    },
+    {
+      "id": "s4",
+      "index": 4,
+      "tag": "B2",
+      "title": "Intermedio",
+      "color": "#ff9600",
+      "dark": "#cc7800",
+      "file": "section_4.json",
+      "units_total": 14,
+      "ready_units": 0
+    }
   ]
 }
