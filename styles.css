@@ -183,9 +183,22 @@ html, body {
   pointer-events: none;
 }
 .match-bad {
+  animation: blinkBad 0.65s ease;
+}
+@keyframes blinkBad {
+  0%, 40%, 80% { border-color: #ff4b4b; color: #ff4b4b; background: rgba(255, 75, 75, 0.15); }
+  20%, 60%, 100% { border-color: #37464f; color: inherit; background: #202f36; }
+}
+
+/* Temporizador del minijuego (últimos 10 segundos) */
+.timer-low {
   border-color: #ff4b4b !important;
   color: #ff4b4b !important;
-  animation: shake 0.4s ease;
+  animation: timerPulse 1s ease-in-out infinite;
+}
+@keyframes timerPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
 }
 
 /* ---------- Scrollbar discreta ---------- */

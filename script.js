@@ -270,6 +270,40 @@ function speak(text) {
     return true;
   } catch (e) { return false; }
 }
+/* ---------------- Audio nativo (MP3 local) con fallback a TTS -------------
+   Ruta esperada: audio/unit_[unit.id]/lesson_[lesson.index]/q_[qid].mp3
+   Ej.: audio/unit_s1_u1/lesson_3/q_2.mp3
+   Si el MP3 no existe todavía (404) o falla la reproducción, se usa el
+   sintetizador de-DE del navegador para no romper la experiencia. */
+let audioPlayer = null;
+
+function audioPathFor(ex) {
+  return `audio/unit_${session.unit.id}/lesson_${session.lesson.index}/q_${ex._qid}.mp3`;
+}
+// Texto alemán canónico de cada ejercicio (también lo usa el fallback TTS)
+function germanTextFor(ex) {
+  if (ex.type === "listening_match") return ex.tts;
+  if (ex.type === "word_bank") return ex.words.join(" ");
+  if (ex.type === "translate_direct") return ex.answer;
+  if (ex.type === "select_image") {
+    const o = ex.options.find((o) => o.id === ex.correct);
+    return o ? o.label : "";
+  }
+  return "";
+}
+function playExerciseAudio(ex) {
+  const fallback = germanTextFor(ex);
+  try {
+    if (audioPlayer) { audioPlayer.pause(); audioPlayer = null; }
+    const a = new Audio(audioPathFor(ex));
+    audioPlayer = a;
+    a.onerror = () => speak(fallback);          // sin MP3 -> TTS
+    a.play().catch(() => speak(fallback));      // autoplay bloqueado/fallo -> TTS
+  } catch (e) {
+    speak(fallback);
+  }
+}
+
 function heartsHTML(size) {
   const cls = size === "sm" ? "text-lg" : "text-2xl";
   let out = "";
@@ -514,7 +548,11 @@ function startLesson(section, unit) {
   session = {
     section, unit, lesson, review,
     idx: 0, correct: 0, wrong: 0,
-    exercises: lesson.kind === "exercises" ? shuffle(lesson.exercises) : null,
+    // _qid: id estable del ejercicio (posición original en el JSON), usado
+    // para localizar su audio aunque la cola se baraje o re-encole.
+    exercises: lesson.kind === "exercises"
+      ? shuffle(lesson.exercises.map((e, i) => Object.assign({ _qid: i + 1 }, e)))
+      : null,
     // Total de ejercicios ÚNICOS: la barra avanza por ACIERTOS sobre este
     // total. Los fallos se re-encolan al final (estilo Duolingo).
     total: lesson.kind === "exercises" ? lesson.exercises.length : lesson.pairs.length,
@@ -622,8 +660,8 @@ function renderExercise() {
     getAnswer = () => selected;
     if (ex.type === "listening_match") {
       const playBtn = document.getElementById("playBtn");
-      playBtn.addEventListener("click", () => speak(ex.tts));
-      setTimeout(() => speak(ex.tts), 350); // intento de autoplay (si el SO lo permite)
+      playBtn.addEventListener("click", () => playExerciseAudio(ex));
+      setTimeout(() => playExerciseAudio(ex), 350); // intento de autoplay
     }
   } else if (ex.type === "translate_direct") {
     const input = document.getElementById("trInput");
@@ -733,6 +771,8 @@ function showFeedback(correct, solution) {
         <div class="flex items-center gap-2 text-xl font-extrabold ${correct ? "text-[#58a700]" : "text-[#ea2b2b]"}">
           <span class="text-3xl pop-icon">${correct ? "✅" : "❌"}</span>
           ${correct ? "¡Muy bien!" : "Incorrecto"}
+          <button id="audioBtn" title="Escuchar en alemán"
+            class="btn3d rounded-xl px-3 py-1.5 text-lg bg-[#1cb0f6] border-[#1899d6] text-white">🔊</button>
         </div>
         ${correct ? "" : `<div class="mt-1 font-bold text-[#ea2b2b]">Respuesta correcta: <span class="font-extrabold">${esc(solution)}</span></div>`}
       </div>
@@ -745,6 +785,8 @@ function showFeedback(correct, solution) {
   const nextBtn = document.getElementById("nextBtn");
   nextBtn.focus();
   nextBtn.addEventListener("click", advance);
+  const audioBtn = document.getElementById("audioBtn");
+  if (audioBtn) audioBtn.addEventListener("click", () => playExerciseAudio(ex));
 }
 
 function advance() {
@@ -757,48 +799,92 @@ function advance() {
   else renderExercise();
 }
 
-/* ------------------------- Minijuego: parejas ---------------------------- */
-function renderMatchGame() {
-  const pairs = session.lesson.pairs;
-  const total = pairs.length;
-  let matched = 0;
-  let selDe = null, selEs = null;
+/* ------------------------- Minijuego: parejas ----------------------------
+   Cuadrícula única con 8 botones mezclados (4 alemán + 4 español) por ronda.
+   Temporizador global de 30 s. Acierto: verde y se desactivan. Fallo:
+   parpadeo rojo y deselección. Éxito: bono DOBLE de XP (ver finishLesson). */
+const MATCH_TIME = 30;      // segundos
+const MATCH_ROUND_SIZE = 4; // parejas visibles a la vez (8 botones)
 
-  const deList = shuffle(pairs.map((p) => p.de));
-  const esList = shuffle(pairs.map((p) => p.es));
+function renderMatchGame() {
+  const allPairs = shuffle(session.lesson.pairs);
+  const total = allPairs.length;
+  let matched = 0;        // parejas acertadas en total
+  let roundStart = 0;     // índice de la ronda actual
+  let sel = null;         // botón seleccionado {el, lang, word}
+  let timeLeft = MATCH_TIME;
+  let timerId = null;
+  let over = false;
 
   app.innerHTML = `
     ${lessonHeaderHTML(0)}
     <main class="scroll-area flex-1 px-5 py-6 max-w-xl w-full mx-auto" id="qArea">
       ${lessonMetaHTML()}
-      <h2 class="text-xl sm:text-2xl font-extrabold mb-2">Une las parejas 🇩🇪 → 🇪🇸</h2>
-      <p class="text-xs text-[#52656d] font-semibold mb-6">En este minijuego no se pierden vidas. ¡Tú puedes!</p>
-      <div class="grid grid-cols-2 gap-3">
-        <div class="flex flex-col gap-3">
-          ${deList.map((w) => `<button class="match-chip chip-btn rounded-xl border-2 border-[#37464f] bg-[#202f36] px-3 py-3 font-bold" data-lang="de" data-w="${esc(w)}">${esc(w)}</button>`).join("")}
-        </div>
-        <div class="flex flex-col gap-3">
-          ${esList.map((w) => `<button class="match-chip chip-btn rounded-xl border-2 border-[#37464f] bg-[#202f36] px-3 py-3 font-bold" data-lang="es" data-w="${esc(w)}">${esc(w)}</button>`).join("")}
-        </div>
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl sm:text-2xl font-extrabold">Une las parejas 🇩🇪↔🇪🇸</h2>
+        <div id="timerChip" class="rounded-2xl border-2 border-[#37464f] bg-[#202f36] px-4 py-2 font-extrabold text-lg tabular-nums">⏱️ ${MATCH_TIME}s</div>
       </div>
+      <p class="text-xs text-[#52656d] font-semibold mb-5">Toca una palabra y su pareja en el otro idioma antes de que acabe el tiempo. Aquí no se pierden vidas.</p>
+      <div id="gridArea" class="grid grid-cols-2 gap-3"></div>
     </main>
     <footer class="app-footer border-t-2 border-[#37464f] px-5 pt-4">
       <div class="max-w-xl mx-auto text-center text-sm font-extrabold text-[#8a9ba5]" id="matchStatus">0/${total} parejas</div>
     </footer>`;
 
-  bindQuit();
   const bar = app.querySelector(".progress-fill");
   const status = document.getElementById("matchStatus");
+  const timerChip = document.getElementById("timerChip");
+  const grid = document.getElementById("gridArea");
 
-  function clearSel(lang) {
-    app.querySelectorAll(`.match-chip[data-lang="${lang}"]`).forEach((c) => c.classList.remove("opt-selected"));
+  function stopTimer() { if (timerId) { clearInterval(timerId); timerId = null; } }
+
+  // Salir limpia el temporizador (no usamos bindQuit genérico)
+  document.getElementById("quitBtn").addEventListener("click", () => {
+    if (confirm("¿Salir del minijuego? Perderás el progreso de esta partida.")) {
+      stopTimer();
+      renderDashboard();
+    }
+  });
+
+  function drawRound() {
+    sel = null;
+    const pairs = allPairs.slice(roundStart, roundStart + MATCH_ROUND_SIZE);
+    const buttons = shuffle(
+      pairs.map((p) => ({ lang: "de", word: p.de }))
+        .concat(pairs.map((p) => ({ lang: "es", word: p.es })))
+    );
+    grid.innerHTML = buttons.map((b) => `
+      <button class="match-chip chip-btn chip-enter rounded-xl border-2 border-[#37464f] bg-[#202f36] px-3 py-4 font-bold"
+        data-lang="${b.lang}" data-w="${esc(b.word)}">${esc(b.word)}</button>`).join("");
+    grid.querySelectorAll(".match-chip").forEach((btn) =>
+      btn.addEventListener("click", () => onChipClick(btn, pairs))
+    );
   }
-  function tryMatch() {
-    if (!selDe || !selEs) return;
-    const de = selDe.dataset.w, es = selEs.dataset.w;
+
+  function onChipClick(btn, pairs) {
+    if (over || btn.disabled) return;
+    const lang = btn.dataset.lang, word = btn.dataset.w;
+
+    if (sel && sel.el === btn) {                 // deseleccionar
+      btn.classList.remove("opt-selected");
+      sel = null;
+      return;
+    }
+    if (!sel || sel.lang === lang) {             // primera selección o cambio
+      if (sel) sel.el.classList.remove("opt-selected");
+      btn.classList.add("opt-selected");
+      sel = { el: btn, lang, word };
+      if (lang === "de") speak(word);
+      return;
+    }
+
+    // Tenemos una palabra de cada idioma: evaluar
+    const de = lang === "de" ? word : sel.word;
+    const es = lang === "es" ? word : sel.word;
     const ok = pairs.some((p) => p.de === de && p.es === es);
-    const a = selDe, b = selEs;
-    selDe = null; selEs = null;
+    const a = sel.el, b = btn;
+    sel = null;
+
     if (ok) {
       session.correct++;
       matched++;
@@ -809,25 +895,61 @@ function renderMatchGame() {
       });
       bar.style.width = (matched / total) * 100 + "%";
       status.textContent = `${matched}/${total} parejas`;
-      if (matched === total) setTimeout(finishLesson, 450);
+      const roundDone = matched - roundStart >= Math.min(MATCH_ROUND_SIZE, total - roundStart);
+      if (matched >= total) {                    // ¡victoria!
+        over = true;
+        stopTimer();
+        setTimeout(finishLesson, 450);
+      } else if (roundDone) {                    // siguiente ronda de 4 parejas
+        roundStart += MATCH_ROUND_SIZE;
+        setTimeout(drawRound, 450);
+      }
     } else {
       session.wrong++;
       [a, b].forEach((c) => {
         c.classList.remove("opt-selected");
-        c.classList.add("match-bad");
-        setTimeout(() => c.classList.remove("match-bad"), 450);
+        c.classList.add("match-bad");            // parpadeo rojo
+        setTimeout(() => c.classList.remove("match-bad"), 650);
       });
     }
   }
-  app.querySelectorAll(".match-chip").forEach((c) =>
-    c.addEventListener("click", () => {
-      const lang = c.dataset.lang;
-      clearSel(lang);
-      c.classList.add("opt-selected");
-      if (lang === "de") { selDe = c; speak(c.dataset.w); } else { selEs = c; }
-      tryMatch();
-    })
-  );
+
+  function tick() {
+    timeLeft--;
+    timerChip.textContent = `⏱️ ${timeLeft}s`;
+    if (timeLeft <= 10) timerChip.classList.add("timer-low");
+    if (timeLeft <= 0) {
+      over = true;
+      stopTimer();
+      renderTimeUp();
+    }
+  }
+
+  drawRound();
+  timerId = setInterval(tick, 1000);
+}
+
+function renderTimeUp() {
+  const { section, unit } = session;
+  session = null;
+  app.innerHTML = `
+    <main class="scroll-area flex-1 flex flex-col items-center justify-center px-6 py-8 text-center">
+      <div class="pop-in text-7xl mb-4">⏰</div>
+      <h1 class="text-3xl font-extrabold text-[#ff9600] mb-2">¡Tiempo agotado!</h1>
+      <p class="text-[#8a9ba5] font-bold mb-8 max-w-sm">
+        Se acabaron los 30 segundos. ¡A la próxima seguro que lo consigues!
+      </p>
+      <div class="flex flex-col gap-3 w-full max-w-xs">
+        <button id="retryBtn" class="btn3d rounded-2xl px-8 py-3 font-extrabold uppercase text-[#131f24] bg-[#ffc800] border-[#e6a800]">
+          🔄 Reintentar
+        </button>
+        <button id="homeBtn" class="btn3d rounded-2xl px-8 py-3 font-extrabold uppercase text-[#8a9ba5] bg-[#131f24] border-2 border-[#37464f] border-b-[#2b3940]">
+          Volver al inicio
+        </button>
+      </div>
+    </main>`;
+  document.getElementById("retryBtn").addEventListener("click", () => startLesson(section, unit));
+  document.getElementById("homeBtn").addEventListener("click", renderDashboard);
 }
 
 /* ====================== LECCIÓN COMPLETADA / GAME OVER =================== */
@@ -838,9 +960,9 @@ function finishLesson() {
   if (!session.review) state.units[unit.id] = Math.min(unit.lessons.length, before + 1);
 
   const isGame = session.lesson.kind === "match_game";
-  const gained = session.review ? 5
-    : isGame ? 10 + (session.wrong === 0 ? 5 : 0)
-    : 10 + Math.max(0, 5 - session.wrong);
+  // Minijuego completado: bono DOBLE de XP
+  const base = session.review ? 5 : 10 + Math.max(0, 5 - session.wrong);
+  const gained = isGame ? base * 2 : base;
   state.xp += gained;
   touchStreak();
   persist();
@@ -860,6 +982,7 @@ function finishLesson() {
       ${session.review
         ? `<p class="text-[#8a9ba5] font-bold mb-8">Repaso terminado 💪</p>`
         : `<p class="text-[#8a9ba5] font-bold mb-8">Lecciones de la unidad: ${doneNow}/${unit.lessons.length}</p>`}
+      ${isGame ? `<div class="mb-4 font-extrabold text-[#1cb0f6] pop-in">🎮 ¡Bono de minijuego: XP ×2!</div>` : ""}
       <div class="flex gap-4 mb-6">
         <div class="rounded-2xl border-2 border-[#ffc800] px-6 py-4">
           <div class="text-xs font-extrabold uppercase text-[#ffc800]">XP ganados</div>
