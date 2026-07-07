@@ -259,12 +259,42 @@ function translationMatches(input, ex) {
     return inputForms.some((f) => candForms.includes(f));
   });
 }
+/* TTS con voz alemana. En iOS/Android el sintetizador solo funciona tras un
+   gesto del usuario: unlockTTS() se engancha al PRIMER toque de la sesión y
+   "calienta" el motor con un utterance silencioso. */
+let deVoice = null;
+let ttsUnlocked = false;
+
+function pickGermanVoice() {
+  try {
+    const voices = window.speechSynthesis.getVoices();
+    deVoice = voices.find((v) => v.lang && v.lang.toLowerCase().startsWith("de")) || null;
+  } catch (e) { /* sin voces aún */ }
+}
+if ("speechSynthesis" in window) {
+  pickGermanVoice();
+  window.speechSynthesis.onvoiceschanged = pickGermanVoice;
+}
+function unlockTTS() {
+  if (ttsUnlocked || !("speechSynthesis" in window)) return;
+  ttsUnlocked = true;
+  try {
+    const u = new SpeechSynthesisUtterance(" ");
+    u.volume = 0;
+    u.lang = "de-DE";
+    window.speechSynthesis.speak(u);
+    pickGermanVoice();
+  } catch (e) { /* nada */ }
+}
+document.addEventListener("pointerdown", unlockTTS, { once: true, capture: true });
+
 function speak(text) {
   try {
-    if (!("speechSynthesis" in window)) return false;
+    if (!("speechSynthesis" in window) || !text) return false;
     window.speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
     u.lang = "de-DE";
+    if (deVoice) u.voice = deVoice;
     u.rate = 0.9;
     window.speechSynthesis.speak(u);
     return true;
@@ -291,17 +321,37 @@ function germanTextFor(ex) {
   }
   return "";
 }
+/* Caché de existencia de MP3. Se precarga (HEAD) al iniciar la lección para
+   que, en el momento del click, la decisión MP3-vs-TTS sea SÍNCRONA y el TTS
+   se dispare dentro del gesto del usuario (imprescindible en móvil). */
+const audioExists = new Map(); // ruta -> boolean
+
+function prefetchLessonAudio() {
+  if (!session || !session.exercises) return;
+  session.exercises.forEach((ex) => {
+    const p = audioPathFor(ex);
+    if (audioExists.has(p)) return;
+    fetch(p, { method: "HEAD" })
+      .then((r) => audioExists.set(p, r.ok))
+      .catch(() => audioExists.set(p, false));
+  });
+}
+
 function playExerciseAudio(ex) {
+  const p = audioPathFor(ex);
   const fallback = germanTextFor(ex);
-  try {
-    if (audioPlayer) { audioPlayer.pause(); audioPlayer = null; }
-    const a = new Audio(audioPathFor(ex));
-    audioPlayer = a;
-    a.onerror = () => speak(fallback);          // sin MP3 -> TTS
-    a.play().catch(() => speak(fallback));      // autoplay bloqueado/fallo -> TTS
-  } catch (e) {
-    speak(fallback);
+  if (audioExists.get(p) === true) {
+    try {
+      if (audioPlayer) { audioPlayer.pause(); audioPlayer = null; }
+      const a = new Audio(p);
+      audioPlayer = a;
+      a.onerror = () => speak(fallback);
+      a.play().catch(() => speak(fallback));
+      return;
+    } catch (e) { /* cae al TTS */ }
   }
+  // Sin MP3 (o aún sin verificar): TTS síncrono dentro del gesto
+  speak(fallback);
 }
 
 function heartsHTML(size) {
@@ -555,10 +605,70 @@ function startLesson(section, unit) {
       : null,
     // Total de ejercicios ÚNICOS: la barra avanza por ACIERTOS sobre este
     // total. Los fallos se re-encolan al final (estilo Duolingo).
-    total: lesson.kind === "exercises" ? lesson.exercises.length : lesson.pairs.length,
+    total: lesson.kind === "exercises" ? lesson.exercises.length
+      : lesson.kind === "match_game" ? lesson.pairs.length : 1,
   };
   if (lesson.kind === "match_game") renderMatchGame();
-  else renderExercise();
+  else if (lesson.kind === "theory") renderTheory();
+  else { prefetchLessonAudio(); renderExercise(); }
+}
+
+/* ------------------------ Lección de teoría (📖) -------------------------
+   Bloques: heading | text | vocab (tabla con audio) | example | tip.
+   Sin corazones ni comprobación: leer, escuchar y "¡Entendido!". */
+function renderTheory() {
+  const c = session.section.color;
+  const html = session.lesson.blocks.map((b) => {
+    if (b.type === "heading") {
+      return `<h2 class="text-xl font-extrabold mt-6 mb-2" style="color:${c}">${esc(b.text)}</h2>`;
+    }
+    if (b.type === "text") {
+      return `<p class="text-[#c8d5dc] font-semibold mb-3">${esc(b.text)}</p>`;
+    }
+    if (b.type === "tip") {
+      return `<div class="my-4 rounded-2xl border-2 border-[#ffc800] bg-[#ffc800]/10 p-3 font-bold text-[#ffc800]">💡 ${esc(b.text)}</div>`;
+    }
+    if (b.type === "example") {
+      return `
+        <div class="my-3 rounded-2xl border-2 border-[#37464f] bg-[#202f36] p-4">
+          <div class="flex items-center gap-3">
+            <button class="speak-btn btn3d rounded-xl px-3 py-1.5 text-lg bg-[#1cb0f6] border-[#1899d6]" data-tts="${esc(b.de)}">🔊</button>
+            <span class="font-extrabold">${esc(b.de)}</span>
+          </div>
+          <div class="text-sm text-[#8a9ba5] font-semibold mt-2">${esc(b.es)}</div>
+        </div>`;
+    }
+    if (b.type === "vocab") {
+      return `<div class="rounded-2xl border-2 border-[#37464f] overflow-hidden my-3">` +
+        b.items.map((it, i) => `
+          <div class="flex items-center gap-3 px-4 py-2 ${i % 2 ? "bg-[#202f36]" : "bg-[#1a262c]"}">
+            <button class="speak-btn text-xl" data-tts="${esc(it.de)}" title="Escuchar">🔊</button>
+            <span class="font-extrabold flex-1">${esc(it.de)}</span>
+            <span class="text-[#8a9ba5] font-bold">${esc(it.es)}</span>
+          </div>`).join("") + `</div>`;
+    }
+    return "";
+  }).join("");
+
+  app.innerHTML = `
+    ${lessonHeaderHTML(100)}
+    <main class="scroll-area flex-1 px-5 py-6 max-w-xl w-full mx-auto" id="qArea">
+      ${lessonMetaHTML()}
+      ${html}
+    </main>
+    <footer class="app-footer border-t-2 border-[#37464f] px-5 pt-4">
+      <div class="max-w-xl mx-auto flex justify-end">
+        <button id="doneBtn" class="btn3d rounded-2xl px-8 py-3 font-extrabold uppercase text-[#131f24] bg-[#58cc02] border-[#46a302]">
+          ¡Entendido!
+        </button>
+      </div>
+    </footer>`;
+
+  bindQuit();
+  app.querySelectorAll(".speak-btn").forEach((b) =>
+    b.addEventListener("click", () => speak(b.dataset.tts))
+  );
+  document.getElementById("doneBtn").addEventListener("click", finishLesson);
 }
 
 function lessonHeaderHTML(pct) {
@@ -598,7 +708,7 @@ function renderExercise() {
           <button class="opt-btn img-card rounded-2xl border-2 border-[#37464f] bg-[#131f24] p-4 flex flex-col items-center gap-2"
             data-val="${esc(o.id)}">
             <span class="text-5xl">${o.image}</span>
-            <span class="font-bold">${esc(o.label)}</span>
+            ${ex.hide_labels ? "" : `<span class="font-bold">${esc(o.label)}</span>`}
           </button>`).join("")}
       </div>`;
   } else if (ex.type === "listening_match") {
@@ -775,6 +885,7 @@ function showFeedback(correct, solution) {
             class="btn3d rounded-xl px-3 py-1.5 text-lg bg-[#1cb0f6] border-[#1899d6] text-white">🔊</button>
         </div>
         ${correct ? "" : `<div class="mt-1 font-bold text-[#ea2b2b]">Respuesta correcta: <span class="font-extrabold">${esc(solution)}</span></div>`}
+        ${ex.explain ? `<div class="mt-1.5 text-sm font-semibold ${correct ? "text-[#4a8f00]" : "text-[#b91c1c]"}">💡 ${esc(ex.explain)}</div>` : ""}
       </div>
       <button id="nextBtn"
         class="btn3d rounded-2xl px-8 py-3 font-extrabold uppercase text-white ${correct ? "bg-[#58cc02] border-[#46a302]" : "bg-[#ff4b4b] border-[#c93636]"}">
@@ -960,8 +1071,9 @@ function finishLesson() {
   if (!session.review) state.units[unit.id] = Math.min(unit.lessons.length, before + 1);
 
   const isGame = session.lesson.kind === "match_game";
-  // Minijuego completado: bono DOBLE de XP
-  const base = session.review ? 5 : 10 + Math.max(0, 5 - session.wrong);
+  const isTheory = session.lesson.kind === "theory";
+  // Teoría: 5 XP fijos. Minijuego completado: bono DOBLE de XP.
+  const base = isTheory ? 5 : session.review ? 5 : 10 + Math.max(0, 5 - session.wrong);
   const gained = isGame ? base * 2 : base;
   state.xp += gained;
   touchStreak();
@@ -988,10 +1100,10 @@ function finishLesson() {
           <div class="text-xs font-extrabold uppercase text-[#ffc800]">XP ganados</div>
           <div class="text-2xl font-extrabold text-[#ffc800]">⚡ +${gained}</div>
         </div>
-        <div class="rounded-2xl border-2 border-[#58cc02] px-6 py-4">
+        ${isTheory ? "" : `<div class="rounded-2xl border-2 border-[#58cc02] px-6 py-4">
           <div class="text-xs font-extrabold uppercase text-[#58cc02]">Precisión</div>
           <div class="text-2xl font-extrabold text-[#58cc02]">${accuracy}%</div>
-        </div>
+        </div>`}
       </div>
       <div class="mb-8 font-extrabold text-[#ff9600]">🔥 Racha: ${state.streak} ${state.streak === 1 ? "día" : "días"}</div>
       <button id="contBtn" class="btn3d w-full max-w-xs rounded-2xl px-8 py-3 font-extrabold uppercase text-[#131f24] bg-[#58cc02] border-[#46a302]">

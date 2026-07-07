@@ -18,7 +18,106 @@
           {
             "id": "s1_u1_l1",
             "index": 1,
-            "title": "Hola y adiós",
+            "title": "📖 Aprende: saludos y presentaciones",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "Los saludos"
+              },
+              {
+                "type": "text",
+                "text": "En alemán los saludos cambian según la hora del día. Toca el altavoz para escuchar cada palabra."
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "Hallo",
+                    "es": "Hola (informal)"
+                  },
+                  {
+                    "de": "Guten Morgen",
+                    "es": "Buenos días (por la mañana)"
+                  },
+                  {
+                    "de": "Guten Tag",
+                    "es": "Buenos días (durante el día)"
+                  },
+                  {
+                    "de": "Guten Abend",
+                    "es": "Buenas tardes / noches"
+                  },
+                  {
+                    "de": "Gute Nacht",
+                    "es": "Buenas noches (al ir a dormir)"
+                  },
+                  {
+                    "de": "Tschüss",
+                    "es": "Adiós (informal)"
+                  },
+                  {
+                    "de": "Auf Wiedersehen",
+                    "es": "Adiós (formal)"
+                  },
+                  {
+                    "de": "Danke",
+                    "es": "Gracias"
+                  },
+                  {
+                    "de": "Bitte",
+                    "es": "Por favor / de nada"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "«Gute Nacht» SOLO se usa para ir a dormir. Durante el día se saluda con «Guten Tag»."
+              },
+              {
+                "type": "heading",
+                "text": "Presentarse"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "Ich heiße…",
+                    "es": "Me llamo…"
+                  },
+                  {
+                    "de": "Ich komme aus…",
+                    "es": "Vengo de…"
+                  },
+                  {
+                    "de": "Ich bin zehn Jahre alt",
+                    "es": "Tengo diez años"
+                  },
+                  {
+                    "de": "Wie heißt du?",
+                    "es": "¿Cómo te llamas?"
+                  },
+                  {
+                    "de": "Woher kommst du?",
+                    "es": "¿De dónde vienes?"
+                  }
+                ]
+              },
+              {
+                "type": "example",
+                "de": "Hallo! Ich heiße Ana und ich komme aus Spanien.",
+                "es": "¡Hola! Me llamo Ana y vengo de España."
+              },
+              {
+                "type": "tip",
+                "text": "Regla de oro del alemán: el verbo va SIEMPRE en 2ª posición. «Ich heiße Ana», «Woher kommst du?»"
+              }
+            ]
+          },
+          {
+            "id": "s1_u1_l2",
+            "index": 2,
+            "title": "✏️ Hola y adiós",
             "kind": "exercises",
             "exercises": [
               {
@@ -30,15 +129,17 @@
                   "Hose",
                   "Haus"
                 ],
-                "answer": "Hallo"
+                "answer": "Hallo",
+                "explain": "«Hallo» es el saludo informal más común, como nuestro «hola»."
               },
               {
                 "type": "translate_direct",
-                "prompt": "Traduce: «Buenas noches»",
+                "prompt": "Traduce al alemán: «Buenas noches»",
                 "answer": "Gute Nacht",
                 "accepted": [
                   "gute nacht"
-                ]
+                ],
+                "explain": "«Gute Nacht» se dice solo al irse a dormir; «die Nacht» es la noche."
               },
               {
                 "type": "word_bank",
@@ -53,7 +154,8 @@
                 "distractors": [
                   "Haus",
                   "und"
-                ]
+                ],
+                "explain": "Literalmente «¿cómo te va?»: el verbo «geht» va en 2ª posición de la pregunta."
               },
               {
                 "type": "listening_match",
@@ -64,20 +166,34 @@
                   "Tisch",
                   "Tasche"
                 ],
-                "answer": "Tschüss"
+                "answer": "Tschüss",
+                "explain": "«Tschüss» es el adiós informal; con desconocidos se usa «Auf Wiedersehen»."
               },
               {
                 "type": "translate_direct",
                 "prompt": "Traduce: «Buenos días» (por la mañana)",
                 "answer": "Guten Morgen",
-                "accepted": []
+                "accepted": [],
+                "explain": "«Guten Morgen» se usa por la mañana; a partir del mediodía, «Guten Tag»."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Danke",
+                "options": [
+                  "Danke",
+                  "Decke",
+                  "Denken"
+                ],
+                "answer": "Danke",
+                "explain": "«Danke» = gracias. Se responde con «Bitte» (de nada)."
               }
             ]
           },
           {
-            "id": "s1_u1_l2",
-            "index": 2,
-            "title": "Me presento",
+            "id": "s1_u1_l3",
+            "index": 3,
+            "title": "✏️ Me presento",
             "kind": "exercises",
             "exercises": [
               {
@@ -91,13 +207,15 @@
                 "distractors": [
                   "bin",
                   "du"
-                ]
+                ],
+                "explain": "«heißen» = llamarse: ich heiße, du heißt. No se usa «bin» para el nombre."
               },
               {
                 "type": "translate_direct",
                 "prompt": "Traduce: «Yo vengo de España»",
                 "answer": "Ich komme aus Spanien",
-                "accepted": []
+                "accepted": [],
+                "explain": "«aus» indica origen (de dónde vienes): aus Spanien, aus Berlin."
               },
               {
                 "type": "listening_match",
@@ -108,7 +226,8 @@
                   "Wie alt bist du?",
                   "Wer bist du?"
                 ],
-                "answer": "Wie heißt du?"
+                "answer": "Wie heißt du?",
+                "explain": "«Wie» = cómo → pregunta por el nombre. «Wie alt…» preguntaría la edad."
               },
               {
                 "type": "word_bank",
@@ -122,7 +241,8 @@
                 ],
                 "distractors": [
                   "habe"
-                ]
+                ],
+                "explain": "¡Ojo! La edad en alemán se dice con «sein» (ser): soy diez años «viejo», no con «haben»."
               },
               {
                 "type": "translate_direct",
@@ -130,19 +250,43 @@
                 "answer": "Woher kommst du?",
                 "accepted": [
                   "woher kommst du"
-                ]
+                ],
+                "explain": "«Woher» = de dónde. «Wo» sería dónde (sin movimiento)."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «nosotros somos»",
+                "answer": "wir sind",
+                "accepted": [],
+                "explain": "«sein» es irregular: ich bin, du bist, er ist, wir sind."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Ella tiene un libro»",
+                "words": [
+                  "Sie",
+                  "hat",
+                  "ein",
+                  "Buch"
+                ],
+                "distractors": [
+                  "er",
+                  "hast"
+                ],
+                "explain": "«haben»: er/sie hat. «Buch» es neutro, por eso «ein Buch»."
               }
             ]
           },
           {
-            "id": "s1_u1_l3",
-            "index": 3,
-            "title": "Gente y cosas",
+            "id": "s1_u1_l4",
+            "index": 4,
+            "title": "✏️ Gente y cosas",
             "kind": "exercises",
             "exercises": [
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el hombre»",
+                "prompt": "Selecciona: «der Mann»",
+                "hide_labels": true,
                 "options": [
                   {
                     "id": "a",
@@ -165,11 +309,13 @@
                     "label": "der Hund"
                   }
                 ],
-                "correct": "a"
+                "correct": "a",
+                "explain": "«der Mann» = el hombre. «die Frau» es la mujer y «das Kind» el niño/a."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el perro»",
+                "prompt": "Selecciona: «der Hund»",
+                "hide_labels": true,
                 "options": [
                   {
                     "id": "a",
@@ -192,7 +338,8 @@
                     "label": "das Pferd"
                   }
                 ],
-                "correct": "b"
+                "correct": "b",
+                "explain": "«der Hund» = el perro. «die Katze» es el gato."
               },
               {
                 "type": "translate_direct",
@@ -200,7 +347,8 @@
                 "answer": "das Wasser",
                 "accepted": [
                   "wasser"
-                ]
+                ],
+                "explain": "«Wasser» es neutro en alemán: DAS Wasser (aunque en español sea «el»)."
               },
               {
                 "type": "word_bank",
@@ -214,11 +362,13 @@
                 "distractors": [
                   "eine",
                   "Hund"
-                ]
+                ],
+                "explain": "«Das ist…» sirve para presentar cosas. «Buch» es neutro → «ein», no «eine»."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «la casa»",
+                "prompt": "Selecciona: «das Haus»",
+                "hide_labels": true,
                 "options": [
                   {
                     "id": "a",
@@ -241,16 +391,9 @@
                     "label": "der Stuhl"
                   }
                 ],
-                "correct": "c"
-              }
-            ]
-          },
-          {
-            "id": "s1_u1_l4",
-            "index": 4,
-            "title": "Primeras frases",
-            "kind": "exercises",
-            "exercises": [
+                "correct": "c",
+                "explain": "«das Haus» = la casa. «das Auto» es el coche y «der Baum» el árbol."
+              },
               {
                 "type": "word_bank",
                 "prompt": "Construye: «Yo tengo un perro»",
@@ -262,29 +405,14 @@
                 ],
                 "distractors": [
                   "bin",
-                  "Katze"
-                ]
-              },
-              {
-                "type": "translate_direct",
-                "prompt": "Traduce: «nosotros somos»",
-                "answer": "wir sind",
-                "accepted": []
-              },
-              {
-                "type": "listening_match",
-                "prompt": "Escucha y elige lo que oyes",
-                "tts": "Danke",
-                "options": [
-                  "Danke",
-                  "Decke",
-                  "Denken"
+                  "ein"
                 ],
-                "answer": "Danke"
+                "explain": "Con «haben» el masculino cambia: ein → EINEN Hund (caso acusativo)."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «la manzana»",
+                "prompt": "Selecciona: «der Apfel»",
+                "hide_labels": true,
                 "options": [
                   {
                     "id": "a",
@@ -307,28 +435,15 @@
                     "label": "der Käse"
                   }
                 ],
-                "correct": "a"
-              },
-              {
-                "type": "word_bank",
-                "prompt": "Construye: «Ella tiene un libro»",
-                "words": [
-                  "Sie",
-                  "hat",
-                  "ein",
-                  "Buch"
-                ],
-                "distractors": [
-                  "er",
-                  "hast"
-                ]
+                "correct": "a",
+                "explain": "«der Apfel» = la manzana. ¡En alemán es masculino!"
               }
             ]
           },
           {
             "id": "s1_u1_l5",
             "index": 5,
-            "title": "Minijuego: parejas",
+            "title": "🎮 Minijuego: parejas",
             "kind": "match_game",
             "pairs": [
               {
@@ -369,7 +484,114 @@
           {
             "id": "s1_u2_l1",
             "index": 1,
-            "title": "Del uno al cinco",
+            "title": "📖 Aprende: números y colores",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "Los números del 1 al 10"
+              },
+              {
+                "type": "text",
+                "text": "Escucha cada número y repítelo en voz alta. ¡La pronunciación es la clave!"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "eins",
+                    "es": "1 · uno"
+                  },
+                  {
+                    "de": "zwei",
+                    "es": "2 · dos"
+                  },
+                  {
+                    "de": "drei",
+                    "es": "3 · tres"
+                  },
+                  {
+                    "de": "vier",
+                    "es": "4 · cuatro"
+                  },
+                  {
+                    "de": "fünf",
+                    "es": "5 · cinco"
+                  },
+                  {
+                    "de": "sechs",
+                    "es": "6 · seis"
+                  },
+                  {
+                    "de": "sieben",
+                    "es": "7 · siete"
+                  },
+                  {
+                    "de": "acht",
+                    "es": "8 · ocho"
+                  },
+                  {
+                    "de": "neun",
+                    "es": "9 · nueve"
+                  },
+                  {
+                    "de": "zehn",
+                    "es": "10 · diez"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "Truco: «sechs» y «sieben» empiezan igual que «seis» y «siete». Y «ei» siempre suena «ai»: drei = drai."
+              },
+              {
+                "type": "heading",
+                "text": "Los colores"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "rot",
+                    "es": "rojo"
+                  },
+                  {
+                    "de": "blau",
+                    "es": "azul"
+                  },
+                  {
+                    "de": "grün",
+                    "es": "verde"
+                  },
+                  {
+                    "de": "gelb",
+                    "es": "amarillo"
+                  },
+                  {
+                    "de": "schwarz",
+                    "es": "negro"
+                  },
+                  {
+                    "de": "weiß",
+                    "es": "blanco"
+                  }
+                ]
+              },
+              {
+                "type": "example",
+                "de": "Der Himmel ist blau und die Sonne ist gelb.",
+                "es": "El cielo es azul y el sol es amarillo."
+              },
+              {
+                "type": "tip",
+                "text": "Los colores van en minúscula (rot, blau…), pero TODOS los sustantivos alemanes llevan mayúscula (der Himmel, die Sonne)."
+              }
+            ]
+          },
+          {
+            "id": "s1_u2_l2",
+            "index": 2,
+            "title": "✏️ Números del 1 al 10",
             "kind": "exercises",
             "exercises": [
               {
@@ -381,11 +603,13 @@
                   "zwei",
                   "dreißig"
                 ],
-                "answer": "drei"
+                "answer": "drei",
+                "explain": "«drei» = 3. La «ei» alemana suena «ai». «dreißig» sería 30."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el número tres»",
+                "prompt": "Selecciona: «drei»",
+                "hide_labels": true,
                 "options": [
                   {
                     "id": "a",
@@ -408,13 +632,15 @@
                     "label": "zwei"
                   }
                 ],
-                "correct": "b"
+                "correct": "b",
+                "explain": "«drei» = tres. Uno a uno: eins 1, zwei 2, drei 3."
               },
               {
                 "type": "translate_direct",
                 "prompt": "Traduce el número: «dos»",
                 "answer": "zwei",
-                "accepted": []
+                "accepted": [],
+                "explain": "«zwei» = 2, se pronuncia «tsvai»."
               },
               {
                 "type": "word_bank",
@@ -428,11 +654,13 @@
                 "distractors": [
                   "drei",
                   "Schwester"
-                ]
+                ],
+                "explain": "«Brüder» es el plural de «Bruder»: el plural alemán a menudo añade diéresis (u → ü)."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el número cinco»",
+                "prompt": "Selecciona: «fünf»",
+                "hide_labels": true,
                 "options": [
                   {
                     "id": "a",
@@ -455,16 +683,9 @@
                     "label": "acht"
                   }
                 ],
-                "correct": "c"
-              }
-            ]
-          },
-          {
-            "id": "s1_u2_l2",
-            "index": 2,
-            "title": "Del seis al diez",
-            "kind": "exercises",
-            "exercises": [
+                "correct": "c",
+                "explain": "«fünf» = cinco. La ü se pronuncia poniendo labios de «u» y diciendo «i»."
+              },
               {
                 "type": "listening_match",
                 "prompt": "Escucha y elige lo que oyes",
@@ -474,40 +695,15 @@
                   "neun",
                   "zehn"
                 ],
-                "answer": "sieben"
-              },
-              {
-                "type": "select_image",
-                "prompt": "Selecciona: «el número ocho»",
-                "options": [
-                  {
-                    "id": "a",
-                    "image": "8️⃣",
-                    "label": "acht"
-                  },
-                  {
-                    "id": "b",
-                    "image": "9️⃣",
-                    "label": "neun"
-                  },
-                  {
-                    "id": "c",
-                    "image": "7️⃣",
-                    "label": "sieben"
-                  },
-                  {
-                    "id": "d",
-                    "image": "6️⃣",
-                    "label": "sechs"
-                  }
-                ],
-                "correct": "a"
+                "answer": "sieben",
+                "explain": "«sieben» = 7. La «ie» alemana suena como una «i» larga."
               },
               {
                 "type": "translate_direct",
                 "prompt": "Traduce el número: «nueve»",
                 "answer": "neun",
-                "accepted": []
+                "accepted": [],
+                "explain": "«neun» = 9. La «eu» alemana suena «oi»: se dice «noin»."
               },
               {
                 "type": "word_bank",
@@ -521,25 +717,21 @@
                 "distractors": [
                   "neun",
                   "Hände"
-                ]
-              },
-              {
-                "type": "translate_direct",
-                "prompt": "Traduce el número: «siete»",
-                "answer": "sieben",
-                "accepted": []
+                ],
+                "explain": "«zehn» = 10; la «h» no suena, solo alarga la vocal. «Finger» no cambia en plural."
               }
             ]
           },
           {
             "id": "s1_u2_l3",
             "index": 3,
-            "title": "Colores básicos",
+            "title": "✏️ Colores básicos",
             "kind": "exercises",
             "exercises": [
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «rojo»",
+                "prompt": "Selecciona: «rot»",
+                "hide_labels": true,
                 "options": [
                   {
                     "id": "a",
@@ -562,7 +754,8 @@
                     "label": "gelb"
                   }
                 ],
-                "correct": "b"
+                "correct": "b",
+                "explain": "«rot» = rojo. Azul es «blau», verde «grün» y amarillo «gelb»."
               },
               {
                 "type": "listening_match",
@@ -573,7 +766,8 @@
                   "braun",
                   "grau"
                 ],
-                "answer": "blau"
+                "answer": "blau",
+                "explain": "«blau» = azul. ¡Cuidado! «braun» es marrón y «grau» es gris."
               },
               {
                 "type": "translate_direct",
@@ -581,7 +775,8 @@
                 "answer": "grün",
                 "accepted": [
                   "gruen"
-                ]
+                ],
+                "explain": "«grün» = verde. Si tu teclado no tiene ü, puedes escribir «gruen»."
               },
               {
                 "type": "word_bank",
@@ -595,11 +790,13 @@
                 "distractors": [
                   "weiß",
                   "rot"
-                ]
+                ],
+                "explain": "Los colores van en minúscula y al final: Das Auto ist schwarz."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «amarillo»",
+                "prompt": "Selecciona: «gelb»",
+                "hide_labels": true,
                 "options": [
                   {
                     "id": "a",
@@ -622,14 +819,24 @@
                     "label": "lila"
                   }
                 ],
-                "correct": "c"
+                "correct": "c",
+                "explain": "«gelb» = amarillo. «orange» y «lila» son casi iguales que en español."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce el color: «blanco»",
+                "answer": "weiß",
+                "accepted": [
+                  "weiss"
+                ],
+                "explain": "«weiß» = blanco. La ß (eszett) suena como una «s» fuerte: «vais»."
               }
             ]
           },
           {
             "id": "s1_u2_l4",
             "index": 4,
-            "title": "Frases con colores y números",
+            "title": "✏️ Números y colores en frases",
             "kind": "exercises",
             "exercises": [
               {
@@ -644,19 +851,13 @@
                 "distractors": [
                   "grün",
                   "die"
-                ]
-              },
-              {
-                "type": "translate_direct",
-                "prompt": "Traduce el color: «blanco»",
-                "answer": "weiß",
-                "accepted": [
-                  "weiss"
-                ]
+                ],
+                "explain": "«der Himmel» = el cielo (masculino). El color se coloca al final."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «negro»",
+                "prompt": "Selecciona: «schwarz»",
+                "hide_labels": true,
                 "options": [
                   {
                     "id": "a",
@@ -679,7 +880,8 @@
                     "label": "rot"
                   }
                 ],
-                "correct": "a"
+                "correct": "a",
+                "explain": "«schwarz» = negro; «weiß» = blanco. Son opuestos, ¡apréndelos juntos!"
               },
               {
                 "type": "listening_match",
@@ -690,7 +892,8 @@
                   "für",
                   "wir"
                 ],
-                "answer": "vier"
+                "answer": "vier",
+                "explain": "«vier» = 4. Suena parecido a «für» (para) y «wir» (nosotros): ¡afina el oído!"
               },
               {
                 "type": "word_bank",
@@ -705,14 +908,51 @@
                 ],
                 "distractors": [
                   "blau"
-                ]
+                ],
+                "explain": "«und» = y. Los colores no concuerdan en género: siempre «rot», «gelb»."
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «acht»",
+                "hide_labels": true,
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "8️⃣",
+                    "label": "acht"
+                  },
+                  {
+                    "id": "b",
+                    "image": "9️⃣",
+                    "label": "neun"
+                  },
+                  {
+                    "id": "c",
+                    "image": "7️⃣",
+                    "label": "sieben"
+                  },
+                  {
+                    "id": "d",
+                    "image": "6️⃣",
+                    "label": "sechs"
+                  }
+                ],
+                "correct": "a",
+                "explain": "«acht» = ocho. La «ch» tras «a» suena áspera, como una j suave: «ajt»."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce el número: «siete»",
+                "answer": "sieben",
+                "accepted": [],
+                "explain": "«sieben» = 7. Casi como «siete», ¡de los números más fáciles!"
               }
             ]
           },
           {
             "id": "s1_u2_l5",
             "index": 5,
-            "title": "Minijuego: parejas",
+            "title": "🎮 Minijuego: parejas",
             "kind": "match_game",
             "pairs": [
               {

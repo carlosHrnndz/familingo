@@ -52,13 +52,25 @@ export interface Unit {
   lessons: Lesson[];                 // exactamente 5 si status === "ready"
 }
 
-export type Lesson = ExerciseLesson | MatchGameLesson;
+export type Lesson = TheoryLesson | ExerciseLesson | MatchGameLesson;
 
 interface LessonBase {
   id: string;       // "s1_u1_l1"
   index: number;    // 1..5 (columna current_lesson de la BD)
   title: string;
 }
+
+/** Lección de teoría (📖): enseña antes de evaluar. Sin corazones. */
+export interface TheoryLesson extends LessonBase {
+  kind: "theory";
+  blocks: TheoryBlock[];
+}
+export type TheoryBlock =
+  | { type: "heading"; text: string }
+  | { type: "text"; text: string }
+  | { type: "tip"; text: string }                          // caja destacada 💡
+  | { type: "example"; de: string; es: string }            // frase con audio
+  | { type: "vocab"; items: { de: string; es: string }[] }; // tabla con audio por fila
 
 /** Lección estándar: secuencia de ejercicios. */
 export interface ExerciseLesson extends LessonBase {
@@ -79,16 +91,25 @@ export type Exercise =
   | TranslateDirectExercise
   | ListeningMatchExercise;
 
-/** Elegir la imagen correcta (imágenes = emoji, sin assets binarios). */
-export interface SelectImageExercise {
+/** Común a todos los ejercicios: explicación pedagógica mostrada al corregir. */
+interface ExerciseBase {
+  explain?: string; // "«der Apfel» = la manzana. ¡En alemán es masculino!"
+}
+
+/** Elegir la imagen correcta (imágenes = emoji, sin assets binarios).
+    REGLA: la imagen nunca puede responder por sí sola a la pregunta.
+    Si la imagen codifica el significado (números, colores, objetos),
+    el prompt debe ir EN ALEMÁN y hide_labels: true. */
+export interface SelectImageExercise extends ExerciseBase {
   type: "select_image";
-  prompt: string;                                        // "Selecciona: «el perro»"
+  prompt: string;                                        // "Selecciona: «acht»"
   options: { id: string; image: string; label: string }[]; // label en alemán
   correct: string;                                       // id de la opción correcta
+  hide_labels?: boolean;                                 // ocultar etiquetas DE
 }
 
 /** Banco de palabras: construir la frase pulsando fichas. */
-export interface WordBankExercise {
+export interface WordBankExercise extends ExerciseBase {
   type: "word_bank";
   prompt: string;          // "Traduce: «Tengo un perro»"
   words: string[];         // EN ORDEN CORRECTO (la app las baraja)
@@ -96,7 +117,7 @@ export interface WordBankExercise {
 }
 
 /** Traducción escrita libre. */
-export interface TranslateDirectExercise {
+export interface TranslateDirectExercise extends ExerciseBase {
   type: "translate_direct";
   prompt: string;
   answer: string;          // respuesta canónica
@@ -104,7 +125,7 @@ export interface TranslateDirectExercise {
 }
 
 /** Escuchar (TTS de-DE del navegador) y elegir lo que se oye. */
-export interface ListeningMatchExercise {
+export interface ListeningMatchExercise extends ExerciseBase {
   type: "listening_match";
   prompt: string;          // "Escucha y elige lo que oyes"
   tts: string;             // texto que se sintetiza en alemán
