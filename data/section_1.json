@@ -993,12 +993,99 @@
           {
             "id": "s1_u3_l1",
             "index": 1,
-            "title": "La familia cercana",
+            "title": "📖 Aprende: la familia y mein/dein",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "La familia"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "die Mutter",
+                    "es": "la madre"
+                  },
+                  {
+                    "de": "der Vater",
+                    "es": "el padre"
+                  },
+                  {
+                    "de": "der Bruder",
+                    "es": "el hermano"
+                  },
+                  {
+                    "de": "die Schwester",
+                    "es": "la hermana"
+                  },
+                  {
+                    "de": "die Oma",
+                    "es": "la abuela"
+                  },
+                  {
+                    "de": "der Opa",
+                    "es": "el abuelo"
+                  },
+                  {
+                    "de": "die Eltern",
+                    "es": "los padres"
+                  },
+                  {
+                    "de": "die Geschwister",
+                    "es": "los hermanos (en conjunto)"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "Cada sustantivo alemán tiene género: der (masculino), die (femenino), das (neutro). ¡Aprende siempre la palabra CON su artículo!"
+              },
+              {
+                "type": "heading",
+                "text": "Mi y tu: mein / dein"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "mein Vater",
+                    "es": "mi padre"
+                  },
+                  {
+                    "de": "meine Mutter",
+                    "es": "mi madre"
+                  },
+                  {
+                    "de": "dein Bruder",
+                    "es": "tu hermano"
+                  },
+                  {
+                    "de": "deine Schwester",
+                    "es": "tu hermana"
+                  }
+                ]
+              },
+              {
+                "type": "example",
+                "de": "Meine Mutter heißt Marta und mein Vater heißt Luis.",
+                "es": "Mi madre se llama Marta y mi padre se llama Luis."
+              },
+              {
+                "type": "tip",
+                "text": "mein/dein SIN -e para palabras con der y das; CON -e (meine/deine) para palabras con die."
+              }
+            ]
+          },
+          {
+            "id": "s1_u3_l2",
+            "index": 2,
+            "title": "✏️ La familia cercana",
             "kind": "exercises",
             "exercises": [
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «la madre»",
+                "prompt": "Selecciona: «die Mutter»",
                 "options": [
                   {
                     "id": "a",
@@ -1021,7 +1108,9 @@
                     "label": "das Baby"
                   }
                 ],
-                "correct": "a"
+                "correct": "a",
+                "explain": "«die Mutter» = la madre; informal: «die Mama».",
+                "hide_labels": true
               },
               {
                 "type": "listening_match",
@@ -1032,7 +1121,8 @@
                   "der Bruder",
                   "die Mutter"
                 ],
-                "answer": "die Schwester"
+                "answer": "die Schwester",
+                "explain": "«die Schwester» = la hermana; «der Bruder» es el hermano."
               },
               {
                 "type": "translate_direct",
@@ -1040,7 +1130,8 @@
                 "answer": "der Bruder",
                 "accepted": [
                   "bruder"
-                ]
+                ],
+                "explain": "«der Bruder» = el hermano; masculino → der."
               },
               {
                 "type": "word_bank",
@@ -1054,11 +1145,12 @@
                 "distractors": [
                   "Mein",
                   "Vater"
-                ]
+                ],
+                "explain": "Con palabra femenina el posesivo lleva -e: MEINE Mutter."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el bebé»",
+                "prompt": "Selecciona: «das Baby»",
                 "options": [
                   {
                     "id": "a",
@@ -1081,7 +1173,9 @@
                     "label": "der Opa"
                   }
                 ],
-                "correct": "b"
+                "correct": "b",
+                "explain": "«das Baby» = el bebé; neutro, como casi todos los diminutivos.",
+                "hide_labels": true
               },
               {
                 "type": "translate_direct",
@@ -1089,16 +1183,9 @@
                 "answer": "die Schwester",
                 "accepted": [
                   "schwester"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "s1_u3_l2",
-            "index": 2,
-            "title": "Abuelos y familia grande",
-            "kind": "exercises",
-            "exercises": [
+                ],
+                "explain": "«die Schwester» = la hermana → artículo die (femenino)."
+              },
               {
                 "type": "listening_match",
                 "prompt": "Escucha y elige lo que oyes",
@@ -1108,11 +1195,12 @@
                   "die Eltern",
                   "die Geschwister"
                 ],
-                "answer": "die Großeltern"
+                "answer": "die Großeltern",
+                "explain": "«die Großeltern» = los abuelos (Oma + Opa); solo existe en plural."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el abuelo»",
+                "prompt": "Selecciona: «der Opa»",
                 "options": [
                   {
                     "id": "a",
@@ -1135,15 +1223,26 @@
                     "label": "der Junge"
                   }
                 ],
-                "correct": "c"
-              },
+                "correct": "c",
+                "explain": "«der Opa» = el abuelo (informal); formal: «der Großvater».",
+                "hide_labels": true
+              }
+            ]
+          },
+          {
+            "id": "s1_u3_l3",
+            "index": 3,
+            "title": "✏️ Abuelos y posesivos",
+            "kind": "exercises",
+            "exercises": [
               {
                 "type": "translate_direct",
                 "prompt": "Traduce: «los padres»",
                 "answer": "die Eltern",
                 "accepted": [
                   "eltern"
-                ]
+                ],
+                "explain": "«die Eltern» = los padres; solo existe en plural."
               },
               {
                 "type": "word_bank",
@@ -1157,7 +1256,8 @@
                 ],
                 "distractors": [
                   "Opa"
-                ]
+                ],
+                "explain": "«nett» = simpático/amable; «sehr» = muy."
               },
               {
                 "type": "translate_direct",
@@ -1165,7 +1265,8 @@
                 "answer": "die Tante",
                 "accepted": [
                   "tante"
-                ]
+                ],
+                "explain": "«die Tante» = la tía; el tío es «der Onkel»."
               },
               {
                 "type": "word_bank",
@@ -1179,16 +1280,9 @@
                   "eine",
                   "Schwester"
                 ],
-                "distractors": []
-              }
-            ]
-          },
-          {
-            "id": "s1_u3_l3",
-            "index": 3,
-            "title": "Mein y dein",
-            "kind": "exercises",
-            "exercises": [
+                "distractors": [],
+                "explain": "«und» une las dos partes; «eine» porque Schwester es femenino."
+              },
               {
                 "type": "word_bank",
                 "prompt": "Construye: «Mi padre trabaja mucho»",
@@ -1201,13 +1295,15 @@
                 "distractors": [
                   "Meine",
                   "Dein"
-                ]
+                ],
+                "explain": "«Mein» sin -e porque «Vater» es masculino."
               },
               {
                 "type": "translate_direct",
                 "prompt": "Traduce: «mi hermano»",
                 "answer": "mein Bruder",
-                "accepted": []
+                "accepted": [],
+                "explain": "Posesivo masculino: MEIN Bruder (femenino sería meine)."
               },
               {
                 "type": "listening_match",
@@ -1218,7 +1314,8 @@
                   "Wie heißt dein Vater?",
                   "Wo ist deine Mutter?"
                 ],
-                "answer": "Wie heißt deine Mutter?"
+                "answer": "Wie heißt deine Mutter?",
+                "explain": "«deine Mutter» = tu madre; dein/deine funciona igual que mein/meine."
               },
               {
                 "type": "word_bank",
@@ -1232,13 +1329,23 @@
                 "distractors": [
                   "deine",
                   "Mutter"
-                ]
-              },
+                ],
+                "explain": "«dein Vater» = tu padre; masculino, sin -e."
+              }
+            ]
+          },
+          {
+            "id": "s1_u3_l4",
+            "index": 4,
+            "title": "✏️ Hablando de la familia",
+            "kind": "exercises",
+            "exercises": [
               {
                 "type": "translate_direct",
                 "prompt": "Traduce: «tu hermana»",
                 "answer": "deine Schwester",
-                "accepted": []
+                "accepted": [],
+                "explain": "«deine Schwester»: con -e porque Schwester es femenino."
               },
               {
                 "type": "word_bank",
@@ -1251,16 +1358,9 @@
                 ],
                 "distractors": [
                   "Mein"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "s1_u3_l4",
-            "index": 4,
-            "title": "Hablando de la familia",
-            "kind": "exercises",
-            "exercises": [
+                ],
+                "explain": "«die Familie» es femenino → MEINE Familie. «groß» = grande."
+              },
               {
                 "type": "listening_match",
                 "prompt": "Escucha y elige lo que oyes",
@@ -1270,7 +1370,8 @@
                   "die Tante",
                   "der Opa"
                 ],
-                "answer": "der Onkel"
+                "answer": "der Onkel",
+                "explain": "«der Onkel» = el tío; la tía es «die Tante»."
               },
               {
                 "type": "translate_direct",
@@ -1278,7 +1379,8 @@
                 "answer": "der Cousin",
                 "accepted": [
                   "cousin"
-                ]
+                ],
+                "explain": "«der Cousin» = el primo; se pronuncia a la francesa: «kusén»."
               },
               {
                 "type": "word_bank",
@@ -1292,11 +1394,12 @@
                 ],
                 "distractors": [
                   "Tante"
-                ]
+                ],
+                "explain": "«wohnen» = vivir (residir): mein Onkel wohnt."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «la familia»",
+                "prompt": "Selecciona: «die Familie»",
                 "options": [
                   {
                     "id": "a",
@@ -1319,7 +1422,9 @@
                     "label": "das Haus"
                   }
                 ],
-                "correct": "a"
+                "correct": "a",
+                "explain": "«die Familie» = la familia; ¡casi igual que en español!",
+                "hide_labels": true
               },
               {
                 "type": "word_bank",
@@ -1332,7 +1437,8 @@
                 "distractors": [
                   "Bruder",
                   "dein"
-                ]
+                ],
+                "explain": "«Geschwister» = hermanos y hermanas en conjunto; siempre plural."
               },
               {
                 "type": "translate_direct",
@@ -1340,14 +1446,15 @@
                 "answer": "Meine Tochter heißt Lena",
                 "accepted": [
                   "meine tochter heisst lena"
-                ]
+                ],
+                "explain": "«die Tochter» = la hija; el hijo es «der Sohn»."
               }
             ]
           },
           {
             "id": "s1_u3_l5",
             "index": 5,
-            "title": "Minijuego: parejas",
+            "title": "🎮 Minijuego: parejas",
             "kind": "match_game",
             "pairs": [
               {
@@ -1388,12 +1495,99 @@
           {
             "id": "s1_u4_l1",
             "index": 1,
-            "title": "Alimentos básicos",
+            "title": "📖 Aprende: comida y el verbo möchten",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "Comida y bebida"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "das Brot",
+                    "es": "el pan"
+                  },
+                  {
+                    "de": "der Käse",
+                    "es": "el queso"
+                  },
+                  {
+                    "de": "die Milch",
+                    "es": "la leche"
+                  },
+                  {
+                    "de": "das Wasser",
+                    "es": "el agua"
+                  },
+                  {
+                    "de": "der Saft",
+                    "es": "el zumo"
+                  },
+                  {
+                    "de": "der Apfel",
+                    "es": "la manzana"
+                  },
+                  {
+                    "de": "das Ei",
+                    "es": "el huevo"
+                  },
+                  {
+                    "de": "der Kuchen",
+                    "es": "el pastel"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "El hambre y la sed en alemán se TIENEN: «Ich habe Hunger» (tengo hambre), «Ich habe Durst» (tengo sed)."
+              },
+              {
+                "type": "heading",
+                "text": "Pedir con möchten (quisiera)"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "ich möchte",
+                    "es": "yo quisiera"
+                  },
+                  {
+                    "de": "du möchtest",
+                    "es": "tú quisieras"
+                  },
+                  {
+                    "de": "er / sie möchte",
+                    "es": "él / ella quisiera"
+                  },
+                  {
+                    "de": "wir möchten",
+                    "es": "nosotros quisiéramos"
+                  }
+                ]
+              },
+              {
+                "type": "example",
+                "de": "Ich möchte einen Kaffee, bitte.",
+                "es": "Quisiera un café, por favor."
+              },
+              {
+                "type": "tip",
+                "text": "«möchten» es la forma educada de pedir, como «quisiera». Lo que pides va detrás y el otro verbo (si lo hay) al FINAL: Ich möchte Wasser trinken."
+              }
+            ]
+          },
+          {
+            "id": "s1_u4_l2",
+            "index": 2,
+            "title": "✏️ Alimentos y bebidas",
             "kind": "exercises",
             "exercises": [
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el pan»",
+                "prompt": "Selecciona: «das Brot»",
                 "options": [
                   {
                     "id": "a",
@@ -1416,7 +1610,9 @@
                     "label": "der Apfel"
                   }
                 ],
-                "correct": "b"
+                "correct": "b",
+                "explain": "«das Brot» = el pan; neutro.",
+                "hide_labels": true
               },
               {
                 "type": "listening_match",
@@ -1427,7 +1623,8 @@
                   "der Kuchen",
                   "die Küche"
                 ],
-                "answer": "der Käse"
+                "answer": "der Käse",
+                "explain": "«der Käse» = el queso. No confundir con «die Küche» (la cocina)."
               },
               {
                 "type": "translate_direct",
@@ -1435,11 +1632,12 @@
                 "answer": "die Milch",
                 "accepted": [
                   "milch"
-                ]
+                ],
+                "explain": "«die Milch» = la leche; femenino."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el huevo»",
+                "prompt": "Selecciona: «das Ei»",
                 "options": [
                   {
                     "id": "a",
@@ -1462,7 +1660,9 @@
                     "label": "das Brot"
                   }
                 ],
-                "correct": "a"
+                "correct": "a",
+                "explain": "«das Ei» = el huevo; plural: die Eier.",
+                "hide_labels": true
               },
               {
                 "type": "word_bank",
@@ -1475,7 +1675,8 @@
                 ],
                 "distractors": [
                   "Käse"
-                ]
+                ],
+                "explain": "«lecker» = rico/delicioso; se usa muchísimo al comer."
               },
               {
                 "type": "translate_direct",
@@ -1484,19 +1685,12 @@
                 "accepted": [
                   "kaese",
                   "käse"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "s1_u4_l2",
-            "index": 2,
-            "title": "Bebidas",
-            "kind": "exercises",
-            "exercises": [
+                ],
+                "explain": "«der Käse» = el queso; sin ä puedes escribir «Kaese»."
+              },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el agua»",
+                "prompt": "Selecciona: «das Wasser»",
                 "options": [
                   {
                     "id": "a",
@@ -1519,7 +1713,9 @@
                     "label": "der Saft"
                   }
                 ],
-                "correct": "c"
+                "correct": "c",
+                "explain": "«das Wasser» = el agua; neutro.",
+                "hide_labels": true
               },
               {
                 "type": "listening_match",
@@ -1530,15 +1726,25 @@
                   "die Suppe",
                   "der Salat"
                 ],
-                "answer": "der Saft"
-              },
+                "answer": "der Saft",
+                "explain": "«der Saft» = el zumo; zumo de naranja = «Orangensaft»."
+              }
+            ]
+          },
+          {
+            "id": "s1_u4_l3",
+            "index": 3,
+            "title": "✏️ Pedir con möchten",
+            "kind": "exercises",
+            "exercises": [
               {
                 "type": "translate_direct",
                 "prompt": "Traduce con artículo: «el té»",
                 "answer": "der Tee",
                 "accepted": [
                   "tee"
-                ]
+                ],
+                "explain": "«der Tee» = el té; casi igual que en español."
               },
               {
                 "type": "word_bank",
@@ -1551,7 +1757,8 @@
                 "distractors": [
                   "esse",
                   "Milch"
-                ]
+                ],
+                "explain": "«trinken» = beber (ich trinke); comer es «essen»."
               },
               {
                 "type": "translate_direct",
@@ -1559,7 +1766,8 @@
                 "answer": "der Saft",
                 "accepted": [
                   "saft"
-                ]
+                ],
+                "explain": "«der Saft» = el zumo."
               },
               {
                 "type": "word_bank",
@@ -1573,16 +1781,9 @@
                 ],
                 "distractors": [
                   "Wasser"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "s1_u4_l3",
-            "index": 3,
-            "title": "El verbo möchten",
-            "kind": "exercises",
-            "exercises": [
+                ],
+                "explain": "«oder» = o. En las preguntas el verbo va primero: Trinkst du…?"
+              },
               {
                 "type": "word_bank",
                 "prompt": "Construye: «Quisiera un café, por favor»",
@@ -1595,7 +1796,8 @@
                 ],
                 "distractors": [
                   "trinke"
-                ]
+                ],
+                "explain": "«möchte» = quisiera; el «bitte» va al final."
               },
               {
                 "type": "listening_match",
@@ -1606,7 +1808,8 @@
                   "Was möchtest du trinken?",
                   "Was isst du gern?"
                 ],
-                "answer": "Was möchtest du essen?"
+                "answer": "Was möchtest du essen?",
+                "explain": "«essen» = comer: pregunta qué quieres COMER, no beber."
               },
               {
                 "type": "translate_direct",
@@ -1614,7 +1817,8 @@
                 "answer": "Ich möchte eine Pizza",
                 "accepted": [
                   "ich moechte eine pizza"
-                ]
+                ],
+                "explain": "möchten: ich möchte, du möchtest. Pizza es femenino: eine Pizza."
               },
               {
                 "type": "word_bank",
@@ -1627,15 +1831,25 @@
                 ],
                 "distractors": [
                   "möchtest"
-                ]
-              },
+                ],
+                "explain": "er möchte (igual que ich); «das Eis» = el helado."
+              }
+            ]
+          },
+          {
+            "id": "s1_u4_l4",
+            "index": 4,
+            "title": "✏️ Comer y beber",
+            "kind": "exercises",
+            "exercises": [
               {
                 "type": "translate_direct",
                 "prompt": "Traduce: «¿Qué quieres beber?»",
                 "answer": "Was möchtest du trinken?",
                 "accepted": [
                   "was moechtest du trinken"
-                ]
+                ],
+                "explain": "Estructura: Was + möchtest + du + infinitivo al FINAL (trinken)."
               },
               {
                 "type": "word_bank",
@@ -1648,19 +1862,12 @@
                 "distractors": [
                   "möchte",
                   "essen"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "s1_u4_l4",
-            "index": 4,
-            "title": "Comer y beber",
-            "kind": "exercises",
-            "exercises": [
+                ],
+                "explain": "wir möchten (con -n); «zahlen» = pagar."
+              },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «la sopa»",
+                "prompt": "Selecciona: «die Suppe»",
                 "options": [
                   {
                     "id": "a",
@@ -1683,7 +1890,9 @@
                     "label": "die Suppe"
                   }
                 ],
-                "correct": "d"
+                "correct": "d",
+                "explain": "«die Suppe» = la sopa; «der Salat» = la ensalada.",
+                "hide_labels": true
               },
               {
                 "type": "translate_direct",
@@ -1691,7 +1900,8 @@
                 "answer": "Ich habe Hunger",
                 "accepted": [
                   "ich bin hungrig"
-                ]
+                ],
+                "explain": "El hambre se TIENE: Ich habe Hunger (no «estoy hambriento»)."
               },
               {
                 "type": "listening_match",
@@ -1702,7 +1912,8 @@
                   "Guten Abend",
                   "Gute Nacht"
                 ],
-                "answer": "Guten Appetit"
+                "answer": "Guten Appetit",
+                "explain": "«Guten Appetit» = ¡que aproveche! Se dice antes de comer."
               },
               {
                 "type": "word_bank",
@@ -1715,13 +1926,15 @@
                 ],
                 "distractors": [
                   "trinke"
-                ]
+                ],
+                "explain": "Apfel es masculino → EINEN Apfel (acusativo)."
               },
               {
                 "type": "translate_direct",
                 "prompt": "Traduce: «Tengo sed»",
                 "answer": "Ich habe Durst",
-                "accepted": []
+                "accepted": [],
+                "explain": "Igual que el hambre, la sed se tiene: Ich habe Durst."
               },
               {
                 "type": "word_bank",
@@ -1735,14 +1948,15 @@
                 ],
                 "distractors": [
                   "sauer"
-                ]
+                ],
+                "explain": "«süß» = dulce; «sauer» = ácido."
               }
             ]
           },
           {
             "id": "s1_u4_l5",
             "index": 5,
-            "title": "Minijuego: parejas",
+            "title": "🎮 Minijuego: parejas",
             "kind": "match_game",
             "pairs": [
               {
@@ -1783,12 +1997,99 @@
           {
             "id": "s1_u5_l1",
             "index": 1,
-            "title": "Mascotas",
+            "title": "📖 Aprende: animales y sus artículos",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "Los animales"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "der Hund",
+                    "es": "el perro"
+                  },
+                  {
+                    "de": "die Katze",
+                    "es": "el gato"
+                  },
+                  {
+                    "de": "der Vogel",
+                    "es": "el pájaro"
+                  },
+                  {
+                    "de": "der Fisch",
+                    "es": "el pez"
+                  },
+                  {
+                    "de": "das Pferd",
+                    "es": "el caballo"
+                  },
+                  {
+                    "de": "die Kuh",
+                    "es": "la vaca"
+                  },
+                  {
+                    "de": "das Schwein",
+                    "es": "el cerdo"
+                  },
+                  {
+                    "de": "das Schaf",
+                    "es": "la oveja"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "¡El género alemán no coincide con el español! El gato es DIE Katze (femenino) y el ratón DIE Maus. Por eso hay que memorizar el artículo con la palabra."
+              },
+              {
+                "type": "example",
+                "de": "Die Katze ist klein und der Hund ist groß.",
+                "es": "El gato es pequeño y el perro es grande."
+              },
+              {
+                "type": "heading",
+                "text": "Animales salvajes"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "der Löwe",
+                    "es": "el león"
+                  },
+                  {
+                    "de": "der Bär",
+                    "es": "el oso"
+                  },
+                  {
+                    "de": "der Elefant",
+                    "es": "el elefante"
+                  },
+                  {
+                    "de": "der Affe",
+                    "es": "el mono"
+                  },
+                  {
+                    "de": "der Pinguin",
+                    "es": "el pingüino"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s1_u5_l2",
+            "index": 2,
+            "title": "✏️ Mascotas",
             "kind": "exercises",
             "exercises": [
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el gato»",
+                "prompt": "Selecciona: «die Katze»",
                 "options": [
                   {
                     "id": "a",
@@ -1811,7 +2112,9 @@
                     "label": "der Vogel"
                   }
                 ],
-                "correct": "b"
+                "correct": "b",
+                "explain": "«die Katze» = el gato; ¡femenino en alemán!",
+                "hide_labels": true
               },
               {
                 "type": "listening_match",
@@ -1822,7 +2125,8 @@
                   "der Hut",
                   "die Hand"
                 ],
-                "answer": "der Hund"
+                "answer": "der Hund",
+                "explain": "«der Hund» = el perro. «der Hut» sería el sombrero."
               },
               {
                 "type": "translate_direct",
@@ -1830,7 +2134,8 @@
                 "answer": "der Vogel",
                 "accepted": [
                   "vogel"
-                ]
+                ],
+                "explain": "«der Vogel» = el pájaro; plural: die Vögel."
               },
               {
                 "type": "word_bank",
@@ -1843,11 +2148,12 @@
                 ],
                 "distractors": [
                   "Katze"
-                ]
+                ],
+                "explain": "«heißen» también sirve para mascotas: Mein Hund heißt…"
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el pez»",
+                "prompt": "Selecciona: «der Fisch»",
                 "options": [
                   {
                     "id": "a",
@@ -1870,7 +2176,9 @@
                     "label": "der Hamster"
                   }
                 ],
-                "correct": "c"
+                "correct": "c",
+                "explain": "«der Fisch» = el pez (y también el pescado).",
+                "hide_labels": true
               },
               {
                 "type": "translate_direct",
@@ -1878,19 +2186,12 @@
                 "answer": "das Kaninchen",
                 "accepted": [
                   "kaninchen"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "s1_u5_l2",
-            "index": 2,
-            "title": "En la granja",
-            "kind": "exercises",
-            "exercises": [
+                ],
+                "explain": "«das Kaninchen» = el conejo; las palabras en -chen siempre son neutras."
+              },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «la vaca»",
+                "prompt": "Selecciona: «die Kuh»",
                 "options": [
                   {
                     "id": "a",
@@ -1913,7 +2214,9 @@
                     "label": "das Schaf"
                   }
                 ],
-                "correct": "a"
+                "correct": "a",
+                "explain": "«die Kuh» = la vaca; plural: die Kühe.",
+                "hide_labels": true
               },
               {
                 "type": "listening_match",
@@ -1924,15 +2227,25 @@
                   "das Schwein",
                   "der Vogel"
                 ],
-                "answer": "das Pferd"
-              },
+                "answer": "das Pferd",
+                "explain": "«das Pferd» = el caballo; neutro."
+              }
+            ]
+          },
+          {
+            "id": "s1_u5_l3",
+            "index": 3,
+            "title": "✏️ En la granja",
+            "kind": "exercises",
+            "exercises": [
               {
                 "type": "translate_direct",
                 "prompt": "Traduce con artículo: «el cerdo»",
                 "answer": "das Schwein",
                 "accepted": [
                   "schwein"
-                ]
+                ],
+                "explain": "«das Schwein» = el cerdo."
               },
               {
                 "type": "word_bank",
@@ -1945,7 +2258,8 @@
                 ],
                 "distractors": [
                   "Kuh"
-                ]
+                ],
+                "explain": "«das Huhn» = la gallina; «legt Eier» = pone huevos."
               },
               {
                 "type": "translate_direct",
@@ -1953,11 +2267,12 @@
                 "answer": "das Schaf",
                 "accepted": [
                   "schaf"
-                ]
+                ],
+                "explain": "«das Schaf» = la oveja."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el caballo»",
+                "prompt": "Selecciona: «das Pferd»",
                 "options": [
                   {
                     "id": "a",
@@ -1980,16 +2295,10 @@
                     "label": "das Pferd"
                   }
                 ],
-                "correct": "d"
-              }
-            ]
-          },
-          {
-            "id": "s1_u5_l3",
-            "index": 3,
-            "title": "Der, die o das",
-            "kind": "exercises",
-            "exercises": [
+                "correct": "d",
+                "explain": "«das Pferd» = el caballo → 🐴.",
+                "hide_labels": true
+              },
               {
                 "type": "listening_match",
                 "prompt": "Escucha y elige lo que oyes",
@@ -1999,7 +2308,8 @@
                   "der Mund",
                   "die Mütze"
                 ],
-                "answer": "die Maus"
+                "answer": "die Maus",
+                "explain": "«die Maus» = el ratón; femenino."
               },
               {
                 "type": "translate_direct",
@@ -2007,7 +2317,8 @@
                 "answer": "die Maus",
                 "accepted": [
                   "maus"
-                ]
+                ],
+                "explain": "El ratón en alemán es femenino: DIE Maus, ¡al revés que en español!"
               },
               {
                 "type": "word_bank",
@@ -2021,7 +2332,8 @@
                 "distractors": [
                   "Der",
                   "Das"
-                ]
+                ],
+                "explain": "«die Katze» → artículo DIE; «klein» = pequeño."
               },
               {
                 "type": "word_bank",
@@ -2035,15 +2347,25 @@
                 "distractors": [
                   "Die",
                   "Das"
-                ]
-              },
+                ],
+                "explain": "«der Hund» → artículo DER; «groß» = grande."
+              }
+            ]
+          },
+          {
+            "id": "s1_u5_l4",
+            "index": 4,
+            "title": "✏️ Artículos y animales salvajes",
+            "kind": "exercises",
+            "exercises": [
               {
                 "type": "translate_direct",
                 "prompt": "Traduce con artículo: «el caballo»",
                 "answer": "das Pferd",
                 "accepted": [
                   "pferd"
-                ]
+                ],
+                "explain": "«das Pferd» → artículo DAS (neutro)."
               },
               {
                 "type": "word_bank",
@@ -2056,19 +2378,12 @@
                 ],
                 "distractors": [
                   "Die"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "s1_u5_l4",
-            "index": 4,
-            "title": "Animales salvajes",
-            "kind": "exercises",
-            "exercises": [
+                ],
+                "explain": "«singen» = cantar; «schön» = bonito."
+              },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el león»",
+                "prompt": "Selecciona: «der Löwe»",
                 "options": [
                   {
                     "id": "a",
@@ -2091,7 +2406,9 @@
                     "label": "der Elefant"
                   }
                 ],
-                "correct": "b"
+                "correct": "b",
+                "explain": "«der Löwe» = el león.",
+                "hide_labels": true
               },
               {
                 "type": "listening_match",
@@ -2102,7 +2419,8 @@
                   "der Affe",
                   "die Ente"
                 ],
-                "answer": "der Elefant"
+                "answer": "der Elefant",
+                "explain": "«der Elefant» = el elefante; casi igual que en español."
               },
               {
                 "type": "translate_direct",
@@ -2111,7 +2429,8 @@
                 "accepted": [
                   "baer",
                   "bär"
-                ]
+                ],
+                "explain": "«der Bär» = el oso; con ä (puedes escribir Baer)."
               },
               {
                 "type": "word_bank",
@@ -2124,11 +2443,12 @@
                 ],
                 "distractors": [
                   "Löwe"
-                ]
+                ],
+                "explain": "«der Affe» = el mono; «isst» viene de essen (cambio e→i)."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el pingüino»",
+                "prompt": "Selecciona: «der Pinguin»",
                 "options": [
                   {
                     "id": "a",
@@ -2151,7 +2471,9 @@
                     "label": "die Ente"
                   }
                 ],
-                "correct": "c"
+                "correct": "c",
+                "explain": "«der Pinguin» = el pingüino 🐧 ¡como Antón!",
+                "hide_labels": true
               },
               {
                 "type": "translate_direct",
@@ -2159,14 +2481,15 @@
                 "answer": "Die Tiere leben im Zoo",
                 "accepted": [
                   "die tiere wohnen im zoo"
-                ]
+                ],
+                "explain": "«leben» = vivir; «im Zoo» = in dem Zoo (contracción im)."
               }
             ]
           },
           {
             "id": "s1_u5_l5",
             "index": 5,
-            "title": "Minijuego: parejas",
+            "title": "🎮 Minijuego: parejas",
             "kind": "match_game",
             "pairs": [
               {
@@ -2207,12 +2530,99 @@
           {
             "id": "s1_u6_l1",
             "index": 1,
-            "title": "Las habitaciones",
+            "title": "📖 Aprende: la casa y la negación",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "La casa"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "die Küche",
+                    "es": "la cocina"
+                  },
+                  {
+                    "de": "das Wohnzimmer",
+                    "es": "el salón"
+                  },
+                  {
+                    "de": "das Schlafzimmer",
+                    "es": "el dormitorio"
+                  },
+                  {
+                    "de": "das Badezimmer",
+                    "es": "el baño"
+                  },
+                  {
+                    "de": "der Garten",
+                    "es": "el jardín"
+                  },
+                  {
+                    "de": "das Bett",
+                    "es": "la cama"
+                  },
+                  {
+                    "de": "der Tisch",
+                    "es": "la mesa"
+                  },
+                  {
+                    "de": "der Stuhl",
+                    "es": "la silla"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "«Zimmer» = habitación. Se combina: WOHNzimmer (salón, de wohnen), SCHLAFzimmer (dormitorio, de schlafen), BADEzimmer (baño, de baden)."
+              },
+              {
+                "type": "heading",
+                "text": "Decir que NO: nicht y kein"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "Das Haus ist nicht groß",
+                    "es": "La casa no es grande"
+                  },
+                  {
+                    "de": "Ich wohne nicht hier",
+                    "es": "No vivo aquí"
+                  },
+                  {
+                    "de": "Ich habe kein Auto",
+                    "es": "No tengo coche"
+                  },
+                  {
+                    "de": "Ich habe keine Zeit",
+                    "es": "No tengo tiempo"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "«nicht» niega verbos y adjetivos. «kein/keine» niega SUSTANTIVOS (significa «ningún»): kein Auto, keine Lampe. ¡Nunca se dice «nicht ein»!"
+              },
+              {
+                "type": "example",
+                "de": "Das ist kein Tisch, das ist ein Stuhl!",
+                "es": "¡Eso no es una mesa, es una silla!"
+              }
+            ]
+          },
+          {
+            "id": "s1_u6_l2",
+            "index": 2,
+            "title": "✏️ Habitaciones y muebles",
             "kind": "exercises",
             "exercises": [
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «la cocina»",
+                "prompt": "Selecciona: «die Küche»",
                 "options": [
                   {
                     "id": "a",
@@ -2235,7 +2645,9 @@
                     "label": "das Wohnzimmer"
                   }
                 ],
-                "correct": "a"
+                "correct": "a",
+                "explain": "«die Küche» = la cocina. No confundir con «der Kuchen» (el pastel).",
+                "hide_labels": true
               },
               {
                 "type": "listening_match",
@@ -2246,7 +2658,8 @@
                   "das Schlafzimmer",
                   "das Wohnzimmer"
                 ],
-                "answer": "das Badezimmer"
+                "answer": "das Badezimmer",
+                "explain": "«das Badezimmer» = el baño: baden (bañarse) + Zimmer (habitación)."
               },
               {
                 "type": "translate_direct",
@@ -2254,7 +2667,8 @@
                 "answer": "das Wohnzimmer",
                 "accepted": [
                   "wohnzimmer"
-                ]
+                ],
+                "explain": "«das Wohnzimmer» = el salón: wohnen (vivir) + Zimmer."
               },
               {
                 "type": "word_bank",
@@ -2267,7 +2681,8 @@
                 ],
                 "distractors": [
                   "groß"
-                ]
+                ],
+                "explain": "«klein» = pequeño; el adjetivo va al final con «ist»."
               },
               {
                 "type": "translate_direct",
@@ -2275,11 +2690,12 @@
                 "answer": "das Schlafzimmer",
                 "accepted": [
                   "schlafzimmer"
-                ]
+                ],
+                "explain": "«das Schlafzimmer» = el dormitorio: schlafen (dormir) + Zimmer."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el jardín»",
+                "prompt": "Selecciona: «der Garten»",
                 "options": [
                   {
                     "id": "a",
@@ -2302,19 +2718,13 @@
                     "label": "das Haus"
                   }
                 ],
-                "correct": "b"
-              }
-            ]
-          },
-          {
-            "id": "s1_u6_l2",
-            "index": 2,
-            "title": "Muebles",
-            "kind": "exercises",
-            "exercises": [
+                "correct": "b",
+                "explain": "«der Garten» = el jardín; como el inglés «garden».",
+                "hide_labels": true
+              },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el sofá»",
+                "prompt": "Selecciona: «das Sofa»",
                 "options": [
                   {
                     "id": "a",
@@ -2337,7 +2747,9 @@
                     "label": "die Tür"
                   }
                 ],
-                "correct": "c"
+                "correct": "c",
+                "explain": "«das Sofa» = el sofá; neutro.",
+                "hide_labels": true
               },
               {
                 "type": "listening_match",
@@ -2348,15 +2760,25 @@
                   "der Stuhl",
                   "der Strand"
                 ],
-                "answer": "der Schrank"
-              },
+                "answer": "der Schrank",
+                "explain": "«der Schrank» = el armario. «der Strand» sería la playa."
+              }
+            ]
+          },
+          {
+            "id": "s1_u6_l3",
+            "index": 3,
+            "title": "✏️ Negación con nicht",
+            "kind": "exercises",
+            "exercises": [
               {
                 "type": "translate_direct",
                 "prompt": "Traduce con artículo: «la cama»",
                 "answer": "das Bett",
                 "accepted": [
                   "bett"
-                ]
+                ],
+                "explain": "«das Bett» = la cama; con doble t."
               },
               {
                 "type": "word_bank",
@@ -2369,11 +2791,12 @@
                   "der",
                   "Küche"
                 ],
-                "distractors": []
+                "distractors": [],
+                "explain": "«in der Küche» = en la cocina (dativo tras «in» sin movimiento)."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «la silla»",
+                "prompt": "Selecciona: «der Stuhl»",
                 "options": [
                   {
                     "id": "a",
@@ -2396,7 +2819,9 @@
                     "label": "die Lampe"
                   }
                 ],
-                "correct": "a"
+                "correct": "a",
+                "explain": "«der Stuhl» = la silla; ¡masculino en alemán!",
+                "hide_labels": true
               },
               {
                 "type": "translate_direct",
@@ -2404,16 +2829,9 @@
                 "answer": "die Lampe",
                 "accepted": [
                   "lampe"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "s1_u6_l3",
-            "index": 3,
-            "title": "Negación con nicht",
-            "kind": "exercises",
-            "exercises": [
+                ],
+                "explain": "«die Lampe» = la lámpara."
+              },
               {
                 "type": "word_bank",
                 "prompt": "Construye: «La casa no es grande»",
@@ -2426,7 +2844,8 @@
                 ],
                 "distractors": [
                   "kein"
-                ]
+                ],
+                "explain": "«nicht» niega adjetivos: ist NICHT groß."
               },
               {
                 "type": "translate_direct",
@@ -2434,7 +2853,8 @@
                 "answer": "Ich wohne nicht hier",
                 "accepted": [
                   "ich wohne hier nicht"
-                ]
+                ],
+                "explain": "«nicht» va normalmente detrás del verbo: Ich wohne nicht hier."
               },
               {
                 "type": "listening_match",
@@ -2445,7 +2865,8 @@
                   "Das ist mein Zimmer",
                   "Das ist dein Zimmer"
                 ],
-                "answer": "Das ist nicht mein Zimmer"
+                "answer": "Das ist nicht mein Zimmer",
+                "explain": "«nicht mein Zimmer»: niega el posesivo (no es MI habitación)."
               },
               {
                 "type": "word_bank",
@@ -2459,13 +2880,23 @@
                 ],
                 "distractors": [
                   "kein"
-                ]
-              },
+                ],
+                "explain": "«oben» = arriba; «unten» = abajo."
+              }
+            ]
+          },
+          {
+            "id": "s1_u6_l4",
+            "index": 4,
+            "title": "✏️ Negación con kein",
+            "kind": "exercises",
+            "exercises": [
               {
                 "type": "translate_direct",
                 "prompt": "¿Qué palabra niega un verbo o un adjetivo?",
                 "answer": "nicht",
-                "accepted": []
+                "accepted": [],
+                "explain": "«nicht» para verbos/adjetivos; «kein» para sustantivos."
               },
               {
                 "type": "word_bank",
@@ -2478,16 +2909,9 @@
                 ],
                 "distractors": [
                   "kein"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "s1_u6_l4",
-            "index": 4,
-            "title": "Negación con kein",
-            "kind": "exercises",
-            "exercises": [
+                ],
+                "explain": "«funktionieren» = funcionar; el «nicht» cierra la frase."
+              },
               {
                 "type": "word_bank",
                 "prompt": "Construye: «No tengo coche»",
@@ -2500,7 +2924,8 @@
                 "distractors": [
                   "nicht",
                   "ein"
-                ]
+                ],
+                "explain": "«kein» niega sustantivos: kein Auto = ningún coche."
               },
               {
                 "type": "translate_direct",
@@ -2508,7 +2933,8 @@
                 "answer": "Wir haben keinen Garten",
                 "accepted": [
                   "wir haben kein garten"
-                ]
+                ],
+                "explain": "Garten es masculino → KEINEN en acusativo (como einen)."
               },
               {
                 "type": "listening_match",
@@ -2519,7 +2945,8 @@
                   "Ich habe keine Katze",
                   "Ich habe kein Eis"
                 ],
-                "answer": "Ich habe keine Zeit"
+                "answer": "Ich habe keine Zeit",
+                "explain": "«keine Zeit»: Zeit es femenino → keine."
               },
               {
                 "type": "word_bank",
@@ -2533,13 +2960,15 @@
                 "distractors": [
                   "nicht",
                   "keine"
-                ]
+                ],
+                "explain": "«kein Tisch»: masculino en nominativo → kein, sin terminación."
               },
               {
                 "type": "translate_direct",
                 "prompt": "Traduce: «No tengo hermanos»",
                 "answer": "Ich habe keine Geschwister",
-                "accepted": []
+                "accepted": [],
+                "explain": "«keine Geschwister»: para el plural se usa keine."
               },
               {
                 "type": "word_bank",
@@ -2552,14 +2981,15 @@
                 ],
                 "distractors": [
                   "nicht"
-                ]
+                ],
+                "explain": "«Es gibt» = hay; Fenster es neutro → kein Fenster."
               }
             ]
           },
           {
             "id": "s1_u6_l5",
             "index": 5,
-            "title": "Minijuego: parejas",
+            "title": "🎮 Minijuego: parejas",
             "kind": "match_game",
             "pairs": [
               {
@@ -2600,7 +3030,90 @@
           {
             "id": "s1_u7_l1",
             "index": 1,
-            "title": "Los días de la semana",
+            "title": "📖 Aprende: días, meses y la hora",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "Los días de la semana"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "Montag",
+                    "es": "lunes"
+                  },
+                  {
+                    "de": "Dienstag",
+                    "es": "martes"
+                  },
+                  {
+                    "de": "Mittwoch",
+                    "es": "miércoles"
+                  },
+                  {
+                    "de": "Donnerstag",
+                    "es": "jueves"
+                  },
+                  {
+                    "de": "Freitag",
+                    "es": "viernes"
+                  },
+                  {
+                    "de": "Samstag",
+                    "es": "sábado"
+                  },
+                  {
+                    "de": "Sonntag",
+                    "es": "domingo"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "Todos los días son masculinos (der Montag) y la semana alemana empieza en lunes. «Mittwoch» significa «mitad de la semana»."
+              },
+              {
+                "type": "heading",
+                "text": "La hora"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "Wie spät ist es?",
+                    "es": "¿Qué hora es?"
+                  },
+                  {
+                    "de": "Es ist drei Uhr",
+                    "es": "Son las tres"
+                  },
+                  {
+                    "de": "um acht Uhr",
+                    "es": "a las ocho"
+                  },
+                  {
+                    "de": "halb vier",
+                    "es": "las tres y media"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "¡La trampa del reloj alemán! «halb vier» NO son las cuatro y media: es media hora ANTES de las cuatro, o sea las 3:30."
+              },
+              {
+                "type": "example",
+                "de": "Der Unterricht beginnt um acht Uhr.",
+                "es": "La clase empieza a las ocho."
+              }
+            ]
+          },
+          {
+            "id": "s1_u7_l2",
+            "index": 2,
+            "title": "✏️ Días de la semana",
             "kind": "exercises",
             "exercises": [
               {
@@ -2612,13 +3125,15 @@
                   "Sonntag",
                   "Morgen"
                 ],
-                "answer": "Montag"
+                "answer": "Montag",
+                "explain": "«Montag» = lunes; viene de «Mond» (luna), igual que en español."
               },
               {
                 "type": "translate_direct",
                 "prompt": "Traduce el día: «miércoles»",
                 "answer": "Mittwoch",
-                "accepted": []
+                "accepted": [],
+                "explain": "«Mittwoch» = miércoles; significa «mitad de la semana»."
               },
               {
                 "type": "word_bank",
@@ -2630,7 +3145,8 @@
                 ],
                 "distractors": [
                   "Morgen"
-                ]
+                ],
+                "explain": "«heute» = hoy; «Freitag» = viernes."
               },
               {
                 "type": "listening_match",
@@ -2641,13 +3157,15 @@
                   "Dienstag",
                   "Samstag"
                 ],
-                "answer": "Donnerstag"
+                "answer": "Donnerstag",
+                "explain": "«Donnerstag» = jueves; el día de Donner (el trueno, como Thor)."
               },
               {
                 "type": "translate_direct",
                 "prompt": "Traduce el día: «domingo»",
                 "answer": "Sonntag",
-                "accepted": []
+                "accepted": [],
+                "explain": "«Sonntag» = domingo; el día del sol (die Sonne)."
               },
               {
                 "type": "word_bank",
@@ -2659,16 +3177,9 @@
                 ],
                 "distractors": [
                   "Heute"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "s1_u7_l2",
-            "index": 2,
-            "title": "Los meses y estaciones",
-            "kind": "exercises",
-            "exercises": [
+                ],
+                "explain": "«morgen» = mañana (el día siguiente); «der Morgen» = la mañana."
+              },
               {
                 "type": "listening_match",
                 "prompt": "Escucha y elige lo que oyes",
@@ -2678,14 +3189,24 @@
                   "Juni",
                   "Juli"
                 ],
-                "answer": "Januar"
+                "answer": "Januar",
+                "explain": "«Januar» = enero; los meses se parecen mucho al español."
               },
               {
                 "type": "translate_direct",
                 "prompt": "Traduce el mes: «mayo»",
                 "answer": "Mai",
-                "accepted": []
-              },
+                "accepted": [],
+                "explain": "«Mai» = mayo; ¡el más corto de escribir!"
+              }
+            ]
+          },
+          {
+            "id": "s1_u7_l3",
+            "index": 3,
+            "title": "✏️ Meses y la hora",
+            "kind": "exercises",
+            "exercises": [
               {
                 "type": "word_bank",
                 "prompt": "Construye: «Mi cumpleaños es en agosto»",
@@ -2698,13 +3219,15 @@
                 ],
                 "distractors": [
                   "Mai"
-                ]
+                ],
+                "explain": "«im August» = en agosto; con meses y estaciones se usa «im»."
               },
               {
                 "type": "translate_direct",
                 "prompt": "Traduce el mes: «diciembre»",
                 "answer": "Dezember",
-                "accepted": []
+                "accepted": [],
+                "explain": "«Dezember» = diciembre; con z."
               },
               {
                 "type": "listening_match",
@@ -2715,7 +3238,8 @@
                   "der Samstag",
                   "die Sonne"
                 ],
-                "answer": "der Sommer"
+                "answer": "der Sommer",
+                "explain": "«der Sommer» = el verano; «der Winter» = el invierno."
               },
               {
                 "type": "word_bank",
@@ -2728,16 +3252,9 @@
                 ],
                 "distractors": [
                   "Sommer"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "s1_u7_l3",
-            "index": 3,
-            "title": "¿Qué hora es?",
-            "kind": "exercises",
-            "exercises": [
+                ],
+                "explain": "«es schneit» = nieva; «es regnet» = llueve."
+              },
               {
                 "type": "listening_match",
                 "prompt": "Escucha y elige lo que oyes",
@@ -2747,7 +3264,8 @@
                   "Wie alt bist du?",
                   "Wie geht es dir?"
                 ],
-                "answer": "Wie spät ist es?"
+                "answer": "Wie spät ist es?",
+                "explain": "«Wie spät ist es?» = ¿qué hora es? (literal: ¿cómo de tarde es?)."
               },
               {
                 "type": "translate_direct",
@@ -2757,7 +3275,8 @@
                   "wie spaet ist es",
                   "wie viel uhr ist es",
                   "wieviel uhr ist es"
-                ]
+                ],
+                "explain": "También vale «Wie viel Uhr ist es?»."
               },
               {
                 "type": "word_bank",
@@ -2770,7 +3289,8 @@
                 ],
                 "distractors": [
                   "um"
-                ]
+                ],
+                "explain": "«Es ist … Uhr» = son las …; «Uhr» nunca cambia."
               },
               {
                 "type": "word_bank",
@@ -2783,15 +3303,25 @@
                   "acht",
                   "Uhr"
                 ],
-                "distractors": []
-              },
+                "distractors": [],
+                "explain": "«um» + hora = a las: um acht Uhr."
+              }
+            ]
+          },
+          {
+            "id": "s1_u7_l4",
+            "index": 4,
+            "title": "✏️ Preguntas Wann y Wie",
+            "kind": "exercises",
+            "exercises": [
               {
                 "type": "translate_direct",
                 "prompt": "Traduce: «a las diez»",
                 "answer": "um zehn Uhr",
                 "accepted": [
                   "um zehn"
-                ]
+                ],
+                "explain": "«um zehn (Uhr)»; al hablar se puede omitir «Uhr»."
               },
               {
                 "type": "listening_match",
@@ -2802,16 +3332,9 @@
                   "Es ist vier Uhr",
                   "Es ist halb sechs"
                 ],
-                "answer": "Es ist halb vier"
-              }
-            ]
-          },
-          {
-            "id": "s1_u7_l4",
-            "index": 4,
-            "title": "Preguntas con Wann y Wie",
-            "kind": "exercises",
-            "exercises": [
+                "answer": "Es ist halb vier",
+                "explain": "¡Trampa! «halb vier» = las 3:30 (media hora ANTES de las cuatro)."
+              },
               {
                 "type": "word_bank",
                 "prompt": "Construye: «¿Cuándo es tu cumpleaños?»",
@@ -2824,13 +3347,15 @@
                 "distractors": [
                   "Wie",
                   "Wo"
-                ]
+                ],
+                "explain": "«Wann» = cuándo; «der Geburtstag» = el cumpleaños."
               },
               {
                 "type": "translate_direct",
                 "prompt": "Traduce: «¿cuándo?»",
                 "answer": "wann",
-                "accepted": []
+                "accepted": [],
+                "explain": "«wann» pregunta el momento; «wo» el lugar; «wie» el modo."
               },
               {
                 "type": "listening_match",
@@ -2841,7 +3366,8 @@
                   "Wann gehst du?",
                   "Wo wohnst du?"
                 ],
-                "answer": "Wann kommst du?"
+                "answer": "Wann kommst du?",
+                "explain": "«Wann kommst du?» = ¿cuándo vienes?"
               },
               {
                 "type": "word_bank",
@@ -2854,13 +3380,15 @@
                 ],
                 "distractors": [
                   "Wann"
-                ]
+                ],
+                "explain": "«Wie geht es dir?» = ¿cómo estás? Respuesta: «Gut, danke!»."
               },
               {
                 "type": "translate_direct",
                 "prompt": "Traduce: «¿Cuántos años tienes?»",
                 "answer": "Wie alt bist du?",
-                "accepted": []
+                "accepted": [],
+                "explain": "«Wie alt bist du?» = literal «¿cómo de viejo eres?»."
               },
               {
                 "type": "word_bank",
@@ -2873,14 +3401,15 @@
                 ],
                 "distractors": [
                   "Wie"
-                ]
+                ],
+                "explain": "«beginnen» = empezar; tras «Wann» el verbo va en 2ª posición."
               }
             ]
           },
           {
             "id": "s1_u7_l5",
             "index": 5,
-            "title": "Minijuego: parejas",
+            "title": "🎮 Minijuego: parejas",
             "kind": "match_game",
             "pairs": [
               {
@@ -2921,7 +3450,94 @@
           {
             "id": "s1_u8_l1",
             "index": 1,
-            "title": "Sein y haben",
+            "title": "📖 Aprende: el presente de los verbos",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "Los imprescindibles: sein y haben"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "ich bin / ich habe",
+                    "es": "yo soy / yo tengo"
+                  },
+                  {
+                    "de": "du bist / du hast",
+                    "es": "tú eres / tú tienes"
+                  },
+                  {
+                    "de": "er, sie ist / hat",
+                    "es": "él, ella es / tiene"
+                  },
+                  {
+                    "de": "wir sind / wir haben",
+                    "es": "nosotros somos / tenemos"
+                  },
+                  {
+                    "de": "ihr seid / ihr habt",
+                    "es": "vosotros sois / tenéis"
+                  },
+                  {
+                    "de": "sie sind / sie haben",
+                    "es": "ellos son / tienen"
+                  }
+                ]
+              },
+              {
+                "type": "heading",
+                "text": "Verbos regulares"
+              },
+              {
+                "type": "text",
+                "text": "Se quita -en del infinitivo y se añade: -e (ich), -st (du), -t (er/sie), -en (wir), -t (ihr), -en (sie). Ejemplo con spielen: ich spiele, du spielst, er spielt…"
+              },
+              {
+                "type": "heading",
+                "text": "Cambios vocálicos (solo con du y er/sie)"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "sprechen → er spricht",
+                    "es": "hablar → él habla (e→i)"
+                  },
+                  {
+                    "de": "essen → er isst",
+                    "es": "comer → él come (e→i)"
+                  },
+                  {
+                    "de": "lesen → er liest",
+                    "es": "leer → él lee (e→ie)"
+                  },
+                  {
+                    "de": "schlafen → er schläft",
+                    "es": "dormir → él duerme (a→ä)"
+                  },
+                  {
+                    "de": "fahren → er fährt",
+                    "es": "conducir → él conduce (a→ä)"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "Los cambios vocálicos SOLO ocurren con du y er/sie. Con ich, wir, ihr y sie-plural el verbo es normal: ich spreche, wir sprechen."
+              },
+              {
+                "type": "example",
+                "de": "Er spricht Deutsch und sie liest ein Buch.",
+                "es": "Él habla alemán y ella lee un libro."
+              }
+            ]
+          },
+          {
+            "id": "s1_u8_l2",
+            "index": 2,
+            "title": "✏️ Sein y haben",
             "kind": "exercises",
             "exercises": [
               {
@@ -2935,7 +3551,8 @@
                 ],
                 "distractors": [
                   "bist"
-                ]
+                ],
+                "explain": "sein: ich BIN. El origen se indica con «aus»."
               },
               {
                 "type": "listening_match",
@@ -2946,7 +3563,8 @@
                   "Wir sind hier",
                   "Ihr seid müde"
                 ],
-                "answer": "Wir sind müde"
+                "answer": "Wir sind müde",
+                "explain": "«wir sind» = somos/estamos; «müde» = cansados."
               },
               {
                 "type": "translate_direct",
@@ -2954,7 +3572,8 @@
                 "answer": "du bist",
                 "accepted": [
                   "bist"
-                ]
+                ],
+                "explain": "sein es totalmente irregular: bin, bist, ist, sind, seid, sind."
               },
               {
                 "type": "word_bank",
@@ -2967,7 +3586,8 @@
                 ],
                 "distractors": [
                   "habe"
-                ]
+                ],
+                "explain": "haben: sie HAT; Katze es femenino → eine."
               },
               {
                 "type": "translate_direct",
@@ -2975,7 +3595,8 @@
                 "answer": "ihr habt",
                 "accepted": [
                   "habt"
-                ]
+                ],
+                "explain": "haben: ihr HABT (vosotros)."
               },
               {
                 "type": "word_bank",
@@ -2988,23 +3609,17 @@
                 "distractors": [
                   "ist",
                   "seid"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "s1_u8_l2",
-            "index": 2,
-            "title": "Verbos regulares",
-            "kind": "exercises",
-            "exercises": [
+                ],
+                "explain": "«sie sind» (ellos) = son; «nett» = simpáticos."
+              },
               {
                 "type": "translate_direct",
                 "prompt": "Conjuga «lernen»: «yo aprendo»",
                 "answer": "ich lerne",
                 "accepted": [
                   "lerne"
-                ]
+                ],
+                "explain": "Regulares: raíz + -e para ich → ich lerne."
               },
               {
                 "type": "word_bank",
@@ -3016,8 +3631,17 @@
                 ],
                 "distractors": [
                   "spielt"
-                ]
-              },
+                ],
+                "explain": "Con wir se usa -en, igual que el infinitivo: wir spielen."
+              }
+            ]
+          },
+          {
+            "id": "s1_u8_l3",
+            "index": 3,
+            "title": "✏️ Verbos regulares",
+            "kind": "exercises",
+            "exercises": [
               {
                 "type": "listening_match",
                 "prompt": "Escucha y elige lo que oyes",
@@ -3027,7 +3651,8 @@
                   "Er kommt aus Hamburg",
                   "Er arbeitet in Hamburg"
                 ],
-                "answer": "Er wohnt in Hamburg"
+                "answer": "Er wohnt in Hamburg",
+                "explain": "er/sie lleva -t: er wohnt."
               },
               {
                 "type": "translate_direct",
@@ -3035,7 +3660,8 @@
                 "answer": "Sie hört Musik",
                 "accepted": [
                   "sie hoert musik"
-                ]
+                ],
+                "explain": "«hören» = escuchar/oír: sie hört."
               },
               {
                 "type": "word_bank",
@@ -3047,7 +3673,8 @@
                 ],
                 "distractors": [
                   "Arbeitet"
-                ]
+                ],
+                "explain": "Los verbos en -t/-d añaden una e: du arbeitEst."
               },
               {
                 "type": "translate_direct",
@@ -3055,16 +3682,9 @@
                 "answer": "wir wohnen",
                 "accepted": [
                   "wir leben"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "s1_u8_l3",
-            "index": 3,
-            "title": "Cambios vocálicos: e → i / ie",
-            "kind": "exercises",
-            "exercises": [
+                ],
+                "explain": "«wohnen» = residir; «leben» = vivir en general. Ambas valen."
+              },
               {
                 "type": "word_bank",
                 "prompt": "Construye: «Él habla alemán»",
@@ -3076,7 +3696,8 @@
                 "distractors": [
                   "sprecht",
                   "spreche"
-                ]
+                ],
+                "explain": "sprechen cambia e→i: ich spreche, PERO er spricht."
               },
               {
                 "type": "translate_direct",
@@ -3084,7 +3705,8 @@
                 "answer": "er isst",
                 "accepted": [
                   "isst"
-                ]
+                ],
+                "explain": "essen: er ISST (suena igual que «ist», ¡pero es comer!)."
               },
               {
                 "type": "listening_match",
@@ -3095,7 +3717,8 @@
                   "Sie sieht ein Buch",
                   "Sie isst einen Kuchen"
                 ],
-                "answer": "Sie liest ein Buch"
+                "answer": "Sie liest ein Buch",
+                "explain": "lesen cambia e→ie: sie liest."
               },
               {
                 "type": "word_bank",
@@ -3107,15 +3730,25 @@
                 ],
                 "distractors": [
                   "Sehe"
-                ]
-              },
+                ],
+                "explain": "sehen: du siehst; «fernsehen» = ver la tele."
+              }
+            ]
+          },
+          {
+            "id": "s1_u8_l4",
+            "index": 4,
+            "title": "✏️ Cambios vocálicos",
+            "kind": "exercises",
+            "exercises": [
               {
                 "type": "translate_direct",
                 "prompt": "Conjuga «lesen»: «él lee»",
                 "answer": "er liest",
                 "accepted": [
                   "liest"
-                ]
+                ],
+                "explain": "lesen: er liest; el cambio solo pasa con du y er/sie."
               },
               {
                 "type": "word_bank",
@@ -3128,16 +3761,9 @@
                 ],
                 "distractors": [
                   "nehmt"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "s1_u8_l4",
-            "index": 4,
-            "title": "Cambios vocálicos: a → ä",
-            "kind": "exercises",
-            "exercises": [
+                ],
+                "explain": "nehmen tiene cambio fuerte: du nimmst, er nimmt."
+              },
               {
                 "type": "word_bank",
                 "prompt": "Construye: «Él duerme mucho»",
@@ -3148,7 +3774,8 @@
                 ],
                 "distractors": [
                   "schlafe"
-                ]
+                ],
+                "explain": "schlafen cambia a→ä: er schläft."
               },
               {
                 "type": "translate_direct",
@@ -3158,7 +3785,8 @@
                   "sie faehrt",
                   "faehrt",
                   "fährt"
-                ]
+                ],
+                "explain": "fahren: a→ä: sie fährt."
               },
               {
                 "type": "listening_match",
@@ -3169,7 +3797,8 @@
                   "Er kauft schnell",
                   "Er schläft viel"
                 ],
-                "answer": "Er läuft schnell"
+                "answer": "Er läuft schnell",
+                "explain": "laufen: au→äu: er läuft (= corre)."
               },
               {
                 "type": "word_bank",
@@ -3181,7 +3810,8 @@
                 ],
                 "distractors": [
                   "Spricht"
-                ]
+                ],
+                "explain": "sprechen: du sprichst."
               },
               {
                 "type": "translate_direct",
@@ -3189,7 +3819,8 @@
                 "answer": "er hilft",
                 "accepted": [
                   "hilft"
-                ]
+                ],
+                "explain": "helfen: e→i: er hilft."
               },
               {
                 "type": "word_bank",
@@ -3203,14 +3834,15 @@
                 ],
                 "distractors": [
                   "fahre"
-                ]
+                ],
+                "explain": "«zur Arbeit» = al trabajo (zu + der = zur)."
               }
             ]
           },
           {
             "id": "s1_u8_l5",
             "index": 5,
-            "title": "Minijuego: parejas",
+            "title": "🎮 Minijuego: parejas",
             "kind": "match_game",
             "pairs": [
               {
@@ -3251,7 +3883,90 @@
           {
             "id": "s1_u9_l1",
             "index": 1,
-            "title": "Por la mañana",
+            "title": "📖 Aprende: mi día y los verbos separables",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "Mi día"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "aufstehen",
+                    "es": "levantarse"
+                  },
+                  {
+                    "de": "frühstücken",
+                    "es": "desayunar"
+                  },
+                  {
+                    "de": "zur Schule fahren",
+                    "es": "ir al colegio"
+                  },
+                  {
+                    "de": "zu Mittag essen",
+                    "es": "almorzar"
+                  },
+                  {
+                    "de": "Hausaufgaben machen",
+                    "es": "hacer los deberes"
+                  },
+                  {
+                    "de": "zu Abend essen",
+                    "es": "cenar"
+                  },
+                  {
+                    "de": "ins Bett gehen",
+                    "es": "acostarse"
+                  }
+                ]
+              },
+              {
+                "type": "heading",
+                "text": "Los verbos separables"
+              },
+              {
+                "type": "text",
+                "text": "Muchos verbos llevan una partícula (auf-, an-, ab-, ein-, fern-, aus-…). Al conjugarlos, la partícula se separa y SALTA al final de la frase."
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "aufstehen → Ich stehe um sieben auf",
+                    "es": "Me levanto a las siete"
+                  },
+                  {
+                    "de": "anrufen → Ich rufe dich an",
+                    "es": "Te llamo"
+                  },
+                  {
+                    "de": "einkaufen → Ich kaufe ein",
+                    "es": "Hago la compra"
+                  },
+                  {
+                    "de": "fernsehen → Ich sehe fern",
+                    "es": "Veo la tele"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "Piensa en la partícula como un imán que se despega del verbo y se pega al FINAL de la frase."
+              },
+              {
+                "type": "example",
+                "de": "Ich hole dich um sechs ab.",
+                "es": "Te recojo a las seis. (abholen)"
+              }
+            ]
+          },
+          {
+            "id": "s1_u9_l2",
+            "index": 2,
+            "title": "✏️ Por la mañana",
             "kind": "exercises",
             "exercises": [
               {
@@ -3265,7 +3980,8 @@
                   "Uhr",
                   "auf"
                 ],
-                "distractors": []
+                "distractors": [],
+                "explain": "«aufstehen» es separable: el «auf» salta al FINAL: Ich stehe … auf."
               },
               {
                 "type": "listening_match",
@@ -3276,7 +3992,8 @@
                   "Ich stehe um acht auf",
                   "Ich schlafe bis acht"
                 ],
-                "answer": "Ich frühstücke um acht"
+                "answer": "Ich frühstücke um acht",
+                "explain": "«frühstücken» = desayunar; este no es separable."
               },
               {
                 "type": "translate_direct",
@@ -3284,7 +4001,8 @@
                 "answer": "Ich dusche mich",
                 "accepted": [
                   "ich dusche"
-                ]
+                ],
+                "explain": "«sich duschen» es reflexivo: ich dusche MICH."
               },
               {
                 "type": "word_bank",
@@ -3296,7 +4014,8 @@
                   "die",
                   "Zähne"
                 ],
-                "distractors": []
+                "distractors": [],
+                "explain": "«die Zähne» = los dientes; «putzen» = limpiar."
               },
               {
                 "type": "translate_direct",
@@ -3304,11 +4023,12 @@
                 "answer": "frühstücken",
                 "accepted": [
                   "fruehstuecken"
-                ]
+                ],
+                "explain": "«das Frühstück» = el desayuno; el verbo es frühstücken."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el despertador»",
+                "prompt": "Selecciona: «der Wecker»",
                 "options": [
                   {
                     "id": "a",
@@ -3331,16 +4051,10 @@
                     "label": "die Dusche"
                   }
                 ],
-                "correct": "b"
-              }
-            ]
-          },
-          {
-            "id": "s1_u9_l2",
-            "index": 2,
-            "title": "Durante el día",
-            "kind": "exercises",
-            "exercises": [
+                "correct": "b",
+                "explain": "«der Wecker» = el despertador; de «wecken» (despertar).",
+                "hide_labels": true
+              },
               {
                 "type": "word_bank",
                 "prompt": "Construye: «Voy al colegio en bici»",
@@ -3353,7 +4067,8 @@
                   "zur",
                   "Schule"
                 ],
-                "distractors": []
+                "distractors": [],
+                "explain": "«mit dem Rad» = en bici; «zur Schule» = al colegio."
               },
               {
                 "type": "listening_match",
@@ -3364,15 +4079,25 @@
                   "Ich mache das Essen",
                   "Ich mache Sport"
                 ],
-                "answer": "Ich mache Hausaufgaben"
-              },
+                "answer": "Ich mache Hausaufgaben",
+                "explain": "«die Hausaufgaben» = los deberes (tareas de casa)."
+              }
+            ]
+          },
+          {
+            "id": "s1_u9_l3",
+            "index": 3,
+            "title": "✏️ Durante el día",
+            "kind": "exercises",
+            "exercises": [
               {
                 "type": "translate_direct",
                 "prompt": "Traduce: «Yo cocino»",
                 "answer": "ich koche",
                 "accepted": [
                   "koche"
-                ]
+                ],
+                "explain": "«kochen» = cocinar: ich koche."
               },
               {
                 "type": "word_bank",
@@ -3384,7 +4109,8 @@
                   "ich",
                   "Fußball"
                 ],
-                "distractors": []
+                "distractors": [],
+                "explain": "Al empezar con «Am Nachmittag», el sujeto va tras el verbo: … spiele ICH."
               },
               {
                 "type": "translate_direct",
@@ -3392,7 +4118,8 @@
                 "answer": "zu Mittag essen",
                 "accepted": [
                   "mittagessen"
-                ]
+                ],
+                "explain": "«zu Mittag essen» = almorzar; «das Mittagessen» = el almuerzo."
               },
               {
                 "type": "word_bank",
@@ -3404,16 +4131,9 @@
                   "die",
                   "Hausaufgaben"
                 ],
-                "distractors": []
-              }
-            ]
-          },
-          {
-            "id": "s1_u9_l3",
-            "index": 3,
-            "title": "Verbos separables",
-            "kind": "exercises",
-            "exercises": [
+                "distractors": [],
+                "explain": "«danach» = después; el verbo sigue en 2ª posición: Danach mache ich…"
+              },
               {
                 "type": "word_bank",
                 "prompt": "Construye (aufmachen): «La tienda abre a las nueve»",
@@ -3425,7 +4145,8 @@
                   "neun",
                   "auf"
                 ],
-                "distractors": []
+                "distractors": [],
+                "explain": "«aufmachen» = abrir (separable): macht … auf."
               },
               {
                 "type": "listening_match",
@@ -3436,7 +4157,8 @@
                   "Ich hole dich ab",
                   "Ich sehe dich an"
                 ],
-                "answer": "Ich rufe dich an"
+                "answer": "Ich rufe dich an",
+                "explain": "«anrufen» = llamar por teléfono: rufe … an."
               },
               {
                 "type": "translate_direct",
@@ -3444,7 +4166,8 @@
                 "answer": "ich kaufe ein",
                 "accepted": [
                   "einkaufen"
-                ]
+                ],
+                "explain": "«einkaufen» = hacer la compra: kaufe … ein."
               },
               {
                 "type": "word_bank",
@@ -3458,8 +4181,17 @@
                   "Uhr",
                   "ab"
                 ],
-                "distractors": []
-              },
+                "distractors": [],
+                "explain": "«abfahren» = salir (un transporte): fährt … ab."
+              }
+            ]
+          },
+          {
+            "id": "s1_u9_l4",
+            "index": 4,
+            "title": "✏️ Separables y noche",
+            "kind": "exercises",
+            "exercises": [
               {
                 "type": "word_bank",
                 "prompt": "Construye (abholen): «Te recojo a las seis»",
@@ -3471,7 +4203,8 @@
                   "sechs",
                   "ab"
                 ],
-                "distractors": []
+                "distractors": [],
+                "explain": "«abholen» = recoger a alguien: hole … ab."
               },
               {
                 "type": "translate_direct",
@@ -3479,16 +4212,9 @@
                 "answer": "ich sehe fern",
                 "accepted": [
                   "fernsehen"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "s1_u9_l4",
-            "index": 4,
-            "title": "Por la noche",
-            "kind": "exercises",
-            "exercises": [
+                ],
+                "explain": "«fernsehen» = ver la tele: sehe … fern."
+              },
               {
                 "type": "word_bank",
                 "prompt": "Construye: «Ceno a las ocho»",
@@ -3500,7 +4226,8 @@
                   "zu",
                   "Abend"
                 ],
-                "distractors": []
+                "distractors": [],
+                "explain": "«zu Abend essen» = cenar; «das Abendessen» = la cena."
               },
               {
                 "type": "listening_match",
@@ -3511,7 +4238,8 @@
                   "Ich gehe ins Kino",
                   "Ich gehe nach Hause"
                 ],
-                "answer": "Ich gehe ins Bett"
+                "answer": "Ich gehe ins Bett",
+                "explain": "«ins Bett gehen» = irse a la cama (ins = in das)."
               },
               {
                 "type": "translate_direct",
@@ -3519,7 +4247,8 @@
                 "answer": "Ich gehe früh ins Bett",
                 "accepted": [
                   "ich gehe frueh ins bett"
-                ]
+                ],
+                "explain": "«früh» = temprano; «spät» = tarde."
               },
               {
                 "type": "word_bank",
@@ -3532,13 +4261,15 @@
                   "ein",
                   "Buch"
                 ],
-                "distractors": []
+                "distractors": [],
+                "explain": "Al empezar con «Am Abend», el sujeto salta tras el verbo: … lese ICH."
               },
               {
                 "type": "translate_direct",
                 "prompt": "Traduce el verbo: «dormir»",
                 "answer": "schlafen",
-                "accepted": []
+                "accepted": [],
+                "explain": "«schlafen» = dormir; con er/sie: schläft (a→ä)."
               },
               {
                 "type": "word_bank",
@@ -3552,14 +4283,15 @@
                 ],
                 "distractors": [
                   "an"
-                ]
+                ],
+                "explain": "«ausmachen» = apagar; «anmachen» = encender."
               }
             ]
           },
           {
             "id": "s1_u9_l5",
             "index": 5,
-            "title": "Minijuego: parejas",
+            "title": "🎮 Minijuego: parejas",
             "kind": "match_game",
             "pairs": [
               {
@@ -3600,7 +4332,48 @@
           {
             "id": "s1_u10_l1",
             "index": 1,
-            "title": "Repaso: saludos y familia",
+            "title": "📖 Repasa: las 5 reglas de oro de A1",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "¡Enhorabuena, última unidad!"
+              },
+              {
+                "type": "text",
+                "text": "Antes del gran repaso, recuerda las cinco reglas que has aprendido en este nivel."
+              },
+              {
+                "type": "tip",
+                "text": "1️⃣ El verbo va SIEMPRE en 2ª posición: «Am Abend lese ich ein Buch»."
+              },
+              {
+                "type": "tip",
+                "text": "2️⃣ Cada sustantivo tiene su artículo: der Hund, die Katze, das Pferd. ¡Y mayúscula siempre!"
+              },
+              {
+                "type": "tip",
+                "text": "3️⃣ «nicht» niega verbos y adjetivos; «kein/keine» niega sustantivos."
+              },
+              {
+                "type": "tip",
+                "text": "4️⃣ Algunos verbos cambian la vocal con du y er/sie: er spricht, er isst, er schläft."
+              },
+              {
+                "type": "tip",
+                "text": "5️⃣ Los verbos separables lanzan su partícula al final: Ich stehe um sieben AUF."
+              },
+              {
+                "type": "example",
+                "de": "Ich stehe früh auf, frühstücke und fahre zur Schule.",
+                "es": "Me levanto temprano, desayuno y voy al colegio."
+              }
+            ]
+          },
+          {
+            "id": "s1_u10_l2",
+            "index": 2,
+            "title": "✏️ Repaso: saludos y familia",
             "kind": "exercises",
             "exercises": [
               {
@@ -3612,7 +4385,8 @@
                   "Guten Morgen",
                   "Gute Nacht"
                 ],
-                "answer": "Guten Tag"
+                "answer": "Guten Tag",
+                "explain": "«Guten Tag» = buenos días (durante el día); el saludo neutro."
               },
               {
                 "type": "word_bank",
@@ -3627,17 +4401,19 @@
                   "Jahre",
                   "alt"
                 ],
-                "distractors": []
+                "distractors": [],
+                "explain": "Dos ideas unidas con «und»; la edad se dice con «bin»."
               },
               {
                 "type": "translate_direct",
                 "prompt": "Traduce: «mi madre y mi padre»",
                 "answer": "meine Mutter und mein Vater",
-                "accepted": []
+                "accepted": [],
+                "explain": "meine (femenino) + mein (masculino): cada posesivo concuerda."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «la abuela»",
+                "prompt": "Selecciona: «die Oma»",
                 "options": [
                   {
                     "id": "a",
@@ -3660,7 +4436,9 @@
                     "label": "das Kind"
                   }
                 ],
-                "correct": "a"
+                "correct": "a",
+                "explain": "«die Oma» = la abuela (unidad 3).",
+                "hide_labels": true
               },
               {
                 "type": "translate_direct",
@@ -3668,7 +4446,8 @@
                 "answer": "Wie heißt du?",
                 "accepted": [
                   "wie heisst du"
-                ]
+                ],
+                "explain": "«Wie heißt du?» pregunta el nombre (unidad 1)."
               },
               {
                 "type": "word_bank",
@@ -3681,19 +4460,12 @@
                 ],
                 "distractors": [
                   "wohne"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "s1_u10_l2",
-            "index": 2,
-            "title": "Repaso: comida y animales",
-            "kind": "exercises",
-            "exercises": [
+                ],
+                "explain": "«kommen aus» = venir de (origen)."
+              },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «la manzana»",
+                "prompt": "Selecciona: «der Apfel»",
                 "options": [
                   {
                     "id": "a",
@@ -3716,7 +4488,9 @@
                     "label": "der Käse"
                   }
                 ],
-                "correct": "c"
+                "correct": "c",
+                "explain": "«der Apfel» = la manzana (unidad 4).",
+                "hide_labels": true
               },
               {
                 "type": "listening_match",
@@ -3727,8 +4501,17 @@
                   "Ich möchte Milch trinken",
                   "Ich möchte Wasser haben"
                 ],
-                "answer": "Ich möchte Wasser trinken"
-              },
+                "answer": "Ich möchte Wasser trinken",
+                "explain": "möchte + infinitivo al final: … Wasser TRINKEN."
+              }
+            ]
+          },
+          {
+            "id": "s1_u10_l3",
+            "index": 3,
+            "title": "✏️ Repaso: comida y animales",
+            "kind": "exercises",
+            "exercises": [
               {
                 "type": "word_bank",
                 "prompt": "Construye: «El perro bebe agua»",
@@ -3740,7 +4523,8 @@
                 ],
                 "distractors": [
                   "isst"
-                ]
+                ],
+                "explain": "trinkt: er/sie lleva -t (unidad 8)."
               },
               {
                 "type": "translate_direct",
@@ -3748,11 +4532,12 @@
                 "answer": "Ich möchte einen Tee",
                 "accepted": [
                   "ich moechte einen tee"
-                ]
+                ],
+                "explain": "Tee es masculino → einen Tee (acusativo)."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «el pez»",
+                "prompt": "Selecciona: «der Fisch»",
                 "options": [
                   {
                     "id": "a",
@@ -3775,7 +4560,9 @@
                     "label": "der Hund"
                   }
                 ],
-                "correct": "b"
+                "correct": "b",
+                "explain": "«der Fisch» = el pez (unidad 5).",
+                "hide_labels": true
               },
               {
                 "type": "translate_direct",
@@ -3783,16 +4570,9 @@
                 "answer": "Die Kuh ist groß",
                 "accepted": [
                   "die kuh ist gross"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "s1_u10_l3",
-            "index": 3,
-            "title": "Repaso: casa y tiempo",
-            "kind": "exercises",
-            "exercises": [
+                ],
+                "explain": "«die Kuh» = la vaca; groß con ß (o «gross»)."
+              },
               {
                 "type": "word_bank",
                 "prompt": "Construye: «La cocina no es grande»",
@@ -3805,7 +4585,8 @@
                 ],
                 "distractors": [
                   "kein"
-                ]
+                ],
+                "explain": "«nicht» niega el adjetivo: ist nicht groß (unidad 6)."
               },
               {
                 "type": "listening_match",
@@ -3816,13 +4597,15 @@
                   "Wann kommst du?",
                   "Wie geht es dir?"
                 ],
-                "answer": "Wie spät ist es?"
+                "answer": "Wie spät ist es?",
+                "explain": "«Wie spät ist es?» = ¿qué hora es? (unidad 7)."
               },
               {
                 "type": "translate_direct",
                 "prompt": "Traduce: «Hoy es lunes»",
                 "answer": "Heute ist Montag",
-                "accepted": []
+                "accepted": [],
+                "explain": "«Heute ist» + día (unidad 7)."
               },
               {
                 "type": "word_bank",
@@ -3835,19 +4618,29 @@
                 ],
                 "distractors": [
                   "nicht"
-                ]
-              },
+                ],
+                "explain": "Lampe es femenino → keine (unidad 6)."
+              }
+            ]
+          },
+          {
+            "id": "s1_u10_l4",
+            "index": 4,
+            "title": "✏️ Repaso: casa, hora y verbos",
+            "kind": "exercises",
+            "exercises": [
               {
                 "type": "translate_direct",
                 "prompt": "Traduce: «Son las cinco»",
                 "answer": "Es ist fünf Uhr",
                 "accepted": [
                   "es ist fuenf uhr"
-                ]
+                ],
+                "explain": "«Es ist fünf Uhr» = son las cinco."
               },
               {
                 "type": "select_image",
-                "prompt": "Selecciona: «la cama»",
+                "prompt": "Selecciona: «das Bett»",
                 "options": [
                   {
                     "id": "a",
@@ -3870,16 +4663,10 @@
                     "label": "das Bett"
                   }
                 ],
-                "correct": "d"
-              }
-            ]
-          },
-          {
-            "id": "s1_u10_l4",
-            "index": 4,
-            "title": "Repaso: verbos y rutina",
-            "kind": "exercises",
-            "exercises": [
+                "correct": "d",
+                "explain": "«das Bett» = la cama (unidad 6).",
+                "hide_labels": true
+              },
               {
                 "type": "word_bank",
                 "prompt": "Construye: «Por la noche él lee un libro»",
@@ -3891,7 +4678,8 @@
                   "ein",
                   "Buch"
                 ],
-                "distractors": []
+                "distractors": [],
+                "explain": "Inversión: Am Abend LIEST ER (verbo en 2ª posición)."
               },
               {
                 "type": "translate_direct",
@@ -3901,7 +4689,8 @@
                   "er schlaeft",
                   "schlaeft",
                   "schläft"
-                ]
+                ],
+                "explain": "schlafen a→ä: er schläft (unidad 8)."
               },
               {
                 "type": "listening_match",
@@ -3912,7 +4701,8 @@
                   "Ich schlafe um sieben Uhr",
                   "Ich frühstücke um sieben Uhr"
                 ],
-                "answer": "Ich stehe um sieben Uhr auf"
+                "answer": "Ich stehe um sieben Uhr auf",
+                "explain": "aufstehen separable: stehe … auf (unidad 9)."
               },
               {
                 "type": "word_bank",
@@ -3926,7 +4716,8 @@
                 ],
                 "distractors": [
                   "sprecht"
-                ]
+                ],
+                "explain": "sprechen e→i: sie spricht."
               },
               {
                 "type": "translate_direct",
@@ -3934,7 +4725,8 @@
                 "answer": "Wir sehen am Abend fern",
                 "accepted": [
                   "am abend sehen wir fern"
-                ]
+                ],
+                "explain": "fernsehen separable: sehen … fern."
               },
               {
                 "type": "word_bank",
@@ -3947,14 +4739,15 @@
                 ],
                 "distractors": [
                   "Wie"
-                ]
+                ],
+                "explain": "Pregunta con separable: Wann stehst du AUF?"
               }
             ]
           },
           {
             "id": "s1_u10_l5",
             "index": 5,
-            "title": "Minijuego final: parejas",
+            "title": "🎮 Minijuego final: parejas",
             "kind": "match_game",
             "pairs": [
               {
