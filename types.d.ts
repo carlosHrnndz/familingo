@@ -89,7 +89,26 @@ export type Exercise =
   | SelectImageExercise
   | WordBankExercise
   | TranslateDirectExercise
+  | TranslateReverseExercise
+  | ClozeExercise
   | ListeningMatchExercise;
+
+/** Traducción inversa DE -> ES: se muestra la frase alemana con audio. */
+export interface TranslateReverseExercise extends ExerciseBase {
+  type: "translate_reverse";
+  de: string;              // frase alemana mostrada (y sintetizada)
+  answer: string;          // traducción española canónica
+  accepted?: string[];     // variantes (sin tildes también valen)
+}
+
+/** Rellenar el hueco: frase con "___" y opciones tipo botón. */
+export interface ClozeExercise extends ExerciseBase {
+  type: "cloze";
+  prompt?: string;         // instrucción (por defecto "Completa la frase")
+  sentence: string;        // debe contener exactamente un "___"
+  options: string[];       // incluye la respuesta
+  answer: string;
+}
 
 /** Común a todos los ejercicios: explicación pedagógica mostrada al corregir. */
 interface ExerciseBase {

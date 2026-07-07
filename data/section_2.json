@@ -13,112 +13,4921 @@
         "index": 1,
         "title": "Rutina diaria",
         "icon": "⏰",
-        "status": "coming_soon",
-        "lessons": []
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s2_u1_l1",
+            "index": 1,
+            "title": "📖 Aprende: reflexivos y frecuencia",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "Verbos reflexivos"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "sich waschen",
+                    "es": "lavarse"
+                  },
+                  {
+                    "de": "sich anziehen",
+                    "es": "vestirse"
+                  },
+                  {
+                    "de": "sich duschen",
+                    "es": "ducharse"
+                  },
+                  {
+                    "de": "sich kämmen",
+                    "es": "peinarse"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "El pronombre reflexivo cambia: ich wasche MICH, du wäschst DICH, er wäscht SICH. Con partes del cuerpo se usa MIR/DIR: Ich wasche MIR die Hände."
+              },
+              {
+                "type": "heading",
+                "text": "¿Con qué frecuencia?"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "immer",
+                    "es": "siempre"
+                  },
+                  {
+                    "de": "oft",
+                    "es": "a menudo"
+                  },
+                  {
+                    "de": "manchmal",
+                    "es": "a veces"
+                  },
+                  {
+                    "de": "nie",
+                    "es": "nunca"
+                  },
+                  {
+                    "de": "zuerst … dann",
+                    "es": "primero … después"
+                  }
+                ]
+              },
+              {
+                "type": "example",
+                "de": "Zuerst wasche ich mich, dann ziehe ich mich an.",
+                "es": "Primero me lavo, después me visto."
+              },
+              {
+                "type": "tip",
+                "text": "Los adverbios de frecuencia van detrás del verbo: Ich gehe OFT ins Kino."
+              }
+            ]
+          },
+          {
+            "id": "s2_u1_l2",
+            "index": 2,
+            "title": "✏️ Reflexivos",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "cloze",
+                "sentence": "Ich wasche ___ jeden Morgen",
+                "options": [
+                  "mich",
+                  "dich",
+                  "sich"
+                ],
+                "answer": "mich",
+                "explain": "El reflexivo de «ich» es «mich»."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Me visto rápido»",
+                "words": [
+                  "Ich",
+                  "ziehe",
+                  "mich",
+                  "schnell",
+                  "an"
+                ],
+                "distractors": [
+                  "dich"
+                ],
+                "explain": "«sich anziehen» es reflexivo Y separable: ziehe … an."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Er rasiert sich",
+                "options": [
+                  "Er rasiert sich",
+                  "Er wäscht sich",
+                  "Er zieht sich an"
+                ],
+                "answer": "Er rasiert sich",
+                "explain": "«sich rasieren» = afeitarse; reflexivo de er = sich."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Sie kämmt sich die Haare.",
+                "answer": "Ella se peina el pelo",
+                "accepted": [
+                  "ella se peina",
+                  "se peina el pelo"
+                ],
+                "explain": "«kämmen» = peinar; el pelo en alemán es plural: die Haare."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Me lavo las manos»",
+                "answer": "Ich wasche mir die Hände",
+                "accepted": [
+                  "ich wasche mir die haende"
+                ],
+                "explain": "Con partes del cuerpo: MIR (dativo) + artículo: mir die Hände."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Du ziehst ___ an",
+                "options": [
+                  "dich",
+                  "mich",
+                  "sich"
+                ],
+                "answer": "dich",
+                "explain": "El reflexivo de «du» es «dich»."
+              }
+            ]
+          },
+          {
+            "id": "s2_u1_l3",
+            "index": 3,
+            "title": "✏️ ¿Con qué frecuencia?",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "cloze",
+                "prompt": "Completa: (a menudo)",
+                "sentence": "Ich gehe ___ ins Kino",
+                "options": [
+                  "oft",
+                  "nie",
+                  "immer"
+                ],
+                "answer": "oft",
+                "explain": "«oft» = a menudo; va detrás del verbo."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «nunca»",
+                "answer": "nie",
+                "accepted": [
+                  "niemals"
+                ],
+                "explain": "«nie» = nunca; «niemals» es aún más enfático."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Siempre desayuno a las ocho»",
+                "words": [
+                  "Ich",
+                  "frühstücke",
+                  "immer",
+                  "um",
+                  "acht"
+                ],
+                "distractors": [
+                  "nie"
+                ],
+                "explain": "«immer» = siempre, tras el verbo frühstücke."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "manchmal",
+                "options": [
+                  "manchmal",
+                  "Mittag",
+                  "Montag"
+                ],
+                "answer": "manchmal",
+                "explain": "«manchmal» = a veces."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Ich sehe manchmal fern.",
+                "answer": "A veces veo la tele",
+                "accepted": [
+                  "veo la tele a veces",
+                  "a veces veo la television"
+                ],
+                "explain": "fernsehen separable + manchmal (a veces)."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Zuerst dusche ich, ___ frühstücke ich",
+                "options": [
+                  "dann",
+                  "nie",
+                  "oft"
+                ],
+                "answer": "dann",
+                "explain": "«zuerst … dann» = primero … después. Tras «dann», verbo en 2ª posición."
+              }
+            ]
+          },
+          {
+            "id": "s2_u1_l4",
+            "index": 4,
+            "title": "✏️ Mi día a día",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Después del colegio hago deporte»",
+                "words": [
+                  "Nach",
+                  "der",
+                  "Schule",
+                  "mache",
+                  "ich",
+                  "Sport"
+                ],
+                "distractors": [],
+                "explain": "Al empezar con «Nach der Schule», el sujeto va tras el verbo: mache ICH."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Ich räume mein Zimmer auf.",
+                "answer": "Ordeno mi habitación",
+                "accepted": [
+                  "yo ordeno mi habitacion",
+                  "recojo mi habitacion"
+                ],
+                "explain": "«aufräumen» = ordenar (separable): räume … auf."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Am Wochenende ___ ich lange",
+                "options": [
+                  "schlafe",
+                  "schläfst",
+                  "schlaft"
+                ],
+                "answer": "schlafe",
+                "explain": "Con «ich» no hay cambio vocálico: ich schlafe (pero er schläft)."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «el fin de semana»",
+                "answer": "das Wochenende",
+                "accepted": [
+                  "wochenende",
+                  "am wochenende"
+                ],
+                "explain": "«das Wochenende»; «am Wochenende» = el/durante el fin de semana."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Ich helfe meiner Mutter",
+                "options": [
+                  "Ich helfe meiner Mutter",
+                  "Ich helfe meinem Vater",
+                  "Ich hole meine Mutter ab"
+                ],
+                "answer": "Ich helfe meiner Mutter",
+                "explain": "«helfen» rige dativo: meiner Mutter."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Por la noche me lavo los dientes»",
+                "words": [
+                  "Am",
+                  "Abend",
+                  "putze",
+                  "ich",
+                  "mir",
+                  "die",
+                  "Zähne"
+                ],
+                "distractors": [],
+                "explain": "putzen + mir (dativo) + die Zähne; inversión tras «Am Abend»."
+              }
+            ]
+          },
+          {
+            "id": "s2_u1_l5",
+            "index": 5,
+            "title": "🎮 Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "sich waschen",
+                "es": "lavarse"
+              },
+              {
+                "de": "sich anziehen",
+                "es": "vestirse"
+              },
+              {
+                "de": "immer",
+                "es": "siempre"
+              },
+              {
+                "de": "oft",
+                "es": "a menudo"
+              },
+              {
+                "de": "manchmal",
+                "es": "a veces"
+              },
+              {
+                "de": "nie",
+                "es": "nunca"
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "s2_u2",
         "index": 2,
         "title": "Compras",
         "icon": "🛒",
-        "status": "coming_soon",
-        "lessons": []
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s2_u2_l1",
+            "index": 1,
+            "title": "📖 Aprende: de compras",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "Comprar y pagar"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "das Geschäft",
+                    "es": "la tienda"
+                  },
+                  {
+                    "de": "der Supermarkt",
+                    "es": "el supermercado"
+                  },
+                  {
+                    "de": "kaufen",
+                    "es": "comprar"
+                  },
+                  {
+                    "de": "kosten",
+                    "es": "costar"
+                  },
+                  {
+                    "de": "das Geld",
+                    "es": "el dinero"
+                  },
+                  {
+                    "de": "teuer / billig",
+                    "es": "caro / barato"
+                  },
+                  {
+                    "de": "die Kasse",
+                    "es": "la caja"
+                  },
+                  {
+                    "de": "bar / mit Karte zahlen",
+                    "es": "pagar en efectivo / con tarjeta"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "El precio se pregunta con «Wie viel kostet das?» (una cosa) o «Wie viel kosten die Schuhe?» (plural)."
+              },
+              {
+                "type": "example",
+                "de": "Ich hätte gern ein Kilo Äpfel, bitte.",
+                "es": "Quisiera un kilo de manzanas, por favor."
+              },
+              {
+                "type": "tip",
+                "text": "«Ich hätte gern…» es la fórmula estrella para pedir en tiendas y mercados."
+              }
+            ]
+          },
+          {
+            "id": "s2_u2_l2",
+            "index": 2,
+            "title": "✏️ En la tienda",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Wie viel kostet das?",
+                "options": [
+                  "Wie viel kostet das?",
+                  "Wie viel kosten die?",
+                  "Was kostet der Käse?"
+                ],
+                "answer": "Wie viel kostet das?",
+                "explain": "«kostet» en singular: pregunta por UNA cosa."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Die Schuhe ___ 50 Euro",
+                "options": [
+                  "kosten",
+                  "kostet",
+                  "kostest"
+                ],
+                "answer": "kosten",
+                "explain": "«die Schuhe» es plural → kosten."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «demasiado caro»",
+                "answer": "zu teuer",
+                "accepted": [],
+                "explain": "«zu» + adjetivo = demasiado: zu teuer, zu groß."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Das ist ein Sonderangebot.",
+                "answer": "Eso es una oferta",
+                "accepted": [
+                  "es una oferta",
+                  "eso es una oferta especial"
+                ],
+                "explain": "«das Sonderangebot» = la oferta especial."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Quisiera pagar con tarjeta»",
+                "words": [
+                  "Ich",
+                  "möchte",
+                  "mit",
+                  "Karte",
+                  "zahlen"
+                ],
+                "distractors": [
+                  "bar"
+                ],
+                "explain": "«mit Karte» = con tarjeta; «bar» sería en efectivo."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Das T-Shirt ist nicht teuer, es ist ___",
+                "options": [
+                  "billig",
+                  "teuer",
+                  "groß"
+                ],
+                "answer": "billig",
+                "explain": "«billig» = barato, lo contrario de teuer."
+              }
+            ]
+          },
+          {
+            "id": "s2_u2_l3",
+            "index": 3,
+            "title": "✏️ Comprando comida",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Necesito un kilo de manzanas»",
+                "words": [
+                  "Ich",
+                  "brauche",
+                  "ein",
+                  "Kilo",
+                  "Äpfel"
+                ],
+                "distractors": [
+                  "Apfel"
+                ],
+                "explain": "«Äpfel» es el plural de Apfel (con diéresis)."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "die Einkaufstasche",
+                "options": [
+                  "die Einkaufstasche",
+                  "die Einkaufsliste",
+                  "der Einkaufswagen"
+                ],
+                "answer": "die Einkaufstasche",
+                "explain": "«die Einkaufstasche» = la bolsa de la compra."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «la lista de la compra»",
+                "answer": "die Einkaufsliste",
+                "accepted": [
+                  "einkaufsliste"
+                ],
+                "explain": "einkaufen + Liste = Einkaufsliste. ¡Palabras compuestas!"
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Haben Sie frisches Brot?",
+                "answer": "¿Tiene pan fresco?",
+                "accepted": [
+                  "tienen pan fresco",
+                  "tienes pan fresco"
+                ],
+                "explain": "«Sie» con mayúscula = usted (trato formal en tiendas)."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (queso)",
+                "sentence": "Ich hätte gern 200 Gramm ___",
+                "options": [
+                  "Käse",
+                  "Kuchen",
+                  "Küche"
+                ],
+                "answer": "Käse",
+                "explain": "«der Käse» = queso. Kuchen es pastel y Küche cocina, ¡no los confundas!"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Dónde está la caja?»",
+                "words": [
+                  "Wo",
+                  "ist",
+                  "die",
+                  "Kasse"
+                ],
+                "distractors": [
+                  "Klasse"
+                ],
+                "explain": "«die Kasse» = la caja; «die Klasse» sería la clase."
+              }
+            ]
+          },
+          {
+            "id": "s2_u2_l4",
+            "index": 4,
+            "title": "✏️ El dinero",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce con artículo: «el dinero»",
+                "answer": "das Geld",
+                "accepted": [
+                  "geld"
+                ],
+                "explain": "«das Geld» = el dinero; neutro."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Kann ich ___ Karte zahlen?",
+                "options": [
+                  "mit",
+                  "bar",
+                  "zu"
+                ],
+                "answer": "mit",
+                "explain": "«mit Karte zahlen» = pagar con tarjeta."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Das macht zwölf Euro fünfzig",
+                "options": [
+                  "Das macht zwölf Euro fünfzig",
+                  "Das macht zwei Euro fünfzig",
+                  "Das macht zwölf Euro fünfzehn"
+                ],
+                "answer": "Das macht zwölf Euro fünfzig",
+                "explain": "«Das macht…» = son… (al cobrar). zwölf = 12."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Ich habe kein Kleingeld.",
+                "answer": "No tengo cambio",
+                "accepted": [
+                  "no tengo suelto",
+                  "no llevo cambio"
+                ],
+                "explain": "«das Kleingeld» = el cambio/las monedas (lit.: dinero pequeño)."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «El recibo, por favor»",
+                "words": [
+                  "Den",
+                  "Kassenbon",
+                  "bitte"
+                ],
+                "distractors": [
+                  "Der"
+                ],
+                "explain": "«der Kassenbon» en acusativo → DEN Kassenbon."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «barato»",
+                "answer": "billig",
+                "accepted": [
+                  "günstig",
+                  "guenstig"
+                ],
+                "explain": "«billig» o «günstig» = barato."
+              }
+            ]
+          },
+          {
+            "id": "s2_u2_l5",
+            "index": 5,
+            "title": "🎮 Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "kaufen",
+                "es": "comprar"
+              },
+              {
+                "de": "teuer",
+                "es": "caro"
+              },
+              {
+                "de": "billig",
+                "es": "barato"
+              },
+              {
+                "de": "das Geld",
+                "es": "el dinero"
+              },
+              {
+                "de": "die Kasse",
+                "es": "la caja"
+              },
+              {
+                "de": "zahlen",
+                "es": "pagar"
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "s2_u3",
         "index": 3,
         "title": "En la ciudad",
         "icon": "🏙️",
-        "status": "coming_soon",
-        "lessons": []
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s2_u3_l1",
+            "index": 1,
+            "title": "📖 Aprende: la ciudad y las direcciones",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "Lugares de la ciudad"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "der Bahnhof",
+                    "es": "la estación"
+                  },
+                  {
+                    "de": "das Rathaus",
+                    "es": "el ayuntamiento"
+                  },
+                  {
+                    "de": "die Kirche",
+                    "es": "la iglesia"
+                  },
+                  {
+                    "de": "der Platz",
+                    "es": "la plaza"
+                  },
+                  {
+                    "de": "die Brücke",
+                    "es": "el puente"
+                  },
+                  {
+                    "de": "die Apotheke",
+                    "es": "la farmacia"
+                  }
+                ]
+              },
+              {
+                "type": "heading",
+                "text": "Pedir y dar direcciones"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "links / rechts",
+                    "es": "izquierda / derecha"
+                  },
+                  {
+                    "de": "geradeaus",
+                    "es": "todo recto"
+                  },
+                  {
+                    "de": "neben",
+                    "es": "al lado de"
+                  },
+                  {
+                    "de": "gegenüber",
+                    "es": "enfrente de"
+                  }
+                ]
+              },
+              {
+                "type": "example",
+                "de": "Entschuldigung, wo ist der Bahnhof? — Gehen Sie geradeaus und dann links.",
+                "es": "Perdone, ¿dónde está la estación? — Siga todo recto y luego a la izquierda."
+              },
+              {
+                "type": "tip",
+                "text": "Con desconocidos se usa el formal «Sie»: Gehen SIE, Biegen SIE ab."
+              }
+            ]
+          },
+          {
+            "id": "s2_u3_l2",
+            "index": 2,
+            "title": "✏️ Lugares",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "das Rathaus",
+                "options": [
+                  "das Rathaus",
+                  "das Krankenhaus",
+                  "das Haus"
+                ],
+                "answer": "das Rathaus",
+                "explain": "«das Rathaus» = el ayuntamiento (lit.: casa del consejo)."
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «die Kirche»",
+                "hide_labels": true,
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "⛪",
+                    "label": "die Kirche"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🏥",
+                    "label": "das Krankenhaus"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🏫",
+                    "label": "die Schule"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🏰",
+                    "label": "das Schloss"
+                  }
+                ],
+                "correct": "a",
+                "explain": "«die Kirche» = la iglesia. Krankenhaus = hospital, Schloss = castillo."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «la farmacia»",
+                "answer": "die Apotheke",
+                "accepted": [
+                  "apotheke"
+                ],
+                "explain": "«die Apotheke» = la farmacia; se reconoce por la A roja."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Die Bibliothek ist neben dem Park.",
+                "answer": "La biblioteca está al lado del parque",
+                "accepted": [
+                  "la biblioteca esta junto al parque"
+                ],
+                "explain": "«neben» = al lado de (+ dativo: dem Park)."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Entschuldigung, ___ ist der Bahnhof?",
+                "options": [
+                  "wo",
+                  "wann",
+                  "wer"
+                ],
+                "answer": "wo",
+                "explain": "«wo» = dónde (lugar); wann = cuándo; wer = quién."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «El museo está en el centro»",
+                "words": [
+                  "Das",
+                  "Museum",
+                  "ist",
+                  "im",
+                  "Zentrum"
+                ],
+                "distractors": [],
+                "explain": "«im Zentrum» = in dem Zentrum (contracción)."
+              }
+            ]
+          },
+          {
+            "id": "s2_u3_l3",
+            "index": 3,
+            "title": "✏️ Direcciones",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "cloze",
+                "prompt": "Completa: (todo recto)",
+                "sentence": "Gehen Sie ___ und dann rechts",
+                "options": [
+                  "geradeaus",
+                  "links",
+                  "zurück"
+                ],
+                "answer": "geradeaus",
+                "explain": "«geradeaus» = todo recto."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «a la izquierda»",
+                "answer": "links",
+                "accepted": [
+                  "nach links"
+                ],
+                "explain": "«links» = izquierda; «rechts» = derecha."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Die zweite Straße rechts",
+                "options": [
+                  "Die zweite Straße rechts",
+                  "Die zweite Straße links",
+                  "Die dritte Straße rechts"
+                ],
+                "answer": "Die zweite Straße rechts",
+                "explain": "«die zweite Straße» = la segunda calle."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye (formal): «Gire a la derecha en el semáforo»",
+                "words": [
+                  "Biegen",
+                  "Sie",
+                  "an",
+                  "der",
+                  "Ampel",
+                  "rechts",
+                  "ab"
+                ],
+                "distractors": [],
+                "explain": "«abbiegen» = girar (separable): Biegen Sie … ab. «die Ampel» = el semáforo."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Es ist nicht weit von hier.",
+                "answer": "No está lejos de aquí",
+                "accepted": [
+                  "no esta lejos",
+                  "no queda lejos de aqui"
+                ],
+                "explain": "«weit» = lejos; «von hier» = de aquí."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (al lado de)",
+                "sentence": "Die Apotheke ist ___ der Kirche",
+                "options": [
+                  "neben",
+                  "unter",
+                  "auf"
+                ],
+                "answer": "neben",
+                "explain": "«neben» = al lado de; unter = debajo; auf = encima."
+              }
+            ]
+          },
+          {
+            "id": "s2_u3_l4",
+            "index": 4,
+            "title": "✏️ Por la ciudad",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Cómo llego a la estación?»",
+                "words": [
+                  "Wie",
+                  "komme",
+                  "ich",
+                  "zum",
+                  "Bahnhof"
+                ],
+                "distractors": [
+                  "zur"
+                ],
+                "explain": "«zum» = zu dem (masculino/neutro); «zur» sería para femeninos."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «el puente»",
+                "answer": "die Brücke",
+                "accepted": [
+                  "bruecke",
+                  "brücke"
+                ],
+                "explain": "«die Brücke» = el puente; ¡femenino en alemán!"
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "der Marktplatz",
+                "options": [
+                  "der Marktplatz",
+                  "der Parkplatz",
+                  "der Spielplatz"
+                ],
+                "answer": "der Marktplatz",
+                "explain": "Marktplatz = plaza del mercado; Parkplatz = aparcamiento; Spielplatz = parque infantil."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Der Supermarkt ist gegenüber der Post.",
+                "answer": "El supermercado está enfrente de correos",
+                "accepted": [
+                  "el supermercado esta frente a correos"
+                ],
+                "explain": "«gegenüber» = enfrente de; «die Post» = correos."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (cerca)",
+                "sentence": "Ich wohne ___ der Nähe",
+                "options": [
+                  "in",
+                  "an",
+                  "bei"
+                ],
+                "answer": "in",
+                "explain": "«in der Nähe» = cerca (lit.: en la cercanía)."
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «die Brücke»",
+                "hide_labels": true,
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🌉",
+                    "label": "die Brücke"
+                  },
+                  {
+                    "id": "b",
+                    "image": "⛪",
+                    "label": "die Kirche"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🏰",
+                    "label": "das Schloss"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🗼",
+                    "label": "der Turm"
+                  }
+                ],
+                "correct": "a",
+                "explain": "«die Brücke» = el puente; «der Turm» = la torre."
+              }
+            ]
+          },
+          {
+            "id": "s2_u3_l5",
+            "index": 5,
+            "title": "🎮 Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "der Bahnhof",
+                "es": "la estación"
+              },
+              {
+                "de": "die Kirche",
+                "es": "la iglesia"
+              },
+              {
+                "de": "links",
+                "es": "izquierda"
+              },
+              {
+                "de": "rechts",
+                "es": "derecha"
+              },
+              {
+                "de": "geradeaus",
+                "es": "todo recto"
+              },
+              {
+                "de": "die Apotheke",
+                "es": "la farmacia"
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "s2_u4",
         "index": 4,
         "title": "Transporte",
         "icon": "🚆",
-        "status": "coming_soon",
-        "lessons": []
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s2_u4_l1",
+            "index": 1,
+            "title": "📖 Aprende: moverse en transporte",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "Los transportes"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "der Zug",
+                    "es": "el tren"
+                  },
+                  {
+                    "de": "der Bus",
+                    "es": "el autobús"
+                  },
+                  {
+                    "de": "die U-Bahn",
+                    "es": "el metro"
+                  },
+                  {
+                    "de": "die Straßenbahn",
+                    "es": "el tranvía"
+                  },
+                  {
+                    "de": "das Fahrrad",
+                    "es": "la bicicleta"
+                  },
+                  {
+                    "de": "das Flugzeug",
+                    "es": "el avión"
+                  },
+                  {
+                    "de": "die Haltestelle",
+                    "es": "la parada"
+                  },
+                  {
+                    "de": "die Fahrkarte",
+                    "es": "el billete"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "Se viaja «mit dem/der» + transporte (dativo): mit dem Bus, mit der U-Bahn. Con el avión se usa «fliegen» (volar)."
+              },
+              {
+                "type": "example",
+                "de": "Ich fahre mit dem Zug nach Berlin und steige in Hannover um.",
+                "es": "Voy en tren a Berlín y hago transbordo en Hannover."
+              },
+              {
+                "type": "tip",
+                "text": "Tres separables clave: EINsteigen (subir), AUSsteigen (bajar), UMsteigen (hacer transbordo)."
+              }
+            ]
+          },
+          {
+            "id": "s2_u4_l2",
+            "index": 2,
+            "title": "✏️ Medios de transporte",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «die U-Bahn»",
+                "hide_labels": true,
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🚇",
+                    "label": "die U-Bahn"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🚆",
+                    "label": "der Zug"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🚌",
+                    "label": "der Bus"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🚋",
+                    "label": "die Straßenbahn"
+                  }
+                ],
+                "correct": "a",
+                "explain": "«die U-Bahn» = el metro (Untergrundbahn: tren subterráneo)."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "das Flugzeug",
+                "options": [
+                  "das Flugzeug",
+                  "das Fahrzeug",
+                  "das Fahrrad"
+                ],
+                "answer": "das Flugzeug",
+                "explain": "«das Flugzeug» = el avión (lit.: cosa que vuela)."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «el billete»",
+                "answer": "die Fahrkarte",
+                "accepted": [
+                  "fahrkarte",
+                  "das ticket",
+                  "ticket"
+                ],
+                "explain": "«die Fahrkarte» = el billete de transporte."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Ich fahre ___ dem Bus zur Arbeit",
+                "options": [
+                  "mit",
+                  "in",
+                  "auf"
+                ],
+                "answer": "mit",
+                "explain": "Transportes con «mit» + dativo: mit dem Bus."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Der Zug hat zehn Minuten Verspätung.",
+                "answer": "El tren lleva diez minutos de retraso",
+                "accepted": [
+                  "el tren tiene diez minutos de retraso"
+                ],
+                "explain": "«die Verspätung» = el retraso. Frase MUY útil en Alemania 😄."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Dónde está la parada de autobús?»",
+                "words": [
+                  "Wo",
+                  "ist",
+                  "die",
+                  "Bushaltestelle"
+                ],
+                "distractors": [],
+                "explain": "Bus + Haltestelle = Bushaltestelle (palabra compuesta)."
+              }
+            ]
+          },
+          {
+            "id": "s2_u4_l3",
+            "index": 3,
+            "title": "✏️ Subir, bajar, transbordar",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "cloze",
+                "prompt": "Completa: (hacer transbordo)",
+                "sentence": "Sie müssen in Hamburg ___",
+                "options": [
+                  "umsteigen",
+                  "einsteigen",
+                  "aussteigen"
+                ],
+                "answer": "umsteigen",
+                "explain": "UM-steigen = cambiar de tren; EIN = subir; AUS = bajar."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «subir (al tren)»",
+                "answer": "einsteigen",
+                "accepted": [],
+                "explain": "«einsteigen» = subir a un transporte."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Nächster Halt: Hauptbahnhof",
+                "options": [
+                  "Nächster Halt: Hauptbahnhof",
+                  "Nächster Halt: Nordbahnhof",
+                  "Letzter Halt: Hauptbahnhof"
+                ],
+                "answer": "Nächster Halt: Hauptbahnhof",
+                "explain": "El anuncio clásico del tren: «próxima parada: estación central»."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «El tren sale del andén dos»",
+                "words": [
+                  "Der",
+                  "Zug",
+                  "fährt",
+                  "von",
+                  "Gleis",
+                  "zwei",
+                  "ab"
+                ],
+                "distractors": [],
+                "explain": "«abfahren» separable + «das Gleis» = el andén/la vía."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Einsteigen bitte, die Türen schließen!",
+                "answer": "¡Suban, las puertas se cierran!",
+                "accepted": [
+                  "suban por favor las puertas se cierran",
+                  "suban las puertas se cierran"
+                ],
+                "explain": "«schließen» = cerrar. Se oye en cada estación de metro."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Ich steige an der nächsten Haltestelle ___",
+                "options": [
+                  "aus",
+                  "ein",
+                  "um"
+                ],
+                "answer": "aus",
+                "explain": "«aussteigen» = bajarse: steige … AUS."
+              }
+            ]
+          },
+          {
+            "id": "s2_u4_l4",
+            "index": 4,
+            "title": "✏️ De viaje",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Volamos a Mallorca»",
+                "words": [
+                  "Wir",
+                  "fliegen",
+                  "nach",
+                  "Mallorca"
+                ],
+                "distractors": [
+                  "fahren"
+                ],
+                "explain": "Con el avión se usa «fliegen» (volar), no fahren."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «el aeropuerto»",
+                "answer": "der Flughafen",
+                "accepted": [
+                  "flughafen"
+                ],
+                "explain": "Flug (vuelo) + Hafen (puerto) = aeropuerto."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "die Straßenbahn",
+                "options": [
+                  "die Straßenbahn",
+                  "die Autobahn",
+                  "die S-Bahn"
+                ],
+                "answer": "die Straßenbahn",
+                "explain": "Straßenbahn = tranvía; Autobahn = autopista; S-Bahn = tren de cercanías."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Wie lange ___ die Fahrt?",
+                "options": [
+                  "dauert",
+                  "fährt",
+                  "geht"
+                ],
+                "answer": "dauert",
+                "explain": "«dauern» = durar: ¿cuánto dura el viaje?"
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Mein Fahrrad ist kaputt.",
+                "answer": "Mi bicicleta está rota",
+                "accepted": [
+                  "mi bici esta rota",
+                  "mi bicicleta esta estropeada"
+                ],
+                "explain": "«kaputt» = roto/estropeado. ¡Palabra comodín del alemán!"
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «das Fahrrad»",
+                "hide_labels": true,
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🚲",
+                    "label": "das Fahrrad"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🛴",
+                    "label": "der Roller"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🏍️",
+                    "label": "das Motorrad"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🚗",
+                    "label": "das Auto"
+                  }
+                ],
+                "correct": "a",
+                "explain": "«das Fahrrad» (o «das Rad») = la bicicleta."
+              }
+            ]
+          },
+          {
+            "id": "s2_u4_l5",
+            "index": 5,
+            "title": "🎮 Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "der Zug",
+                "es": "el tren"
+              },
+              {
+                "de": "die U-Bahn",
+                "es": "el metro"
+              },
+              {
+                "de": "das Flugzeug",
+                "es": "el avión"
+              },
+              {
+                "de": "die Fahrkarte",
+                "es": "el billete"
+              },
+              {
+                "de": "umsteigen",
+                "es": "hacer transbordo"
+              },
+              {
+                "de": "die Haltestelle",
+                "es": "la parada"
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "s2_u5",
         "index": 5,
         "title": "El tiempo",
         "icon": "🌦️",
-        "status": "coming_soon",
-        "lessons": []
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s2_u5_l1",
+            "index": 1,
+            "title": "📖 Aprende: hablar del tiempo",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "El tiempo atmosférico"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "die Sonne",
+                    "es": "el sol"
+                  },
+                  {
+                    "de": "der Regen",
+                    "es": "la lluvia"
+                  },
+                  {
+                    "de": "der Schnee",
+                    "es": "la nieve"
+                  },
+                  {
+                    "de": "der Wind",
+                    "es": "el viento"
+                  },
+                  {
+                    "de": "die Wolke",
+                    "es": "la nube"
+                  },
+                  {
+                    "de": "das Gewitter",
+                    "es": "la tormenta"
+                  },
+                  {
+                    "de": "warm / kalt",
+                    "es": "cálido / frío"
+                  },
+                  {
+                    "de": "heiß / kühl",
+                    "es": "caluroso / fresco"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "El tiempo se dice con «es»: ES regnet (llueve), ES schneit (nieva), ES ist kalt (hace frío)."
+              },
+              {
+                "type": "example",
+                "de": "Wie ist das Wetter? — Die Sonne scheint und es ist warm.",
+                "es": "¿Qué tiempo hace? — Brilla el sol y hace calor."
+              },
+              {
+                "type": "tip",
+                "text": "Las estaciones: der Frühling (primavera), der Sommer, der Herbst (otoño), der Winter. Con «im»: im Sommer."
+              }
+            ]
+          },
+          {
+            "id": "s2_u5_l2",
+            "index": 2,
+            "title": "✏️ ¿Qué tiempo hace?",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «die Sonne»",
+                "hide_labels": true,
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "☀️",
+                    "label": "die Sonne"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🌧️",
+                    "label": "der Regen"
+                  },
+                  {
+                    "id": "c",
+                    "image": "☁️",
+                    "label": "die Wolke"
+                  },
+                  {
+                    "id": "d",
+                    "image": "❄️",
+                    "label": "der Schnee"
+                  }
+                ],
+                "correct": "a",
+                "explain": "«die Sonne» = el sol; femenino en alemán (¡y la luna, der Mond, masculino!)."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Es regnet",
+                "options": [
+                  "Es regnet",
+                  "Es schneit",
+                  "Es ist neblig"
+                ],
+                "answer": "Es regnet",
+                "explain": "«Es regnet» = llueve; «es schneit» = nieva."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Hace frío»",
+                "answer": "Es ist kalt",
+                "accepted": [],
+                "explain": "El tiempo siempre con «es»: Es ist kalt."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Im Winter ___ es oft",
+                "options": [
+                  "schneit",
+                  "scheint",
+                  "schwimmt"
+                ],
+                "answer": "schneit",
+                "explain": "«schneien» = nevar; «scheinen» = brillar (el sol)."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Die Sonne scheint den ganzen Tag.",
+                "answer": "El sol brilla todo el día",
+                "accepted": [
+                  "hace sol todo el dia",
+                  "el sol luce todo el dia"
+                ],
+                "explain": "«den ganzen Tag» = todo el día."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Mañana habrá tormenta»",
+                "words": [
+                  "Morgen",
+                  "gibt",
+                  "es",
+                  "ein",
+                  "Gewitter"
+                ],
+                "distractors": [],
+                "explain": "«es gibt» = hay/habrá; «das Gewitter» = la tormenta."
+              }
+            ]
+          },
+          {
+            "id": "s2_u5_l3",
+            "index": 3,
+            "title": "✏️ Lluvia y viento",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "cloze",
+                "sentence": "Es ist windig, der ___ ist stark",
+                "options": [
+                  "Wind",
+                  "Regen",
+                  "Schnee"
+                ],
+                "answer": "Wind",
+                "explain": "«der Wind» = el viento; «stark» = fuerte."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «la nube»",
+                "answer": "die Wolke",
+                "accepted": [
+                  "wolke"
+                ],
+                "explain": "«die Wolke» = la nube; plural: die Wolken."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "die Wettervorhersage",
+                "options": [
+                  "die Wettervorhersage",
+                  "das Wetter",
+                  "die Wolke"
+                ],
+                "answer": "die Wettervorhersage",
+                "explain": "«die Wettervorhersage» = el pronóstico del tiempo."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Wie ist das Wetter heute?",
+                "answer": "¿Qué tiempo hace hoy?",
+                "accepted": [
+                  "como esta el tiempo hoy"
+                ],
+                "explain": "La pregunta estándar del tiempo: «Wie ist das Wetter?»."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «En otoño llueve mucho»",
+                "words": [
+                  "Im",
+                  "Herbst",
+                  "regnet",
+                  "es",
+                  "viel"
+                ],
+                "distractors": [],
+                "explain": "«der Herbst» = el otoño; inversión tras «Im Herbst»."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Nimm einen Regenschirm, es ___ !",
+                "options": [
+                  "regnet",
+                  "schneit",
+                  "klingelt"
+                ],
+                "answer": "regnet",
+                "explain": "«der Regenschirm» = el paraguas (escudo de lluvia)."
+              }
+            ]
+          },
+          {
+            "id": "s2_u5_l4",
+            "index": 4,
+            "title": "✏️ Temperaturas y estaciones",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «veinte grados»",
+                "answer": "zwanzig Grad",
+                "accepted": [
+                  "20 grad"
+                ],
+                "explain": "«das Grad» = el grado; no cambia en plural: 20 Grad."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Es sind minus fünf Grad",
+                "options": [
+                  "Es sind minus fünf Grad",
+                  "Es sind minus neun Grad",
+                  "Es sind fünf Grad"
+                ],
+                "answer": "Es sind minus fünf Grad",
+                "explain": "«minus fünf» = cinco bajo cero. ¡Invierno alemán!"
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (templado)",
+                "sentence": "Im Frühling ist es ___",
+                "options": [
+                  "mild",
+                  "kalt",
+                  "heiß"
+                ],
+                "answer": "mild",
+                "explain": "«mild» = templado/suave; típico de la primavera."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Hoy hace mucho calor»",
+                "words": [
+                  "Heute",
+                  "ist",
+                  "es",
+                  "sehr",
+                  "heiß"
+                ],
+                "distractors": [
+                  "kalt"
+                ],
+                "explain": "«heiß» = muy caluroso; «warm» = agradablemente cálido."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Es ist neblig und kühl.",
+                "answer": "Hay niebla y hace fresco",
+                "accepted": [
+                  "hay niebla y fresco",
+                  "esta nublado y fresco"
+                ],
+                "explain": "«neblig» = con niebla; «kühl» = fresco."
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «der Schnee»",
+                "hide_labels": true,
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "❄️",
+                    "label": "der Schnee"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🌧️",
+                    "label": "der Regen"
+                  },
+                  {
+                    "id": "c",
+                    "image": "⛈️",
+                    "label": "das Gewitter"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🌈",
+                    "label": "der Regenbogen"
+                  }
+                ],
+                "correct": "a",
+                "explain": "«der Schnee» = la nieve; «der Regenbogen» = el arcoíris."
+              }
+            ]
+          },
+          {
+            "id": "s2_u5_l5",
+            "index": 5,
+            "title": "🎮 Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "die Sonne",
+                "es": "el sol"
+              },
+              {
+                "de": "der Regen",
+                "es": "la lluvia"
+              },
+              {
+                "de": "der Schnee",
+                "es": "la nieve"
+              },
+              {
+                "de": "der Wind",
+                "es": "el viento"
+              },
+              {
+                "de": "warm",
+                "es": "cálido"
+              },
+              {
+                "de": "kalt",
+                "es": "frío"
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "s2_u6",
         "index": 6,
         "title": "Salud y cuerpo",
         "icon": "🩺",
-        "status": "coming_soon",
-        "lessons": []
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s2_u6_l1",
+            "index": 1,
+            "title": "📖 Aprende: el cuerpo y la salud",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "El cuerpo"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "der Kopf",
+                    "es": "la cabeza"
+                  },
+                  {
+                    "de": "der Bauch",
+                    "es": "la tripa"
+                  },
+                  {
+                    "de": "der Arm",
+                    "es": "el brazo"
+                  },
+                  {
+                    "de": "das Bein",
+                    "es": "la pierna"
+                  },
+                  {
+                    "de": "die Hand",
+                    "es": "la mano"
+                  },
+                  {
+                    "de": "der Fuß",
+                    "es": "el pie"
+                  },
+                  {
+                    "de": "das Auge",
+                    "es": "el ojo"
+                  },
+                  {
+                    "de": "das Ohr",
+                    "es": "la oreja"
+                  }
+                ]
+              },
+              {
+                "type": "heading",
+                "text": "Estar enfermo"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "krank / gesund",
+                    "es": "enfermo / sano"
+                  },
+                  {
+                    "de": "das Fieber",
+                    "es": "la fiebre"
+                  },
+                  {
+                    "de": "der Husten",
+                    "es": "la tos"
+                  },
+                  {
+                    "de": "die Erkältung",
+                    "es": "el resfriado"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "El dolor se dice de dos formas: «Mir tut der Kopf weh» o «Ich habe Kopfschmerzen» (dolores de cabeza)."
+              },
+              {
+                "type": "example",
+                "de": "Ich bin krank: Ich habe Fieber und Husten.",
+                "es": "Estoy enfermo: tengo fiebre y tos."
+              }
+            ]
+          },
+          {
+            "id": "s2_u6_l2",
+            "index": 2,
+            "title": "✏️ Me duele…",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "der Bauch",
+                "options": [
+                  "der Bauch",
+                  "der Baum",
+                  "das Buch"
+                ],
+                "answer": "der Bauch",
+                "explain": "«der Bauch» = la tripa; Baum = árbol, Buch = libro."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Mir tut der Kopf ___",
+                "options": [
+                  "weh",
+                  "gut",
+                  "warm"
+                ],
+                "answer": "weh",
+                "explain": "«weh tun» = doler: Mir tut … weh."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Me duele la tripa»",
+                "answer": "Mir tut der Bauch weh",
+                "accepted": [
+                  "ich habe bauchschmerzen",
+                  "mein bauch tut weh"
+                ],
+                "explain": "También vale «Ich habe Bauchschmerzen»."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Ich habe Halsschmerzen.",
+                "answer": "Me duele la garganta",
+                "accepted": [
+                  "tengo dolor de garganta"
+                ],
+                "explain": "«der Hals» = la garganta/el cuello + Schmerzen (dolores)."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Necesito ir al médico»",
+                "words": [
+                  "Ich",
+                  "muss",
+                  "zum",
+                  "Arzt",
+                  "gehen"
+                ],
+                "distractors": [],
+                "explain": "«der Arzt» = el médico; «zum Arzt» = al médico."
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «die Hand»",
+                "hide_labels": true,
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "✋",
+                    "label": "die Hand"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🦵",
+                    "label": "das Bein"
+                  },
+                  {
+                    "id": "c",
+                    "image": "👂",
+                    "label": "das Ohr"
+                  },
+                  {
+                    "id": "d",
+                    "image": "👁️",
+                    "label": "das Auge"
+                  }
+                ],
+                "correct": "a",
+                "explain": "«die Hand» = la mano; plural: die Hände."
+              }
+            ]
+          },
+          {
+            "id": "s2_u6_l3",
+            "index": 3,
+            "title": "✏️ En el médico",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Gute Besserung!",
+                "options": [
+                  "Gute Besserung!",
+                  "Guten Morgen!",
+                  "Gute Reise!"
+                ],
+                "answer": "Gute Besserung!",
+                "explain": "«Gute Besserung» = ¡que te mejores!"
+              },
+              {
+                "type": "cloze",
+                "sentence": "Ich bin ___ und habe Fieber",
+                "options": [
+                  "krank",
+                  "gesund",
+                  "müde"
+                ],
+                "answer": "krank",
+                "explain": "«krank» = enfermo; «gesund» = sano."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «la fiebre»",
+                "answer": "das Fieber",
+                "accepted": [
+                  "fieber"
+                ],
+                "explain": "«das Fieber»; tener fiebre = Fieber haben."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Der Arzt verschreibt mir Medikamente.",
+                "answer": "El médico me receta medicamentos",
+                "accepted": [
+                  "el medico me receta medicinas"
+                ],
+                "explain": "«verschreiben» = recetar."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Tienes tos?»",
+                "words": [
+                  "Hast",
+                  "du",
+                  "Husten"
+                ],
+                "distractors": [
+                  "Schnupfen"
+                ],
+                "explain": "«der Husten» = la tos; «der Schnupfen» = los mocos."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Nimm die Tabletten dreimal am ___",
+                "options": [
+                  "Tag",
+                  "Nacht",
+                  "Uhr"
+                ],
+                "answer": "Tag",
+                "explain": "«dreimal am Tag» = tres veces al día."
+              }
+            ]
+          },
+          {
+            "id": "s2_u6_l4",
+            "index": 4,
+            "title": "✏️ Cuerpo sano",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «sano»",
+                "answer": "gesund",
+                "accepted": [],
+                "explain": "«gesund» = sano; «die Gesundheit» = la salud (¡y se dice al estornudar!)."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "das Krankenhaus",
+                "options": [
+                  "das Krankenhaus",
+                  "das Rathaus",
+                  "die Krankenkasse"
+                ],
+                "answer": "das Krankenhaus",
+                "explain": "«das Krankenhaus» = el hospital (casa de enfermos)."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «El brazo me duele mucho»",
+                "words": [
+                  "Mein",
+                  "Arm",
+                  "tut",
+                  "sehr",
+                  "weh"
+                ],
+                "distractors": [],
+                "explain": "«der Arm» = el brazo; estructura: X tut (sehr) weh."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (resfriado)",
+                "sentence": "Ich habe eine ___",
+                "options": [
+                  "Erkältung",
+                  "Erklärung",
+                  "Erzählung"
+                ],
+                "answer": "Erkältung",
+                "explain": "«die Erkältung» = el resfriado (de «kalt», frío)."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Du sollst viel Wasser trinken.",
+                "answer": "Debes beber mucha agua",
+                "accepted": [
+                  "tienes que beber mucha agua"
+                ],
+                "explain": "«sollen» = deber (consejo/orden de otro)."
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «das Auge»",
+                "hide_labels": true,
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "👁️",
+                    "label": "das Auge"
+                  },
+                  {
+                    "id": "b",
+                    "image": "👂",
+                    "label": "das Ohr"
+                  },
+                  {
+                    "id": "c",
+                    "image": "👃",
+                    "label": "die Nase"
+                  },
+                  {
+                    "id": "d",
+                    "image": "👄",
+                    "label": "der Mund"
+                  }
+                ],
+                "correct": "a",
+                "explain": "«das Auge» = el ojo; Ohr = oreja, Nase = nariz, Mund = boca."
+              }
+            ]
+          },
+          {
+            "id": "s2_u6_l5",
+            "index": 5,
+            "title": "🎮 Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "der Kopf",
+                "es": "la cabeza"
+              },
+              {
+                "de": "der Bauch",
+                "es": "la tripa"
+              },
+              {
+                "de": "die Hand",
+                "es": "la mano"
+              },
+              {
+                "de": "das Bein",
+                "es": "la pierna"
+              },
+              {
+                "de": "krank",
+                "es": "enfermo"
+              },
+              {
+                "de": "gesund",
+                "es": "sano"
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "s2_u7",
         "index": 7,
         "title": "Ropa",
         "icon": "👕",
-        "status": "coming_soon",
-        "lessons": []
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s2_u7_l1",
+            "index": 1,
+            "title": "📖 Aprende: la ropa",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "Prendas de vestir"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "die Hose",
+                    "es": "los pantalones"
+                  },
+                  {
+                    "de": "das T-Shirt",
+                    "es": "la camiseta"
+                  },
+                  {
+                    "de": "das Kleid",
+                    "es": "el vestido"
+                  },
+                  {
+                    "de": "die Jacke",
+                    "es": "la chaqueta"
+                  },
+                  {
+                    "de": "die Schuhe",
+                    "es": "los zapatos"
+                  },
+                  {
+                    "de": "der Pullover",
+                    "es": "el jersey"
+                  },
+                  {
+                    "de": "der Schal",
+                    "es": "la bufanda"
+                  },
+                  {
+                    "de": "die Mütze",
+                    "es": "el gorro"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "«tragen» = llevar puesto, con cambio a→ä: ich trage, du trägst, er TRÄGT. «anziehen» = ponerse; «anprobieren» = probarse."
+              },
+              {
+                "type": "example",
+                "de": "Kann ich das Kleid anprobieren? — Ja, die Umkleidekabine ist dort.",
+                "es": "¿Puedo probarme el vestido? — Sí, el probador está allí."
+              },
+              {
+                "type": "tip",
+                "text": "La talla se pregunta con «Welche Größe haben Sie?»."
+              }
+            ]
+          },
+          {
+            "id": "s2_u7_l2",
+            "index": 2,
+            "title": "✏️ ¿Qué me pongo?",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «die Jacke»",
+                "hide_labels": true,
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🧥",
+                    "label": "die Jacke"
+                  },
+                  {
+                    "id": "b",
+                    "image": "👖",
+                    "label": "die Hose"
+                  },
+                  {
+                    "id": "c",
+                    "image": "👗",
+                    "label": "das Kleid"
+                  },
+                  {
+                    "id": "d",
+                    "image": "👟",
+                    "label": "die Schuhe"
+                  }
+                ],
+                "correct": "a",
+                "explain": "«die Jacke» = la chaqueta."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "der Pullover",
+                "options": [
+                  "der Pullover",
+                  "der Mantel",
+                  "die Bluse"
+                ],
+                "answer": "der Pullover",
+                "explain": "«der Pullover» (o «der Pulli») = el jersey; Mantel = abrigo."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «los zapatos»",
+                "answer": "die Schuhe",
+                "accepted": [
+                  "schuhe"
+                ],
+                "explain": "«der Schuh» → plural die Schuhe."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (tragen)",
+                "sentence": "Er ___ heute einen Anzug",
+                "options": [
+                  "trägt",
+                  "tragt",
+                  "trage"
+                ],
+                "answer": "trägt",
+                "explain": "tragen cambia a→ä con er/sie: er trägt. «der Anzug» = el traje."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Ich ziehe eine warme Jacke an.",
+                "answer": "Me pongo una chaqueta calentita",
+                "accepted": [
+                  "me pongo una chaqueta caliente",
+                  "me pongo una chaqueta de abrigo"
+                ],
+                "explain": "«anziehen» = ponerse (ropa): ziehe … an."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «El vestido es muy bonito»",
+                "words": [
+                  "Das",
+                  "Kleid",
+                  "ist",
+                  "sehr",
+                  "schön"
+                ],
+                "distractors": [],
+                "explain": "«das Kleid» = el vestido; neutro."
+              }
+            ]
+          },
+          {
+            "id": "s2_u7_l3",
+            "index": 3,
+            "title": "✏️ En la tienda de ropa",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "cloze",
+                "prompt": "Completa: (probármelo)",
+                "sentence": "Kann ich das ___ ?",
+                "options": [
+                  "anprobieren",
+                  "ausprobieren",
+                  "probieren"
+                ],
+                "answer": "anprobieren",
+                "explain": "ANprobieren = probarse ropa; AUSprobieren = probar cosas; probieren = probar comida."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Welche Größe haben Sie?",
+                "options": [
+                  "Welche Größe haben Sie?",
+                  "Welche Farbe haben Sie?",
+                  "Welche Straße suchen Sie?"
+                ],
+                "answer": "Welche Größe haben Sie?",
+                "explain": "«die Größe» = la talla; «welche» = qué/cuál."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «la talla»",
+                "answer": "die Größe",
+                "accepted": [
+                  "groesse",
+                  "größe"
+                ],
+                "explain": "«die Größe» = la talla (y el tamaño en general)."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Die Hose ist mir zu klein.",
+                "answer": "Los pantalones me quedan pequeños",
+                "accepted": [
+                  "el pantalon me queda pequeno",
+                  "la talla me queda pequena"
+                ],
+                "explain": "«mir zu klein» = demasiado pequeño PARA MÍ (dativo)."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Tiene esto en azul?»",
+                "words": [
+                  "Haben",
+                  "Sie",
+                  "das",
+                  "in",
+                  "Blau"
+                ],
+                "distractors": [],
+                "explain": "Los colores como sustantivo van en mayúscula: in Blau."
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «die Socken»",
+                "hide_labels": true,
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🧦",
+                    "label": "die Socken"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🧤",
+                    "label": "die Handschuhe"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🧣",
+                    "label": "der Schal"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🎩",
+                    "label": "der Hut"
+                  }
+                ],
+                "correct": "a",
+                "explain": "«die Socken» = los calcetines; Handschuhe = guantes (¡zapatos de mano!)."
+              }
+            ]
+          },
+          {
+            "id": "s2_u7_l4",
+            "index": 4,
+            "title": "✏️ Estilo y tallas",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Hoy llevo camiseta y vaqueros»",
+                "words": [
+                  "Heute",
+                  "trage",
+                  "ich",
+                  "T-Shirt",
+                  "und",
+                  "Jeans"
+                ],
+                "distractors": [],
+                "explain": "Inversión tras «Heute»: trage ICH."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «el gorro»",
+                "answer": "die Mütze",
+                "accepted": [
+                  "muetze",
+                  "mütze"
+                ],
+                "explain": "«die Mütze» = el gorro (de lana); «der Hut» = el sombrero."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "die Umkleidekabine",
+                "options": [
+                  "die Umkleidekabine",
+                  "die Umleitung",
+                  "die Kabine"
+                ],
+                "answer": "die Umkleidekabine",
+                "explain": "«die Umkleidekabine» = el probador."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (bufanda)",
+                "sentence": "Im Winter trage ich einen ___",
+                "options": [
+                  "Schal",
+                  "Hut",
+                  "Gürtel"
+                ],
+                "answer": "Schal",
+                "explain": "«der Schal» = la bufanda; «der Gürtel» = el cinturón."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Das steht dir gut!",
+                "answer": "¡Te queda bien!",
+                "accepted": [
+                  "te sienta bien",
+                  "eso te queda bien"
+                ],
+                "explain": "«stehen» + dativo = sentar/quedar bien: Das steht DIR gut."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Die Schuhe ___ mir zu groß",
+                "options": [
+                  "sind",
+                  "ist",
+                  "hat"
+                ],
+                "answer": "sind",
+                "explain": "«die Schuhe» es plural → sind."
+              }
+            ]
+          },
+          {
+            "id": "s2_u7_l5",
+            "index": 5,
+            "title": "🎮 Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "die Hose",
+                "es": "los pantalones"
+              },
+              {
+                "de": "das Kleid",
+                "es": "el vestido"
+              },
+              {
+                "de": "die Jacke",
+                "es": "la chaqueta"
+              },
+              {
+                "de": "die Schuhe",
+                "es": "los zapatos"
+              },
+              {
+                "de": "tragen",
+                "es": "llevar puesto"
+              },
+              {
+                "de": "die Größe",
+                "es": "la talla"
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "s2_u8",
         "index": 8,
         "title": "Aficiones",
         "icon": "⚽",
-        "status": "coming_soon",
-        "lessons": []
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s2_u8_l1",
+            "index": 1,
+            "title": "📖 Aprende: hobbys y tiempo libre",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "Aficiones"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "Fußball spielen",
+                    "es": "jugar al fútbol"
+                  },
+                  {
+                    "de": "schwimmen",
+                    "es": "nadar"
+                  },
+                  {
+                    "de": "tanzen",
+                    "es": "bailar"
+                  },
+                  {
+                    "de": "malen",
+                    "es": "pintar"
+                  },
+                  {
+                    "de": "Musik hören",
+                    "es": "escuchar música"
+                  },
+                  {
+                    "de": "Rad fahren",
+                    "es": "montar en bici"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "«gern» convierte cualquier verbo en afición: Ich schwimme GERN = me gusta nadar. Más aún: am liebsten (lo que más)."
+              },
+              {
+                "type": "heading",
+                "text": "Lo favorito: Lieblings-"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "mein Lieblingssport",
+                    "es": "mi deporte favorito"
+                  },
+                  {
+                    "de": "mein Lieblingsbuch",
+                    "es": "mi libro favorito"
+                  },
+                  {
+                    "de": "der Spaß",
+                    "es": "la diversión"
+                  }
+                ]
+              },
+              {
+                "type": "example",
+                "de": "Sport macht mir Spaß, aber am liebsten male ich.",
+                "es": "El deporte me divierte, pero lo que más me gusta es pintar."
+              }
+            ]
+          },
+          {
+            "id": "s2_u8_l2",
+            "index": 2,
+            "title": "✏️ Me gusta…",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "cloze",
+                "prompt": "Completa: (me gusta)",
+                "sentence": "Ich spiele ___ Fußball",
+                "options": [
+                  "gern",
+                  "nie",
+                  "gut"
+                ],
+                "answer": "gern",
+                "explain": "«gern» tras el verbo = me gusta hacerlo."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Ich spiele Klavier",
+                "options": [
+                  "Ich spiele Klavier",
+                  "Ich spiele Gitarre",
+                  "Ich spiele Karten"
+                ],
+                "answer": "Ich spiele Klavier",
+                "explain": "«das Klavier» = el piano. Instrumentos sin artículo: Klavier spielen."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Me gusta nadar»",
+                "answer": "Ich schwimme gern",
+                "accepted": [],
+                "explain": "Verbo + gern: Ich schwimme gern."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Mein Hobby ist Fotografieren.",
+                "answer": "Mi afición es la fotografía",
+                "accepted": [
+                  "mi hobby es la fotografia",
+                  "mi hobby es fotografiar"
+                ],
+                "explain": "Los verbos como sustantivo van en mayúscula: das Fotografieren."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Cuál es tu deporte favorito?»",
+                "words": [
+                  "Was",
+                  "ist",
+                  "dein",
+                  "Lieblingssport"
+                ],
+                "distractors": [],
+                "explain": "Lieblings- + palabra = favorito: Lieblingssport."
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «schwimmen»",
+                "hide_labels": true,
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🏊",
+                    "label": "schwimmen"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🚴",
+                    "label": "Rad fahren"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🏃",
+                    "label": "laufen"
+                  },
+                  {
+                    "id": "d",
+                    "image": "⛷️",
+                    "label": "Ski fahren"
+                  }
+                ],
+                "correct": "a",
+                "explain": "«schwimmen» = nadar; «laufen» = correr."
+              }
+            ]
+          },
+          {
+            "id": "s2_u8_l3",
+            "index": 3,
+            "title": "✏️ Tiempo libre",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Los fines de semana montamos en bici»",
+                "words": [
+                  "Am",
+                  "Wochenende",
+                  "fahren",
+                  "wir",
+                  "Rad"
+                ],
+                "distractors": [],
+                "explain": "«Rad fahren» = montar en bici; inversión tras «Am Wochenende»."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (lesen)",
+                "sentence": "Sie ___ gern Bücher",
+                "options": [
+                  "liest",
+                  "lest",
+                  "lese"
+                ],
+                "answer": "liest",
+                "explain": "lesen e→ie con er/sie: sie liest."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Ich gehe ins Kino",
+                "options": [
+                  "Ich gehe ins Kino",
+                  "Ich gehe ins Konzert",
+                  "Ich gehe in die Kirche"
+                ],
+                "answer": "Ich gehe ins Kino",
+                "explain": "«ins Kino gehen» = ir al cine."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «bailar»",
+                "answer": "tanzen",
+                "accepted": [],
+                "explain": "«tanzen» = bailar; ich tanze, du tanzt."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Wir treffen uns mit Freunden im Park.",
+                "answer": "Quedamos con amigos en el parque",
+                "accepted": [
+                  "nos encontramos con amigos en el parque"
+                ],
+                "explain": "«sich treffen» = quedar/encontrarse: wir treffen UNS."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (le gusta)",
+                "sentence": "Er hört ___ Musik",
+                "options": [
+                  "gern",
+                  "nie",
+                  "laut"
+                ],
+                "answer": "gern",
+                "explain": "«Musik hören» = escuchar música + gern."
+              }
+            ]
+          },
+          {
+            "id": "s2_u8_l4",
+            "index": 4,
+            "title": "✏️ Deporte y música",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «malen»",
+                "hide_labels": true,
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🎨",
+                    "label": "malen"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🎸",
+                    "label": "Gitarre spielen"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🎤",
+                    "label": "singen"
+                  },
+                  {
+                    "id": "d",
+                    "image": "💃",
+                    "label": "tanzen"
+                  }
+                ],
+                "correct": "a",
+                "explain": "«malen» = pintar; «singen» = cantar."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «el equipo»",
+                "answer": "die Mannschaft",
+                "accepted": [
+                  "mannschaft",
+                  "das team",
+                  "team"
+                ],
+                "explain": "«die Mannschaft» = el equipo (deportivo)."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Mein Lieblingsverein ist Bayern München",
+                "options": [
+                  "Mein Lieblingsverein ist Bayern München",
+                  "Mein Lieblingsverein ist Borussia Dortmund",
+                  "Meine Lieblingsstadt ist München"
+                ],
+                "answer": "Mein Lieblingsverein ist Bayern München",
+                "explain": "«der Verein» = el club."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Toco la guitarra en una banda»",
+                "words": [
+                  "Ich",
+                  "spiele",
+                  "Gitarre",
+                  "in",
+                  "einer",
+                  "Band"
+                ],
+                "distractors": [],
+                "explain": "Instrumentos sin artículo: Gitarre spielen."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Sport macht mir Spaß.",
+                "answer": "El deporte me divierte",
+                "accepted": [
+                  "hacer deporte me divierte",
+                  "me divierte el deporte"
+                ],
+                "explain": "«Spaß machen» = divertir: … macht MIR Spaß."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (nadar, como sustantivo)",
+                "sentence": "___ macht Spaß!",
+                "options": [
+                  "Schwimmen",
+                  "Schwimme",
+                  "Geschwommen"
+                ],
+                "answer": "Schwimmen",
+                "explain": "El infinitivo como sujeto va en mayúscula: Schwimmen macht Spaß."
+              }
+            ]
+          },
+          {
+            "id": "s2_u8_l5",
+            "index": 5,
+            "title": "🎮 Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "schwimmen",
+                "es": "nadar"
+              },
+              {
+                "de": "tanzen",
+                "es": "bailar"
+              },
+              {
+                "de": "malen",
+                "es": "pintar"
+              },
+              {
+                "de": "lesen",
+                "es": "leer"
+              },
+              {
+                "de": "gern",
+                "es": "con gusto"
+              },
+              {
+                "de": "der Spaß",
+                "es": "la diversión"
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "s2_u9",
         "index": 9,
         "title": "Pasado (Perfekt)",
         "icon": "🕰️",
-        "status": "coming_soon",
-        "lessons": []
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s2_u9_l1",
+            "index": 1,
+            "title": "📖 Aprende: el Perfekt",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "Hablar del pasado"
+              },
+              {
+                "type": "text",
+                "text": "El Perfekt se forma con haben o sein + participio AL FINAL de la frase: «Ich habe Pizza gegessen»."
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "machen → gemacht",
+                    "es": "hacer → hecho"
+                  },
+                  {
+                    "de": "spielen → gespielt",
+                    "es": "jugar → jugado"
+                  },
+                  {
+                    "de": "essen → gegessen",
+                    "es": "comer → comido"
+                  },
+                  {
+                    "de": "sehen → gesehen",
+                    "es": "ver → visto"
+                  },
+                  {
+                    "de": "trinken → getrunken",
+                    "es": "beber → bebido"
+                  },
+                  {
+                    "de": "gehen → gegangen",
+                    "es": "ir → ido"
+                  },
+                  {
+                    "de": "fahren → gefahren",
+                    "es": "viajar → viajado"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "Los verbos de movimiento o cambio (gehen, fahren, fliegen, aufstehen) usan SEIN: Ich BIN nach Berlin gefahren. El resto usa HABEN."
+              },
+              {
+                "type": "example",
+                "de": "Gestern habe ich einen Film gesehen und bin früh ins Bett gegangen.",
+                "es": "Ayer vi una película y me fui pronto a la cama."
+              },
+              {
+                "type": "tip",
+                "text": "Los separables meten ge- en medio: anrufen → anGErufen; aufstehen → aufGEstanden."
+              }
+            ]
+          },
+          {
+            "id": "s2_u9_l2",
+            "index": 2,
+            "title": "✏️ Haben o sein",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "cloze",
+                "sentence": "Ich ___ Pizza gegessen",
+                "options": [
+                  "habe",
+                  "bin",
+                  "hat"
+                ],
+                "answer": "habe",
+                "explain": "«essen» no es movimiento → haben."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Wir ___ nach Berlin gefahren",
+                "options": [
+                  "sind",
+                  "haben",
+                  "seid"
+                ],
+                "answer": "sind",
+                "explain": "«fahren» es movimiento → sein: wir sind gefahren."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Escribe el participio de «machen»",
+                "answer": "gemacht",
+                "accepted": [],
+                "explain": "Regulares: ge- + raíz + -t: gemacht."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Ich habe Fußball gespielt",
+                "options": [
+                  "Ich habe Fußball gespielt",
+                  "Ich habe Fußball gesehen",
+                  "Ich habe Musik gespielt"
+                ],
+                "answer": "Ich habe Fußball gespielt",
+                "explain": "gespielt = jugado; gesehen = visto."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «He visto una película»",
+                "words": [
+                  "Ich",
+                  "habe",
+                  "einen",
+                  "Film",
+                  "gesehen"
+                ],
+                "distractors": [
+                  "bin"
+                ],
+                "explain": "El participio SIEMPRE al final: … gesehen."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Was hast du am Wochenende gemacht?",
+                "answer": "¿Qué hiciste el fin de semana?",
+                "accepted": [
+                  "que has hecho el fin de semana"
+                ],
+                "explain": "LA pregunta del lunes en Alemania 😄"
+              }
+            ]
+          },
+          {
+            "id": "s2_u9_l3",
+            "index": 3,
+            "title": "✏️ Ayer…",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Ayer fuimos al cine»",
+                "words": [
+                  "Gestern",
+                  "sind",
+                  "wir",
+                  "ins",
+                  "Kino",
+                  "gegangen"
+                ],
+                "distractors": [
+                  "haben"
+                ],
+                "explain": "gehen → sein; inversión tras «Gestern»: sind WIR."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Sie ___ ein Buch gelesen",
+                "options": [
+                  "hat",
+                  "ist",
+                  "habt"
+                ],
+                "answer": "hat",
+                "explain": "lesen → haben: sie hat gelesen."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «ayer»",
+                "answer": "gestern",
+                "accepted": [],
+                "explain": "gestern = ayer; vorgestern = anteayer."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Er ist zu Hause geblieben",
+                "options": [
+                  "Er ist zu Hause geblieben",
+                  "Er ist nach Hause gegangen",
+                  "Er hat zu Hause gegessen"
+                ],
+                "answer": "Er ist zu Hause geblieben",
+                "explain": "«bleiben» (quedarse) también va con sein: ist geblieben."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Ich habe meine Hausaufgaben schon gemacht.",
+                "answer": "Ya he hecho mis deberes",
+                "accepted": [
+                  "ya hice mis deberes",
+                  "ya he hecho los deberes"
+                ],
+                "explain": "«schon» = ya."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa con el participio de «sehen»",
+                "sentence": "Ich habe den Film ___",
+                "options": [
+                  "gesehen",
+                  "geseht",
+                  "sehen"
+                ],
+                "answer": "gesehen",
+                "explain": "sehen es irregular: gesehen (no «geseht»)."
+              }
+            ]
+          },
+          {
+            "id": "s2_u9_l4",
+            "index": 4,
+            "title": "✏️ Perfekt nivel pro",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "cloze",
+                "sentence": "Bist du schon einmal nach Deutschland ___ ?",
+                "options": [
+                  "geflogen",
+                  "fliegen",
+                  "geflogt"
+                ],
+                "answer": "geflogen",
+                "explain": "fliegen → geflogen (irregular), con sein."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Hemos comprado pan y queso»",
+                "words": [
+                  "Wir",
+                  "haben",
+                  "Brot",
+                  "und",
+                  "Käse",
+                  "gekauft"
+                ],
+                "distractors": [
+                  "sind"
+                ],
+                "explain": "kaufen → gekauft, con haben."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Escribe el participio de «trinken»",
+                "answer": "getrunken",
+                "accepted": [],
+                "explain": "trinken → getrunken (irregular: i→u)."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Wir haben Deutsch gelernt",
+                "options": [
+                  "Wir haben Deutsch gelernt",
+                  "Wir haben Englisch gelernt",
+                  "Wir haben Deutsch gesprochen"
+                ],
+                "answer": "Wir haben Deutsch gelernt",
+                "explain": "gelernt = aprendido; gesprochen = hablado."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Am Sonntag bin ich früh aufgestanden.",
+                "answer": "El domingo me levanté temprano",
+                "accepted": [
+                  "el domingo me he levantado temprano"
+                ],
+                "explain": "aufstehen → bin aufgestanden (movimiento + separable)."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (anrufen)",
+                "sentence": "Ich habe dich gestern ___",
+                "options": [
+                  "angerufen",
+                  "anrufen",
+                  "gerufen"
+                ],
+                "answer": "angerufen",
+                "explain": "Separables: ge- en medio → an-GE-rufen."
+              }
+            ]
+          },
+          {
+            "id": "s2_u9_l5",
+            "index": 5,
+            "title": "🎮 Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "gemacht",
+                "es": "hecho"
+              },
+              {
+                "de": "gegessen",
+                "es": "comido"
+              },
+              {
+                "de": "gesehen",
+                "es": "visto"
+              },
+              {
+                "de": "gegangen",
+                "es": "ido"
+              },
+              {
+                "de": "gefahren",
+                "es": "viajado"
+              },
+              {
+                "de": "gestern",
+                "es": "ayer"
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "s2_u10",
         "index": 10,
         "title": "En el restaurante",
         "icon": "🍽️",
-        "status": "coming_soon",
-        "lessons": []
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s2_u10_l1",
+            "index": 1,
+            "title": "📖 Aprende: comer fuera",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "En el restaurante"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "die Speisekarte",
+                    "es": "la carta"
+                  },
+                  {
+                    "de": "die Vorspeise",
+                    "es": "el entrante"
+                  },
+                  {
+                    "de": "das Hauptgericht",
+                    "es": "el plato principal"
+                  },
+                  {
+                    "de": "der Nachtisch",
+                    "es": "el postre"
+                  },
+                  {
+                    "de": "die Rechnung",
+                    "es": "la cuenta"
+                  },
+                  {
+                    "de": "das Trinkgeld",
+                    "es": "la propina"
+                  },
+                  {
+                    "de": "bestellen",
+                    "es": "pedir"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "Para pedir: «Ich hätte gern…» o «Ich nehme…» (tomaré). Al pagar te preguntarán «Zusammen oder getrennt?» (¿juntos o por separado?)."
+              },
+              {
+                "type": "example",
+                "de": "Als Vorspeise nehme ich die Suppe und als Hauptgericht das Schnitzel.",
+                "es": "De entrante tomaré la sopa y de principal el escalope."
+              },
+              {
+                "type": "tip",
+                "text": "En Alemania la propina se redondea al pagar: si son 18,50 € se dice «19, bitte» o «stimmt so» (quédese el cambio)."
+              }
+            ]
+          },
+          {
+            "id": "s2_u10_l2",
+            "index": 2,
+            "title": "✏️ Pedir la comida",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "die Speisekarte",
+                "options": [
+                  "die Speisekarte",
+                  "die Landkarte",
+                  "die Postkarte"
+                ],
+                "answer": "die Speisekarte",
+                "explain": "Speisekarte = carta del restaurante; Landkarte = mapa; Postkarte = postal."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (pedir educado)",
+                "sentence": "Ich ___ gern ein Schnitzel",
+                "options": [
+                  "hätte",
+                  "habe",
+                  "bin"
+                ],
+                "answer": "hätte",
+                "explain": "«Ich hätte gern» = quisiera (más educado que «ich habe»)."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «el postre»",
+                "answer": "der Nachtisch",
+                "accepted": [
+                  "nachtisch",
+                  "das dessert",
+                  "dessert"
+                ],
+                "explain": "«der Nachtisch» = el postre (lit.: después de la mesa)."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Was können Sie empfehlen?",
+                "answer": "¿Qué me recomienda?",
+                "accepted": [
+                  "que puede recomendar",
+                  "que recomienda usted"
+                ],
+                "explain": "«empfehlen» = recomendar. Frase estrella con el camarero."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «De primero tomo la sopa»",
+                "words": [
+                  "Als",
+                  "Vorspeise",
+                  "nehme",
+                  "ich",
+                  "die",
+                  "Suppe"
+                ],
+                "distractors": [],
+                "explain": "«als Vorspeise» = como entrante; nehmen = tomar."
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «der Nachtisch»",
+                "hide_labels": true,
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🍨",
+                    "label": "der Nachtisch"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🍲",
+                    "label": "die Suppe"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🥗",
+                    "label": "der Salat"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🍞",
+                    "label": "das Brot"
+                  }
+                ],
+                "correct": "a",
+                "explain": "«der Nachtisch» = el postre 🍨."
+              }
+            ]
+          },
+          {
+            "id": "s2_u10_l3",
+            "index": 3,
+            "title": "✏️ La cuenta, por favor",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «La cuenta, por favor»",
+                "words": [
+                  "Die",
+                  "Rechnung",
+                  "bitte"
+                ],
+                "distractors": [
+                  "Rechnen"
+                ],
+                "explain": "«die Rechnung» = la cuenta; «rechnen» sería calcular."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Zusammen oder getrennt?",
+                "options": [
+                  "Zusammen oder getrennt?",
+                  "Zusammen oder allein?",
+                  "Gemeinsam oder getrennt?"
+                ],
+                "answer": "Zusammen oder getrennt?",
+                "explain": "¿Pagan juntos (zusammen) o por separado (getrennt)?"
+              },
+              {
+                "type": "cloze",
+                "sentence": "Das Essen ist sehr ___ !",
+                "options": [
+                  "lecker",
+                  "ledig",
+                  "leer"
+                ],
+                "answer": "lecker",
+                "explain": "«lecker» = delicioso; leer = vacío."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «la propina»",
+                "answer": "das Trinkgeld",
+                "accepted": [
+                  "trinkgeld"
+                ],
+                "explain": "«das Trinkgeld» = la propina (lit.: dinero para beber)."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Ich bin allergisch gegen Nüsse.",
+                "answer": "Soy alérgico a los frutos secos",
+                "accepted": [
+                  "soy alergico a las nueces",
+                  "tengo alergia a los frutos secos"
+                ],
+                "explain": "«allergisch gegen» + acusativo = alérgico a."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Tienen platos vegetarianos?»",
+                "words": [
+                  "Haben",
+                  "Sie",
+                  "vegetarische",
+                  "Gerichte"
+                ],
+                "distractors": [],
+                "explain": "«das Gericht» = el plato (comida); vegetarisch = vegetariano."
+              }
+            ]
+          },
+          {
+            "id": "s2_u10_l4",
+            "index": 4,
+            "title": "✏️ Buen provecho",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "cloze",
+                "prompt": "Completa: (pedir)",
+                "sentence": "Herr Ober, wir möchten ___",
+                "options": [
+                  "bestellen",
+                  "bezahlen",
+                  "bleiben"
+                ],
+                "answer": "bestellen",
+                "explain": "«bestellen» = pedir; «bezahlen» = pagar."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «He reservado una mesa»",
+                "answer": "Ich habe einen Tisch reserviert",
+                "accepted": [],
+                "explain": "reservieren → reserviert (los verbos en -ieren no llevan ge-)."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Guten Appetit!",
+                "options": [
+                  "Guten Appetit!",
+                  "Guten Abend!",
+                  "Gute Fahrt!"
+                ],
+                "answer": "Guten Appetit!",
+                "explain": "«Guten Appetit» = que aproveche."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Das Hauptgericht war ausgezeichnet.",
+                "answer": "El plato principal estaba excelente",
+                "accepted": [
+                  "el plato principal fue excelente"
+                ],
+                "explain": "«ausgezeichnet» = excelente; «war» = estaba (pasado de sein)."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Tomaré un agua mineral»",
+                "words": [
+                  "Ich",
+                  "nehme",
+                  "ein",
+                  "Mineralwasser"
+                ],
+                "distractors": [
+                  "nimmst"
+                ],
+                "explain": "nehmen: ich nehme (el cambio e→i solo con du/er)."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (¿le ha gustado?)",
+                "sentence": "Hat es Ihnen ___ ?",
+                "options": [
+                  "geschmeckt",
+                  "geschmackt",
+                  "schmecken"
+                ],
+                "answer": "geschmeckt",
+                "explain": "«schmecken» = saber bien: Hat es geschmeckt? = ¿estaba rico?"
+              }
+            ]
+          },
+          {
+            "id": "s2_u10_l5",
+            "index": 5,
+            "title": "🎮 Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "die Speisekarte",
+                "es": "la carta"
+              },
+              {
+                "de": "die Rechnung",
+                "es": "la cuenta"
+              },
+              {
+                "de": "das Trinkgeld",
+                "es": "la propina"
+              },
+              {
+                "de": "bestellen",
+                "es": "pedir"
+              },
+              {
+                "de": "der Nachtisch",
+                "es": "el postre"
+              },
+              {
+                "de": "lecker",
+                "es": "delicioso"
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "s2_u11",
         "index": 11,
         "title": "La escuela",
         "icon": "🏫",
-        "status": "coming_soon",
-        "lessons": []
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s2_u11_l1",
+            "index": 1,
+            "title": "📖 Aprende: el cole en Alemania",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "La escuela"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "die Schule",
+                    "es": "el colegio"
+                  },
+                  {
+                    "de": "der Lehrer / die Lehrerin",
+                    "es": "el profesor / la profesora"
+                  },
+                  {
+                    "de": "die Klasse",
+                    "es": "la clase"
+                  },
+                  {
+                    "de": "die Pause",
+                    "es": "el recreo"
+                  },
+                  {
+                    "de": "das Fach",
+                    "es": "la asignatura"
+                  },
+                  {
+                    "de": "die Note",
+                    "es": "la nota"
+                  },
+                  {
+                    "de": "die Prüfung",
+                    "es": "el examen"
+                  },
+                  {
+                    "de": "die Ferien",
+                    "es": "las vacaciones"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "Las asignaturas van sin artículo: Ich habe heute Mathe, Deutsch und Sport."
+              },
+              {
+                "type": "example",
+                "de": "Meine Lieblingsfächer sind Kunst und Musik.",
+                "es": "Mis asignaturas favoritas son plástica y música."
+              },
+              {
+                "type": "tip",
+                "text": "¡Al revés que en España! En Alemania la MEJOR nota es el 1 (eine Eins) y la peor el 6."
+              }
+            ]
+          },
+          {
+            "id": "s2_u11_l2",
+            "index": 2,
+            "title": "✏️ Mi clase",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "die Pause",
+                "options": [
+                  "die Pause",
+                  "die Dose",
+                  "die Hose"
+                ],
+                "answer": "die Pause",
+                "explain": "«die Pause» = el recreo/la pausa."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Mein Lieblings___ ist Mathe",
+                "options": [
+                  "fach",
+                  "buch",
+                  "tag"
+                ],
+                "answer": "fach",
+                "explain": "«das Fach» = la asignatura → Lieblingsfach."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «el profesor»",
+                "answer": "der Lehrer",
+                "accepted": [
+                  "lehrer"
+                ],
+                "explain": "«der Lehrer»; la profesora = die Lehrerin."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "In der Pause spielen wir auf dem Schulhof.",
+                "answer": "En el recreo jugamos en el patio",
+                "accepted": [
+                  "durante el recreo jugamos en el patio"
+                ],
+                "explain": "«der Schulhof» = el patio del colegio."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Tengo mates a las nueve»",
+                "words": [
+                  "Ich",
+                  "habe",
+                  "um",
+                  "neun",
+                  "Mathe"
+                ],
+                "distractors": [],
+                "explain": "Asignaturas sin artículo: Ich habe Mathe."
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «das Heft»",
+                "hide_labels": true,
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "📓",
+                    "label": "das Heft"
+                  },
+                  {
+                    "id": "b",
+                    "image": "✏️",
+                    "label": "der Bleistift"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🎒",
+                    "label": "der Schulranzen"
+                  },
+                  {
+                    "id": "d",
+                    "image": "📏",
+                    "label": "das Lineal"
+                  }
+                ],
+                "correct": "a",
+                "explain": "«das Heft» = el cuaderno; Bleistift = lápiz; Lineal = regla."
+              }
+            ]
+          },
+          {
+            "id": "s2_u11_l3",
+            "index": 3,
+            "title": "✏️ Notas y exámenes",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "cloze",
+                "sentence": "Morgen schreiben wir eine ___",
+                "options": [
+                  "Prüfung",
+                  "Pause",
+                  "Party"
+                ],
+                "answer": "Prüfung",
+                "explain": "«eine Prüfung schreiben» = hacer un examen escrito."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «la nota»",
+                "answer": "die Note",
+                "accepted": [
+                  "note"
+                ],
+                "explain": "«die Note» = la nota escolar (¡y musical!)."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Ich habe eine Eins bekommen",
+                "options": [
+                  "Ich habe eine Eins bekommen",
+                  "Ich habe eine Vier bekommen",
+                  "Ich habe einen Hund bekommen"
+                ],
+                "answer": "Ich habe eine Eins bekommen",
+                "explain": "«eine Eins bekommen» = sacar un 1 (¡la mejor nota!)."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Tenemos que estudiar para el examen»",
+                "words": [
+                  "Wir",
+                  "müssen",
+                  "für",
+                  "die",
+                  "Prüfung",
+                  "lernen"
+                ],
+                "distractors": [],
+                "explain": "müssen + infinitivo al final: … lernen."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Der Unterricht beginnt um acht Uhr.",
+                "answer": "La clase empieza a las ocho",
+                "accepted": [
+                  "las clases empiezan a las ocho"
+                ],
+                "explain": "«der Unterricht» = la clase (la actividad de enseñar)."
+              },
+              {
+                "type": "cloze",
+                "sentence": "In Deutschland ist die Eins die ___ Note",
+                "options": [
+                  "beste",
+                  "schlechteste",
+                  "letzte"
+                ],
+                "answer": "beste",
+                "explain": "¡Dato cultural! En Alemania el 1 es la mejor nota y el 6 la peor."
+              }
+            ]
+          },
+          {
+            "id": "s2_u11_l4",
+            "index": 4,
+            "title": "✏️ Vida escolar",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Mi mochila es muy pesada»",
+                "words": [
+                  "Mein",
+                  "Schulranzen",
+                  "ist",
+                  "sehr",
+                  "schwer"
+                ],
+                "distractors": [],
+                "explain": "«der Schulranzen» = la mochila escolar; «schwer» = pesado."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «los deberes»",
+                "answer": "die Hausaufgaben",
+                "accepted": [
+                  "hausaufgaben"
+                ],
+                "explain": "«die Hausaufgaben»: tareas (Aufgaben) de casa (Haus)."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "das Klassenzimmer",
+                "options": [
+                  "das Klassenzimmer",
+                  "das Wohnzimmer",
+                  "das Lehrerzimmer"
+                ],
+                "answer": "das Klassenzimmer",
+                "explain": "Klassenzimmer = aula; Lehrerzimmer = sala de profesores."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Kunst, Musik und Sport sind meine ___",
+                "options": [
+                  "Lieblingsfächer",
+                  "Lieblingsfarben",
+                  "Lieblingstage"
+                ],
+                "answer": "Lieblingsfächer",
+                "explain": "«Fächer» = plural de Fach (asignatura)."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Wir lernen seit zwei Jahren Deutsch.",
+                "answer": "Aprendemos alemán desde hace dos años",
+                "accepted": [
+                  "llevamos dos anos aprendiendo aleman",
+                  "estudiamos aleman desde hace dos anos"
+                ],
+                "explain": "«seit» + dativo = desde hace: seit zwei Jahren."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Die Sommerferien ___ sechs Wochen",
+                "options": [
+                  "dauern",
+                  "dauert",
+                  "gedauert"
+                ],
+                "answer": "dauern",
+                "explain": "«die Ferien» siempre es plural → dauern."
+              }
+            ]
+          },
+          {
+            "id": "s2_u11_l5",
+            "index": 5,
+            "title": "🎮 Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "der Lehrer",
+                "es": "el profesor"
+              },
+              {
+                "de": "die Pause",
+                "es": "el recreo"
+              },
+              {
+                "de": "die Prüfung",
+                "es": "el examen"
+              },
+              {
+                "de": "die Note",
+                "es": "la nota"
+              },
+              {
+                "de": "das Fach",
+                "es": "la asignatura"
+              },
+              {
+                "de": "die Ferien",
+                "es": "las vacaciones"
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "s2_u12",
         "index": 12,
         "title": "Fiestas y tradiciones",
         "icon": "🎉",
-        "status": "coming_soon",
-        "lessons": []
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s2_u12_l1",
+            "index": 1,
+            "title": "📖 Aprende: celebraciones",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "Fiestas"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "das Fest",
+                    "es": "la fiesta"
+                  },
+                  {
+                    "de": "der Geburtstag",
+                    "es": "el cumpleaños"
+                  },
+                  {
+                    "de": "Weihnachten",
+                    "es": "Navidad"
+                  },
+                  {
+                    "de": "Ostern",
+                    "es": "Pascua"
+                  },
+                  {
+                    "de": "Silvester",
+                    "es": "Nochevieja"
+                  },
+                  {
+                    "de": "das Geschenk",
+                    "es": "el regalo"
+                  },
+                  {
+                    "de": "feiern",
+                    "es": "celebrar"
+                  },
+                  {
+                    "de": "einladen",
+                    "es": "invitar"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "Felicitaciones clave: «Herzlichen Glückwunsch zum Geburtstag!» (feliz cumpleaños), «Frohe Weihnachten!» (feliz Navidad), «Frohes neues Jahr!» (feliz año nuevo)."
+              },
+              {
+                "type": "example",
+                "de": "Ich lade dich zu meiner Geburtstagsparty ein!",
+                "es": "¡Te invito a mi fiesta de cumpleaños!"
+              },
+              {
+                "type": "tip",
+                "text": "«einladen» es separable: Ich lade dich EIN. En Alemania quien invita… ¡paga!"
+              }
+            ]
+          },
+          {
+            "id": "s2_u12_l2",
+            "index": 2,
+            "title": "✏️ ¡Felicidades!",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Herzlichen Glückwunsch!",
+                "options": [
+                  "Herzlichen Glückwunsch!",
+                  "Herzliche Grüße!",
+                  "Gute Besserung!"
+                ],
+                "answer": "Herzlichen Glückwunsch!",
+                "explain": "«Herzlichen Glückwunsch» = felicidades (lit.: cordial deseo de suerte)."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (einladen)",
+                "sentence": "Ich lade dich zu meiner Party ___",
+                "options": [
+                  "ein",
+                  "an",
+                  "auf"
+                ],
+                "answer": "ein",
+                "explain": "«einladen» separable: lade … EIN."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «el regalo»",
+                "answer": "das Geschenk",
+                "accepted": [
+                  "geschenk"
+                ],
+                "explain": "«das Geschenk» = el regalo; de «schenken» (regalar)."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Wann hast du Geburtstag?",
+                "answer": "¿Cuándo es tu cumpleaños?",
+                "accepted": [
+                  "cuando cumples anos",
+                  "cuando es tu cumple"
+                ],
+                "explain": "Se dice «Geburtstag haben»: ¿cuándo TIENES cumpleaños?"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Celebramos la Navidad en familia»",
+                "words": [
+                  "Wir",
+                  "feiern",
+                  "Weihnachten",
+                  "mit",
+                  "der",
+                  "Familie"
+                ],
+                "distractors": [],
+                "explain": "«feiern» = celebrar; Weihnachten sin artículo."
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «das Geschenk»",
+                "hide_labels": true,
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🎁",
+                    "label": "das Geschenk"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🎂",
+                    "label": "der Kuchen"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🎈",
+                    "label": "der Luftballon"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🕯️",
+                    "label": "die Kerze"
+                  }
+                ],
+                "correct": "a",
+                "explain": "«das Geschenk» = el regalo; Luftballon = globo; Kerze = vela."
+              }
+            ]
+          },
+          {
+            "id": "s2_u12_l3",
+            "index": 3,
+            "title": "✏️ Navidad y Pascua",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "cloze",
+                "prompt": "Completa: (Navidad)",
+                "sentence": "Frohe ___ !",
+                "options": [
+                  "Weihnachten",
+                  "Ostern",
+                  "Ferien"
+                ],
+                "answer": "Weihnachten",
+                "explain": "«Frohe Weihnachten» = feliz Navidad; «Frohe Ostern» = feliz Pascua."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Feliz Año Nuevo»",
+                "answer": "Frohes neues Jahr",
+                "accepted": [
+                  "gutes neues jahr"
+                ],
+                "explain": "Se dice en Silvester (Nochevieja), a medianoche."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "der Weihnachtsmarkt",
+                "options": [
+                  "der Weihnachtsmarkt",
+                  "der Weihnachtsmann",
+                  "der Supermarkt"
+                ],
+                "answer": "der Weihnachtsmarkt",
+                "explain": "«der Weihnachtsmarkt» = el mercadillo navideño, tradición alemana top."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «En Pascua buscamos huevos»",
+                "words": [
+                  "An",
+                  "Ostern",
+                  "suchen",
+                  "wir",
+                  "Eier"
+                ],
+                "distractors": [],
+                "explain": "«Eier suchen»: la búsqueda de huevos de Pascua."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Der Weihnachtsmann bringt die Geschenke.",
+                "answer": "Papá Noel trae los regalos",
+                "accepted": [
+                  "papa noel trae regalos"
+                ],
+                "explain": "«der Weihnachtsmann» = Papá Noel; en el sur los trae el Christkind."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Auf der Party ___ wir und essen Kuchen",
+                "options": [
+                  "tanzen",
+                  "tanzt",
+                  "getanzt"
+                ],
+                "answer": "tanzen",
+                "explain": "wir + -en: wir tanzen."
+              }
+            ]
+          },
+          {
+            "id": "s2_u12_l4",
+            "index": 4,
+            "title": "✏️ De fiesta",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Soplo las velas de la tarta»",
+                "words": [
+                  "Ich",
+                  "puste",
+                  "die",
+                  "Kerzen",
+                  "aus"
+                ],
+                "distractors": [],
+                "explain": "«auspusten» = soplar/apagar (separable): puste … aus."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «invitar»",
+                "answer": "einladen",
+                "accepted": [],
+                "explain": "«einladen» = invitar; separable: Ich lade dich ein."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "das Feuerwerk",
+                "options": [
+                  "das Feuerwerk",
+                  "das Netzwerk",
+                  "das Handwerk"
+                ],
+                "answer": "das Feuerwerk",
+                "explain": "«das Feuerwerk» = los fuegos artificiales (obra de fuego)."
+              },
+              {
+                "type": "cloze",
+                "sentence": "An Silvester gibt es ein großes ___",
+                "options": [
+                  "Feuerwerk",
+                  "Frühstück",
+                  "Fußballspiel"
+                ],
+                "answer": "Feuerwerk",
+                "explain": "En Nochevieja (Silvester) los alemanes tiran fuegos artificiales."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Alles Gute zum Geburtstag!",
+                "answer": "¡Feliz cumpleaños!",
+                "accepted": [
+                  "felicidades por tu cumpleanos",
+                  "feliz cumple"
+                ],
+                "explain": "«Alles Gute» = todo lo bueno; la felicitación más común."
+              },
+              {
+                "type": "select_image",
+                "prompt": "Selecciona: «der Kuchen»",
+                "hide_labels": true,
+                "options": [
+                  {
+                    "id": "a",
+                    "image": "🎂",
+                    "label": "der Kuchen"
+                  },
+                  {
+                    "id": "b",
+                    "image": "🍪",
+                    "label": "der Keks"
+                  },
+                  {
+                    "id": "c",
+                    "image": "🍞",
+                    "label": "das Brot"
+                  },
+                  {
+                    "id": "d",
+                    "image": "🧁",
+                    "label": "der Muffin"
+                  }
+                ],
+                "correct": "a",
+                "explain": "«der Kuchen» = la tarta/el pastel; «der Keks» = la galleta."
+              }
+            ]
+          },
+          {
+            "id": "s2_u12_l5",
+            "index": 5,
+            "title": "🎮 Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "das Fest",
+                "es": "la fiesta"
+              },
+              {
+                "de": "das Geschenk",
+                "es": "el regalo"
+              },
+              {
+                "de": "Weihnachten",
+                "es": "Navidad"
+              },
+              {
+                "de": "feiern",
+                "es": "celebrar"
+              },
+              {
+                "de": "einladen",
+                "es": "invitar"
+              },
+              {
+                "de": "der Geburtstag",
+                "es": "el cumpleaños"
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "s2_u13",
         "index": 13,
         "title": "Planes de futuro",
         "icon": "🔮",
-        "status": "coming_soon",
-        "lessons": []
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s2_u13_l1",
+            "index": 1,
+            "title": "📖 Aprende: hablar del futuro",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "El futuro en alemán"
+              },
+              {
+                "type": "text",
+                "text": "El futuro casi siempre se dice en PRESENTE + palabra de tiempo: «Morgen fahre ich nach Berlin» (mañana voy a Berlín)."
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "morgen",
+                    "es": "mañana"
+                  },
+                  {
+                    "de": "nächste Woche",
+                    "es": "la próxima semana"
+                  },
+                  {
+                    "de": "nächstes Jahr",
+                    "es": "el año que viene"
+                  },
+                  {
+                    "de": "die Zukunft",
+                    "es": "el futuro"
+                  },
+                  {
+                    "de": "der Plan",
+                    "es": "el plan"
+                  },
+                  {
+                    "de": "der Traum",
+                    "es": "el sueño"
+                  }
+                ]
+              },
+              {
+                "type": "heading",
+                "text": "wollen y werden"
+              },
+              {
+                "type": "vocab",
+                "items": [
+                  {
+                    "de": "ich will",
+                    "es": "yo quiero"
+                  },
+                  {
+                    "de": "du willst",
+                    "es": "tú quieres"
+                  },
+                  {
+                    "de": "er / sie will",
+                    "es": "él / ella quiere"
+                  },
+                  {
+                    "de": "ich werde…",
+                    "es": "yo haré… (futuro)"
+                  }
+                ]
+              },
+              {
+                "type": "tip",
+                "text": "¡OJO! «will» alemán NO es el will inglés: significa QUIERO. «Ich will Pilot werden» = quiero ser piloto."
+              },
+              {
+                "type": "example",
+                "de": "Nächsten Sommer wollen wir nach Deutschland reisen.",
+                "es": "El próximo verano queremos viajar a Alemania."
+              }
+            ]
+          },
+          {
+            "id": "s2_u13_l2",
+            "index": 2,
+            "title": "✏️ Mañana…",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "cloze",
+                "prompt": "Completa: (presente con valor de futuro)",
+                "sentence": "Morgen ___ ich zu Oma",
+                "options": [
+                  "fahre",
+                  "fuhr",
+                  "gefahren"
+                ],
+                "answer": "fahre",
+                "explain": "El futuro se dice en presente: Morgen fahre ich…"
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «la próxima semana»",
+                "answer": "nächste Woche",
+                "accepted": [
+                  "naechste woche"
+                ],
+                "explain": "«nächste Woche»; el año que viene = nächstes Jahr."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Was machst du morgen?",
+                "options": [
+                  "Was machst du morgen?",
+                  "Was machst du heute?",
+                  "Was machst du gern?"
+                ],
+                "answer": "Was machst du morgen?",
+                "explain": "«morgen» = mañana (¡pero «der Morgen» = la mañana!)."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «El año que viene aprendo francés»",
+                "words": [
+                  "Nächstes",
+                  "Jahr",
+                  "lerne",
+                  "ich",
+                  "Französisch"
+                ],
+                "distractors": [],
+                "explain": "Inversión: Nächstes Jahr lerne ICH."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Wir wollen im Sommer ans Meer fahren.",
+                "answer": "Queremos ir al mar en verano",
+                "accepted": [
+                  "en verano queremos ir al mar"
+                ],
+                "explain": "«ans Meer» = an das Meer (al mar); wollen + infinitivo al final."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (querer)",
+                "sentence": "Ich ___ Tierarzt werden",
+                "options": [
+                  "will",
+                  "werde",
+                  "wollen"
+                ],
+                "answer": "will",
+                "explain": "«Ich will … werden» = quiero SER (de profesión). Tierarzt = veterinario."
+              }
+            ]
+          },
+          {
+            "id": "s2_u13_l3",
+            "index": 3,
+            "title": "✏️ Quiero ser…",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "cloze",
+                "sentence": "Er ___ Pilot werden",
+                "options": [
+                  "will",
+                  "willst",
+                  "wollt"
+                ],
+                "answer": "will",
+                "explain": "wollen es irregular: ich will, du willst, ER WILL (sin -t)."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «yo quiero»",
+                "answer": "ich will",
+                "accepted": [
+                  "will"
+                ],
+                "explain": "«ich will» = yo quiero (¡no confundir con el futuro inglés!)."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Ich werde viel lernen",
+                "options": [
+                  "Ich werde viel lernen",
+                  "Ich werde viel lesen",
+                  "Ich will viel lernen"
+                ],
+                "answer": "Ich werde viel lernen",
+                "explain": "«werde» = futuro formal; «will» = querer. ¡Escucha la diferencia!"
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Qué quieres ser de mayor?»",
+                "words": [
+                  "Was",
+                  "willst",
+                  "du",
+                  "später",
+                  "werden"
+                ],
+                "distractors": [],
+                "explain": "«später» = más tarde/de mayor; werden = llegar a ser."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Ich habe viele Pläne für die Zukunft.",
+                "answer": "Tengo muchos planes para el futuro",
+                "accepted": [
+                  "tengo muchos planes de futuro"
+                ],
+                "explain": "«die Pläne» = plural de der Plan."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (el futuro)",
+                "sentence": "die ___ = el futuro",
+                "options": [
+                  "Zukunft",
+                  "Zufall",
+                  "Zug"
+                ],
+                "answer": "Zukunft",
+                "explain": "«die Zukunft» = el futuro; Zufall = casualidad; Zug = tren."
+              }
+            ]
+          },
+          {
+            "id": "s2_u13_l4",
+            "index": 4,
+            "title": "✏️ Sueños y planes",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «Mañana visitamos a los abuelos»",
+                "words": [
+                  "Morgen",
+                  "besuchen",
+                  "wir",
+                  "die",
+                  "Großeltern"
+                ],
+                "distractors": [],
+                "explain": "«besuchen» = visitar; presente con valor de futuro."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «el sueño» (una meta)",
+                "answer": "der Traum",
+                "accepted": [
+                  "traum"
+                ],
+                "explain": "«der Traum» = el sueño; «träumen» = soñar."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Mein Traumberuf ist Astronautin",
+                "options": [
+                  "Mein Traumberuf ist Astronautin",
+                  "Mein Traumberuf ist Ärztin",
+                  "Mein Traumberuf ist Lehrerin"
+                ],
+                "answer": "Mein Traumberuf ist Astronautin",
+                "explain": "«der Traumberuf» = la profesión soñada."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (predicción con werden)",
+                "sentence": "Es ___ morgen regnen",
+                "options": [
+                  "wird",
+                  "will",
+                  "werde"
+                ],
+                "answer": "wird",
+                "explain": "Predicciones con werden: Es wird regnen = lloverá."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Am Samstag gehen wir ins Schwimmbad.",
+                "answer": "El sábado vamos a la piscina",
+                "accepted": [
+                  "vamos a la piscina el sabado"
+                ],
+                "explain": "«das Schwimmbad» = la piscina."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (visitar/conocer)",
+                "sentence": "Ich möchte Deutschland ___",
+                "options": [
+                  "besuchen",
+                  "besuche",
+                  "besucht"
+                ],
+                "answer": "besuchen",
+                "explain": "möchte + INFINITIVO al final: besuchen."
+              }
+            ]
+          },
+          {
+            "id": "s2_u13_l5",
+            "index": 5,
+            "title": "🎮 Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "morgen",
+                "es": "mañana"
+              },
+              {
+                "de": "die Zukunft",
+                "es": "el futuro"
+              },
+              {
+                "de": "ich will",
+                "es": "yo quiero"
+              },
+              {
+                "de": "der Plan",
+                "es": "el plan"
+              },
+              {
+                "de": "der Traum",
+                "es": "el sueño"
+              },
+              {
+                "de": "nächstes Jahr",
+                "es": "el año que viene"
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "s2_u14",
         "index": 14,
         "title": "Repaso final A2",
         "icon": "🏆",
-        "status": "coming_soon",
-        "lessons": []
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s2_u14_l1",
+            "index": 1,
+            "title": "📖 Repasa: las 5 claves de A2",
+            "kind": "theory",
+            "blocks": [
+              {
+                "type": "heading",
+                "text": "¡Última unidad del nivel A2!"
+              },
+              {
+                "type": "text",
+                "text": "Antes del gran repaso, las cinco claves que has aprendido en esta sección."
+              },
+              {
+                "type": "tip",
+                "text": "1️⃣ Pedir con educación: «Ich hätte gern…» / «Ich möchte…»."
+              },
+              {
+                "type": "tip",
+                "text": "2️⃣ Transportes con mit + dativo: mit dem Bus, mit der U-Bahn. Y umsteigen para el transbordo."
+              },
+              {
+                "type": "tip",
+                "text": "3️⃣ El pasado (Perfekt): haben/sein + participio AL FINAL. Movimiento → sein: Ich bin gefahren."
+              },
+              {
+                "type": "tip",
+                "text": "4️⃣ El futuro se dice en presente + tiempo: Morgen fahre ich… Y los deseos con wollen: Ich will Pilot werden."
+              },
+              {
+                "type": "tip",
+                "text": "5️⃣ Reflexivos y frecuencia: Ich wasche mich / Ich gehe oft ins Kino."
+              },
+              {
+                "type": "example",
+                "de": "Gestern habe ich eingekauft und morgen will ich mit Freunden ins Kino gehen.",
+                "es": "Ayer hice la compra y mañana quiero ir al cine con amigos."
+              }
+            ]
+          },
+          {
+            "id": "s2_u14_l2",
+            "index": 2,
+            "title": "✏️ Repaso: ciudad y compras",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "cloze",
+                "sentence": "Entschuldigung, wie ___ ich zum Bahnhof?",
+                "options": [
+                  "komme",
+                  "kommt",
+                  "kommen"
+                ],
+                "answer": "komme",
+                "explain": "«Wie komme ich zu…?» = ¿cómo llego a…? (unidad 3)."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «El jersey es demasiado caro»",
+                "words": [
+                  "Der",
+                  "Pullover",
+                  "ist",
+                  "zu",
+                  "teuer"
+                ],
+                "distractors": [],
+                "explain": "«zu teuer» = demasiado caro (unidad 2)."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Die zweite Straße links",
+                "options": [
+                  "Die zweite Straße links",
+                  "Die zweite Straße rechts",
+                  "Die dritte Straße links"
+                ],
+                "answer": "Die zweite Straße links",
+                "explain": "Direcciones (unidad 3)."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Ich hätte gern ein Kilo Tomaten.",
+                "answer": "Quisiera un kilo de tomates",
+                "accepted": [
+                  "querria un kilo de tomates",
+                  "me pone un kilo de tomates"
+                ],
+                "explain": "«Ich hätte gern» = fórmula educada del mercado (unidad 2)."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «hacer transbordo»",
+                "answer": "umsteigen",
+                "accepted": [],
+                "explain": "«umsteigen» (unidad 4)."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Wir fahren ___ der U-Bahn",
+                "options": [
+                  "mit",
+                  "in",
+                  "auf"
+                ],
+                "answer": "mit",
+                "explain": "Transportes con mit + dativo (unidad 4)."
+              }
+            ]
+          },
+          {
+            "id": "s2_u14_l3",
+            "index": 3,
+            "title": "✏️ Repaso: tiempo, salud y ropa",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "cloze",
+                "sentence": "Es ist kalt: Zieh eine ___ an!",
+                "options": [
+                  "Jacke",
+                  "Hose",
+                  "Socke"
+                ],
+                "answer": "Jacke",
+                "explain": "«anziehen» + Jacke: ¡abrígate! (unidades 5 y 7)."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Traduce: «Me duele la cabeza»",
+                "answer": "Mir tut der Kopf weh",
+                "accepted": [
+                  "ich habe kopfschmerzen"
+                ],
+                "explain": "Dolores con weh tun o -schmerzen (unidad 6)."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Es regnet und es ist windig",
+                "options": [
+                  "Es regnet und es ist windig",
+                  "Es schneit und es ist windig",
+                  "Es regnet und es ist neblig"
+                ],
+                "answer": "Es regnet und es ist windig",
+                "explain": "El tiempo con «es» (unidad 5)."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «En verano hace mucho calor»",
+                "words": [
+                  "Im",
+                  "Sommer",
+                  "ist",
+                  "es",
+                  "sehr",
+                  "heiß"
+                ],
+                "distractors": [],
+                "explain": "«im Sommer» + inversión (unidad 5)."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Gute Besserung! Bleib im Bett.",
+                "answer": "¡Que te mejores! Quédate en la cama",
+                "accepted": [
+                  "que te mejores quedate en cama",
+                  "mejorate quedate en la cama"
+                ],
+                "explain": "«Gute Besserung» (unidad 6); «bleib» = imperativo de bleiben."
+              },
+              {
+                "type": "cloze",
+                "prompt": "Completa: (tragen)",
+                "sentence": "Er ___ heute einen Pullover",
+                "options": [
+                  "trägt",
+                  "trage",
+                  "tragt"
+                ],
+                "answer": "trägt",
+                "explain": "tragen a→ä: er trägt (unidad 7)."
+              }
+            ]
+          },
+          {
+            "id": "s2_u14_l4",
+            "index": 4,
+            "title": "✏️ Repaso: Perfekt y planes",
+            "kind": "exercises",
+            "exercises": [
+              {
+                "type": "cloze",
+                "sentence": "Gestern ___ ich einen Film gesehen",
+                "options": [
+                  "habe",
+                  "bin",
+                  "werde"
+                ],
+                "answer": "habe",
+                "explain": "sehen → haben (unidad 9)."
+              },
+              {
+                "type": "cloze",
+                "sentence": "Wir ___ ans Meer gefahren",
+                "options": [
+                  "sind",
+                  "haben",
+                  "werden"
+                ],
+                "answer": "sind",
+                "explain": "fahren = movimiento → sein (unidad 9)."
+              },
+              {
+                "type": "word_bank",
+                "prompt": "Construye: «¿Qué hiciste ayer?»",
+                "words": [
+                  "Was",
+                  "hast",
+                  "du",
+                  "gestern",
+                  "gemacht"
+                ],
+                "distractors": [
+                  "bist"
+                ],
+                "explain": "machen → haben: Was hast du gemacht? (unidad 9)."
+              },
+              {
+                "type": "listening_match",
+                "prompt": "Escucha y elige lo que oyes",
+                "tts": "Nächstes Jahr will ich nach Deutschland reisen",
+                "options": [
+                  "Nächstes Jahr will ich nach Deutschland reisen",
+                  "Nächstes Jahr will ich nach Österreich reisen",
+                  "Dieses Jahr will ich nach Deutschland reisen"
+                ],
+                "answer": "Nächstes Jahr will ich nach Deutschland reisen",
+                "explain": "wollen + plan (unidad 13). Österreich = Austria."
+              },
+              {
+                "type": "translate_reverse",
+                "de": "Ich habe mein Zimmer aufgeräumt und dann habe ich ferngesehen.",
+                "answer": "Ordené mi habitación y luego vi la tele",
+                "accepted": [
+                  "he ordenado mi habitacion y luego he visto la tele"
+                ],
+                "explain": "Separables en Perfekt: aufGEräumt, fernGEsehen (unidad 9)."
+              },
+              {
+                "type": "translate_direct",
+                "prompt": "Escribe el participio de «essen»",
+                "answer": "gegessen",
+                "accepted": [],
+                "explain": "essen → gegessen, con doble ge- aparente. ¡El participio más curioso!"
+              }
+            ]
+          },
+          {
+            "id": "s2_u14_l5",
+            "index": 5,
+            "title": "🎮 Minijuego final A2",
+            "kind": "match_game",
+            "pairs": [
+              {
+                "de": "teuer",
+                "es": "caro"
+              },
+              {
+                "de": "das Wetter",
+                "es": "el tiempo"
+              },
+              {
+                "de": "krank",
+                "es": "enfermo"
+              },
+              {
+                "de": "gestern",
+                "es": "ayer"
+              },
+              {
+                "de": "die Zukunft",
+                "es": "el futuro"
+              },
+              {
+                "de": "das Geschenk",
+                "es": "el regalo"
+              }
+            ]
+          }
+        ]
       }
     ]
   }

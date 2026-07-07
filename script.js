@@ -134,7 +134,7 @@ function computeDerived() {
           break;
         }
       }
-      return { level: meta.index, unit: Math.min(10, unit), lesson: Math.min(LESSONS_PER_UNIT, lesson) };
+      return { level: meta.index, unit: Math.min(14, unit), lesson: Math.min(LESSONS_PER_UNIT, lesson) };
     }
   }
   return { level: 1, unit: 10, lesson: LESSONS_PER_UNIT };
@@ -358,6 +358,9 @@ function esc(s) {
 function normForms(s) {
   let t = String(s).toLowerCase().trim()
     .replace(/ß/g, "ss")
+    // acentos españoles (para translate_reverse DE->ES)
+    .replace(/á/g, "a").replace(/é/g, "e").replace(/í/g, "i")
+    .replace(/ó/g, "o").replace(/ú/g, "u").replace(/ñ/g, "n")
     .replace(/[.,!?¿¡;:'"„“”‚’()]/g, "")
     .replace(/\s+/g, " ");
   const expanded = t.replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue");
@@ -433,6 +436,8 @@ function germanTextFor(ex) {
   if (ex.type === "listening_match") return ex.tts;
   if (ex.type === "word_bank") return ex.words.join(" ");
   if (ex.type === "translate_direct") return ex.answer;
+  if (ex.type === "translate_reverse") return ex.de;
+  if (ex.type === "cloze") return ex.sentence.replace("___", ex.answer);
   if (ex.type === "select_image") {
     const o = ex.options.find((o) => o.id === ex.correct);
     return o ? o.label : "";
@@ -934,6 +939,27 @@ function renderExercise() {
         placeholder="Escribe en alemán…"
         class="answer-input w-full rounded-2xl border-2 border-[#37464f] bg-[#202f36] p-4 text-lg font-semibold resize-none"></textarea>
       <p class="mt-2 text-xs text-[#52656d] font-semibold">Consejo: puedes escribir ae, oe, ue y ss en lugar de ä, ö, ü y ß.</p>`;
+  } else if (ex.type === "translate_reverse") {
+    body = `
+      <h2 class="text-xl sm:text-2xl font-extrabold mb-4">Traduce al español</h2>
+      <div class="mb-6 rounded-2xl border-2 border-[#37464f] bg-[#202f36] p-4 flex items-center gap-3">
+        <button id="playBtn" class="btn3d rounded-xl px-3 py-2 text-xl bg-[#1cb0f6] border-[#1899d6]">🔊</button>
+        <span class="font-extrabold text-lg">${esc(ex.de)}</span>
+      </div>
+      <textarea id="trInput" rows="3" autocomplete="off" spellcheck="false"
+        placeholder="Escribe en español…"
+        class="answer-input w-full rounded-2xl border-2 border-[#37464f] bg-[#202f36] p-4 text-lg font-semibold resize-none"></textarea>
+      <p class="mt-2 text-xs text-[#52656d] font-semibold">No te preocupes por las tildes: las corregimos por ti.</p>`;
+  } else if (ex.type === "cloze") {
+    const gap = `<span class="inline-block min-w-[70px] border-b-4 border-[#1cb0f6] text-[#1cb0f6] font-extrabold text-center">&nbsp;____&nbsp;</span>`;
+    body = `
+      <h2 class="text-xl sm:text-2xl font-extrabold mb-2">${esc(ex.prompt || "Completa la frase")}</h2>
+      <p class="text-lg sm:text-xl font-bold mb-6 leading-relaxed">${esc(ex.sentence).replace("___", gap)}</p>
+      <div class="grid gap-3">
+        ${shuffle(ex.options).map((o) => `
+          <button class="opt-btn rounded-2xl border-2 border-[#37464f] bg-[#131f24] px-4 py-3 text-left font-bold text-base"
+            data-val="${esc(o)}">${esc(o)}</button>`).join("")}
+      </div>`;
   } else { // word_bank
     body = `
       <h2 class="text-xl sm:text-2xl font-extrabold mb-6">${esc(ex.prompt)}</h2>
@@ -960,7 +986,7 @@ function renderExercise() {
   const checkBtn = document.getElementById("checkBtn");
   let getAnswer = null;
 
-  if (ex.type === "select_image" || ex.type === "listening_match") {
+  if (ex.type === "select_image" || ex.type === "listening_match" || ex.type === "cloze") {
     let selected = null;
     app.querySelectorAll(".opt-btn").forEach((b) => {
       b.addEventListener("click", () => {
@@ -976,7 +1002,7 @@ function renderExercise() {
       playBtn.addEventListener("click", () => playExerciseAudio(ex));
       setTimeout(() => playExerciseAudio(ex), 350); // intento de autoplay
     }
-  } else if (ex.type === "translate_direct") {
+  } else if (ex.type === "translate_direct" || ex.type === "translate_reverse") {
     const input = document.getElementById("trInput");
     input.focus();
     input.addEventListener("input", () => { checkBtn.disabled = input.value.trim() === ""; });
@@ -984,6 +1010,10 @@ function renderExercise() {
       if (e.key === "Enter") { e.preventDefault(); if (!checkBtn.disabled) checkBtn.click(); }
     });
     getAnswer = () => input.value;
+    if (ex.type === "translate_reverse") {
+      const playBtn = document.getElementById("playBtn");
+      if (playBtn) playBtn.addEventListener("click", () => playExerciseAudio(ex));
+    }
   } else { // word_bank
     const answerArea = document.getElementById("answerArea");
     const bankArea = document.getElementById("bankArea");
@@ -1035,7 +1065,10 @@ function renderExercise() {
     } else if (ex.type === "listening_match") {
       correct = userAnswer === ex.answer;
       solution = ex.answer;
-    } else if (ex.type === "translate_direct") {
+    } else if (ex.type === "cloze") {
+      correct = userAnswer === ex.answer;
+      solution = ex.sentence.replace("___", ex.answer);
+    } else if (ex.type === "translate_direct" || ex.type === "translate_reverse") {
       correct = translationMatches(userAnswer, ex);
       solution = ex.answer;
     } else {

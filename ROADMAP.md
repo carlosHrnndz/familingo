@@ -105,7 +105,7 @@ usuario (`mistakes` en el jsonb) y ofrecer una lección "🩹 Repasa tus errores
 están en Supabase; es una consulta y una pantalla).
 **2.6 Objetivo diario** configurable (p. ej. 20 XP/día) con anillo de progreso.
 
-### 📚 FASE 3 — Contenido A2 (siguiendo la regla 1.3 y con `explain` desde el inicio)
+### 📚 FASE 3 — Contenido A2 ✅ (jul 2026: 14 unidades, tipos cloze y translate_reverse, migración SQL en migrate_a2.sql)
 - 14 unidades A2 en `section_2.json`, por tandas de 3-4 unidades.
 - Nuevos tipos de ejercicio para variar: `cloze` (rellenar hueco con opciones)
   y `translate_reverse` (DE→ES).

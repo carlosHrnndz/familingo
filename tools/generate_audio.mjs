@@ -47,6 +47,8 @@ function germanTextFor(ex) {
   if (ex.type === "listening_match") return ex.tts;
   if (ex.type === "word_bank") return ex.words.join(" ");
   if (ex.type === "translate_direct") return ex.answer;
+  if (ex.type === "translate_reverse") return ex.de;
+  if (ex.type === "cloze") return ex.sentence.replace("___", ex.answer);
   if (ex.type === "select_image") {
     const o = ex.options.find((o) => o.id === ex.correct);
     return o ? o.label : "";
