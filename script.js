@@ -131,12 +131,23 @@ function computeDerived() {
   return { level: 1, unit: 10, lesson: LESSONS_PER_UNIT };
 }
 
+/* Racha diaria: compara la fecha del sistema con la última lección completada.
+   - touchStreak(): se llama al completar una lección; suma si ayer también
+     se practicó, reinicia a 1 si hubo un hueco.
+   - effectiveStreak(): valor a MOSTRAR; si el último día activo no es hoy
+     ni ayer, la racha está rota y se enseña 0. */
+function todayStr() { return new Date().toISOString().slice(0, 10); }
+function yesterdayStr() { return new Date(Date.now() - 86400000).toISOString().slice(0, 10); }
+
 function touchStreak() {
-  const today = new Date().toISOString().slice(0, 10);
+  const today = todayStr();
   if (state.lastActive === today) return;
-  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
-  state.streak = state.lastActive === yesterday ? state.streak + 1 : 1;
+  state.streak = state.lastActive === yesterdayStr() ? state.streak + 1 : 1;
   state.lastActive = today;
+}
+function effectiveStreak() {
+  if (state.lastActive === todayStr() || state.lastActive === yesterdayStr()) return state.streak;
+  return 0;
 }
 
 /* ============================ CAPA DE NUBE =============================== */
@@ -446,7 +457,7 @@ async function renderDashboard() {
           ${cloudBadge()}
         </button>
         <div class="flex items-center gap-3">
-          <span class="font-extrabold text-[#ff9600]">🔥 ${state.streak}</span>
+          <span class="font-extrabold text-[#ff9600]" title="Racha diaria">🔥 ${effectiveStreak()}</span>
           <span class="font-extrabold text-[#ffc800]">⚡ ${state.xp}</span>
           ${heartsHTML("sm")}
         </div>
@@ -504,6 +515,9 @@ function startLesson(section, unit) {
     section, unit, lesson, review,
     idx: 0, correct: 0, wrong: 0,
     exercises: lesson.kind === "exercises" ? shuffle(lesson.exercises) : null,
+    // Total de ejercicios ÚNICOS: la barra avanza por ACIERTOS sobre este
+    // total. Los fallos se re-encolan al final (estilo Duolingo).
+    total: lesson.kind === "exercises" ? lesson.exercises.length : lesson.pairs.length,
   };
   if (lesson.kind === "match_game") renderMatchGame();
   else renderExercise();
@@ -534,8 +548,8 @@ function bindQuit() {
 /* ------------------------ Lección de ejercicios -------------------------- */
 function renderExercise() {
   const ex = session.exercises[session.idx];
-  const total = session.exercises.length;
-  const pct = (session.idx / total) * 100;
+  // La barra avanza en proporción a las respuestas CORRECTAS
+  const pct = (session.correct / session.total) * 100;
 
   let body = "";
   if (ex.type === "select_image") {
@@ -686,8 +700,15 @@ function showFeedback(correct, solution) {
   const input = document.getElementById("trInput");
   if (input) input.disabled = true;
 
+  const qArea = document.getElementById("qArea");
+  const ex = session.exercises[session.idx];
+
   if (correct) {
     session.correct++;
+    qArea.classList.add("flash-ok");
+    // Avance visual inmediato de la barra (proporcional a aciertos)
+    const bar = app.querySelector(".progress-fill");
+    if (bar) bar.style.width = (session.correct / session.total) * 100 + "%";
   } else {
     session.wrong++;
     state.hearts = Math.max(0, state.hearts - 1);
@@ -697,9 +718,12 @@ function showFeedback(correct, solution) {
       hearts.outerHTML = heartsHTML("sm");
       document.getElementById("hearts").classList.add("heart-lost");
     }
-    document.getElementById("qArea").classList.add("shake");
+    qArea.classList.add("shake", "flash-bad");
+    // Re-encolar el ejercicio fallado al final (si la lección continúa)
+    if (state.hearts > 0) session.exercises.push(ex);
   }
 
+  const defeated = state.hearts <= 0;
   const footer = document.getElementById("footer");
   footer.className = "app-footer feedback-bar border-t-2 px-5 pt-4 " +
     (correct ? "bg-[#d7ffb8] border-[#a5ed6e]" : "bg-[#ffdfe0] border-[#ffb2b2]");
@@ -707,14 +731,14 @@ function showFeedback(correct, solution) {
     <div class="max-w-xl mx-auto flex flex-col sm:flex-row sm:items-center gap-3">
       <div class="flex-1">
         <div class="flex items-center gap-2 text-xl font-extrabold ${correct ? "text-[#58a700]" : "text-[#ea2b2b]"}">
-          <span class="text-2xl">${correct ? "✅" : "❌"}</span>
+          <span class="text-3xl pop-icon">${correct ? "✅" : "❌"}</span>
           ${correct ? "¡Muy bien!" : "Incorrecto"}
         </div>
         ${correct ? "" : `<div class="mt-1 font-bold text-[#ea2b2b]">Respuesta correcta: <span class="font-extrabold">${esc(solution)}</span></div>`}
       </div>
       <button id="nextBtn"
         class="btn3d rounded-2xl px-8 py-3 font-extrabold uppercase text-white ${correct ? "bg-[#58cc02] border-[#46a302]" : "bg-[#ff4b4b] border-[#c93636]"}">
-        Continuar
+        ${defeated ? "Fin de la lección" : "Continuar"}
       </button>
     </div>`;
 
@@ -724,8 +748,11 @@ function showFeedback(correct, solution) {
 }
 
 function advance() {
+  // Sin corazones: derrota inmediata y vuelta a la selección de lección
   if (state.hearts <= 0) { renderGameOver(); return; }
   session.idx++;
+  // La cola crece con los fallos re-encolados: la lección solo termina
+  // cuando TODOS los ejercicios se han respondido correctamente.
   if (session.idx >= session.exercises.length) finishLesson();
   else renderExercise();
 }
@@ -856,9 +883,10 @@ function renderGameOver() {
   app.innerHTML = `
     <main class="scroll-area flex-1 flex flex-col items-center justify-center px-6 py-8 text-center">
       <div class="pop-in text-7xl mb-4">💔</div>
-      <h1 class="text-3xl font-extrabold text-[#ff4b4b] mb-2">¡Te has quedado sin vidas!</h1>
+      <h1 class="text-3xl font-extrabold text-[#ff4b4b] mb-2">¡Derrota!</h1>
       <p class="text-[#8a9ba5] font-bold mb-8 max-w-sm">
-        No pasa nada: equivocarse es parte de aprender. Recupera tus vidas y vuelve a intentarlo.
+        Te has quedado sin corazones y la lección ha terminado. No pasa nada:
+        equivocarse es parte de aprender. Recupera tus vidas y vuelve a intentarlo.
       </p>
       <div class="flex flex-col gap-3 w-full max-w-xs">
         <button id="refillBtn" class="btn3d rounded-2xl px-8 py-3 font-extrabold uppercase text-white bg-[#ff4b4b] border-[#c93636]">

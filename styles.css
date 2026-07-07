@@ -138,6 +138,33 @@ html, body {
   border-color: #1cb0f6;
 }
 
+/* ---------- "Efectos de sonido" visuales: acierto / error ---------- */
+.flash-ok {
+  animation: flashOk 0.55s ease;
+}
+@keyframes flashOk {
+  0% { background: rgba(88, 204, 2, 0); }
+  25% { background: rgba(88, 204, 2, 0.18); }
+  100% { background: rgba(88, 204, 2, 0); }
+}
+.flash-bad {
+  animation: flashBad 0.55s ease;
+}
+@keyframes flashBad {
+  0% { background: rgba(255, 75, 75, 0); }
+  25% { background: rgba(255, 75, 75, 0.18); }
+  100% { background: rgba(255, 75, 75, 0); }
+}
+.pop-icon {
+  display: inline-block;
+  animation: popIcon 0.45s cubic-bezier(0.34, 1.8, 0.64, 1);
+}
+@keyframes popIcon {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+
 /* ---------- Ejercicio select_image ---------- */
 .img-card {
   border-bottom-width: 4px;
