@@ -60,7 +60,7 @@ audio MP3 con fallback TTS · desbloqueo secuencial de unidades y secciones.
 
 ## 3. Roadmap
 
-### 🎯 FASE 1 — Calidad pedagógica (la prioridad ahora)
+### 🎯 FASE 1 — Calidad pedagógica ✅ (Sprints 1-2, jul 2026 — MP3 pendientes de clave Google)
 
 **1.1 Lecciones de teoría** `[P3]`
 - Nuevo `kind: "theory"` en el esquema: bloques `heading | text | vocab | example | tip`.
@@ -93,7 +93,7 @@ audio MP3 con fallback TTS · desbloqueo secuencial de unidades y secciones.
 - Generar los MP3 reales de A1 (`--synth`) y subir `/audio` → el problema
   desaparece de raíz.
 
-### 🚀 FASE 2 — Experiencia de juego
+### 🚀 FASE 2 — Experiencia de juego ✅ (Sprint 3, jul 2026)
 
 **2.1 Regeneración de vidas por tiempo**: +1 corazón cada 30 min
 (timestamp en la nube), en lugar de solo el botón de rellenar.

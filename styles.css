@@ -17,6 +17,27 @@ html, body {
   height: 100vh;      /* fallback para navegadores antiguos */
   height: 100dvh;     /* viewport dinámico: correcto en móviles */
   overflow: hidden;   /* solo hacen scroll las .scroll-area internas */
+  position: relative; /* ancla del confeti */
+}
+
+/* ---------- Confeti ---------- */
+.confetti-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 50;
+}
+.confetti-wrap i {
+  position: absolute;
+  top: -16px;
+  width: 10px;
+  height: 14px;
+  border-radius: 2px;
+  animation: confettiFall 2s linear forwards;
+}
+@keyframes confettiFall {
+  to { transform: translateY(105vh) rotate(720deg); opacity: 0.7; }
 }
 .scroll-area {
   overflow-y: auto;

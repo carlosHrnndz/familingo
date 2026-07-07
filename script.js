@@ -21,6 +21,9 @@
 const MAX_HEARTS = 5;
 const LESSONS_PER_UNIT = 5;   // toda unidad "ready" tiene exactamente 5 lecciones
 const DATA_BASE = "data/";
+const HEART_REGEN_MS = 30 * 60 * 1000; // +1 corazón cada 30 minutos
+const DAILY_GOAL = 20;                 // objetivo diario en XP
+const MISTAKES_CAP = 20;               // máximo de errores guardados por perfil
 const USERS = [
   { name: "Antón",  icon: "🐧", color: "#58cc02" },
   { name: "Pepa",   icon: "🦄", color: "#ff86d0" },
@@ -42,7 +45,13 @@ let session = null;               // lección en curso
 let activeSection = 1;            // 1..4
 
 function defaultState() {
-  return { hearts: MAX_HEARTS, xp: 0, streak: 0, lastActive: null, units: {} };
+  return {
+    hearts: MAX_HEARTS, xp: 0, streak: 0, lastActive: null, units: {},
+    heartsTs: null,          // timestamp desde el que se regeneran corazones
+    mistakes: [],            // ejercicios fallados: {sec, u, l, q}
+    weekId: null, weekXp: 0, // XP de la semana (liga familiar)
+    dayId: null, dayXp: 0,   // XP de hoy (objetivo diario)
+  };
 }
 function lsKey(name) { return "familingo_u_" + name; }
 function loadLocal(name) {
@@ -150,6 +159,98 @@ function effectiveStreak() {
   return 0;
 }
 
+/* ---------------- XP con contadores diario y semanal --------------------- */
+function weekId() {
+  const d = new Date();
+  const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  const day = t.getUTCDay() || 7;
+  t.setUTCDate(t.getUTCDate() + 4 - day);
+  const y = t.getUTCFullYear();
+  const w = Math.ceil(((t - Date.UTC(y, 0, 1)) / 86400000 + 1) / 7);
+  return y + "-W" + String(w).padStart(2, "0");
+}
+function addXp(gained) {
+  state.xp += gained;
+  const today = todayStr(), wk = weekId();
+  if (state.dayId !== today) { state.dayId = today; state.dayXp = 0; }
+  if (state.weekId !== wk) { state.weekId = wk; state.weekXp = 0; }
+  const before = state.dayXp;
+  state.dayXp += gained;
+  state.weekXp += gained;
+  if (before < DAILY_GOAL && state.dayXp >= DAILY_GOAL) sfx("win"); // ¡objetivo diario!
+}
+function todayXp() { return state.dayId === todayStr() ? state.dayXp : 0; }
+
+/* -------------- Regeneración de corazones por tiempo --------------------- */
+function applyHeartRegen() {
+  if (state.hearts >= MAX_HEARTS) { state.heartsTs = null; return false; }
+  const ts = state.heartsTs || Date.now();
+  const regenerated = Math.floor((Date.now() - ts) / HEART_REGEN_MS);
+  if (regenerated <= 0) { state.heartsTs = ts; return false; }
+  state.hearts = Math.min(MAX_HEARTS, state.hearts + regenerated);
+  state.heartsTs = state.hearts >= MAX_HEARTS ? null : ts + regenerated * HEART_REGEN_MS;
+  return true;
+}
+function minsToNextHeart() {
+  if (state.hearts >= MAX_HEARTS || !state.heartsTs) return null;
+  const ms = state.heartsTs + HEART_REGEN_MS - Date.now();
+  return Math.max(1, Math.ceil(ms / 60000));
+}
+let regenTimer = null;
+function clearRegenTimer() { if (regenTimer) { clearInterval(regenTimer); regenTimer = null; } }
+
+/* ------------------- Repaso inteligente de errores ----------------------- */
+function mistakeKey(r) { return r.sec + "|" + r.u + "|" + r.l + "|" + r.q; }
+function addMistake(r) {
+  if (!r) return;
+  if (!Array.isArray(state.mistakes)) state.mistakes = [];
+  if (state.mistakes.some((m) => mistakeKey(m) === mistakeKey(r))) return;
+  state.mistakes.push(r);
+  if (state.mistakes.length > MISTAKES_CAP) state.mistakes.shift();
+}
+function removeMistake(r) {
+  if (!r || !Array.isArray(state.mistakes)) return;
+  state.mistakes = state.mistakes.filter((m) => mistakeKey(m) !== mistakeKey(r));
+}
+
+/* ------------- Efectos de sonido (WebAudio, sin archivos) ---------------- */
+let audioCtx = null;
+function sfx(kind) {
+  try {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const t = audioCtx.currentTime;
+    const note = (freq, start, dur, type = "sine", gain = 0.14) => {
+      const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+      o.type = type; o.frequency.value = freq;
+      g.gain.setValueAtTime(gain, t + start);
+      g.gain.exponentialRampToValueAtTime(0.001, t + start + dur);
+      o.connect(g); g.connect(audioCtx.destination);
+      o.start(t + start); o.stop(t + start + dur);
+    };
+    if (kind === "ok") { note(660, 0, 0.12); note(880, 0.12, 0.2); }
+    else if (kind === "bad") { note(220, 0, 0.2, "square", 0.07); note(160, 0.15, 0.25, "square", 0.07); }
+    else if (kind === "win") { [523, 659, 784, 1047].forEach((f, i) => note(f, i * 0.12, 0.28)); }
+    else if (kind === "match") { note(740, 0, 0.09, "triangle", 0.12); }
+  } catch (e) { /* sin audio */ }
+}
+
+/* -------------------------- Confeti (CSS puro) --------------------------- */
+function confettiBurst() {
+  const colors = ["#58cc02", "#1cb0f6", "#ffc800", "#ff4b4b", "#ce82ff", "#ff9600"];
+  const wrap = document.createElement("div");
+  wrap.className = "confetti-wrap";
+  for (let i = 0; i < 60; i++) {
+    const c = document.createElement("i");
+    c.style.left = Math.random() * 100 + "%";
+    c.style.background = colors[i % colors.length];
+    c.style.animationDelay = (Math.random() * 0.6).toFixed(2) + "s";
+    c.style.animationDuration = (1.6 + Math.random()).toFixed(2) + "s";
+    wrap.appendChild(c);
+  }
+  app.appendChild(wrap);
+  setTimeout(() => wrap.remove(), 3500);
+}
+
 /* ============================ CAPA DE NUBE =============================== */
 function rowToState(row) {
   const p = row.progress || {};
@@ -159,6 +260,12 @@ function rowToState(row) {
     streak: row.streak_count || 0,
     lastActive: row.last_active || null,
     units: (p && p.units) || {},
+    heartsTs: (p && p.heartsTs) || null,
+    mistakes: (p && Array.isArray(p.mistakes)) ? p.mistakes : [],
+    weekId: (p && p.week && p.week.id) || null,
+    weekXp: (p && p.week && p.week.xp) || 0,
+    dayId: (p && p.day && p.day.id) || null,
+    dayXp: (p && p.day && p.day.xp) || 0,
   };
 }
 
@@ -191,7 +298,13 @@ async function cloudSave() {
       xp_total: state.xp,
       hearts: state.hearts,
       last_active: state.lastActive,
-      progress: { units: state.units },
+      progress: {
+        units: state.units,
+        heartsTs: state.heartsTs,
+        mistakes: state.mistakes,
+        week: { id: state.weekId, xp: state.weekXp },
+        day: { id: state.dayId, xp: state.dayXp },
+      },
       last_client: CLIENT_ID,
       updated_at: new Date().toISOString(),
     }, { onConflict: "user_name" });
@@ -276,6 +389,11 @@ if ("speechSynthesis" in window) {
   window.speechSynthesis.onvoiceschanged = pickGermanVoice;
 }
 function unlockTTS() {
+  // Desbloquea también el AudioContext de los efectos de sonido
+  try {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.resume) audioCtx.resume();
+  } catch (e) { /* nada */ }
   if (ttsUnlocked || !("speechSynthesis" in window)) return;
   ttsUnlocked = true;
   try {
@@ -329,7 +447,7 @@ const audioExists = new Map(); // ruta -> boolean
 function prefetchLessonAudio() {
   if (!session || !session.exercises) return;
   session.exercises.forEach((ex) => {
-    const p = audioPathFor(ex);
+    const p = ex._audio || audioPathFor(ex);
     if (audioExists.has(p)) return;
     fetch(p, { method: "HEAD" })
       .then((r) => audioExists.set(p, r.ok))
@@ -338,7 +456,7 @@ function prefetchLessonAudio() {
 }
 
 function playExerciseAudio(ex) {
-  const p = audioPathFor(ex);
+  const p = ex._audio || audioPathFor(ex);
   const fallback = germanTextFor(ex);
   if (audioExists.get(p) === true) {
     try {
@@ -391,6 +509,7 @@ function showDataError(err, retryFn) {
 /* ====================== PANTALLA: SELECCIÓN DE PERFIL ==================== */
 function renderProfileSelect() {
   unsubscribeRealtime();
+  clearRegenTimer();
   currentUser = null;
   session = null;
 
@@ -466,6 +585,8 @@ async function renderDashboard() {
   if (!currentUser) { renderProfileSelect(); return; }
   if (pendingRemote) { state = pendingRemote; pendingRemote = null; saveLocal(); }
   session = null;
+  clearRegenTimer();
+  if (applyHeartRegen()) persist(); // corazones regenerados por tiempo
 
   let section;
   try {
@@ -541,6 +662,7 @@ async function renderDashboard() {
           ${cloudBadge()}
         </button>
         <div class="flex items-center gap-3">
+          <button id="leagueBtn" title="Liga familiar" class="text-xl">🏆</button>
           <span class="font-extrabold text-[#ff9600]" title="Racha diaria">🔥 ${effectiveStreak()}</span>
           <span class="font-extrabold text-[#ffc800]">⚡ ${state.xp}</span>
           ${heartsHTML("sm")}
@@ -565,6 +687,20 @@ async function renderDashboard() {
         ${prog.total === 0 ? `<div class="mt-3 text-sm font-bold text-[#8a9ba5]">🚧 Contenido en preparación.</div>` : ""}
       </section>
 
+      <section class="mt-3 rounded-2xl border-2 border-[#37464f] p-3 flex items-center gap-3">
+        <span class="font-extrabold text-sm shrink-0">🎯 Hoy</span>
+        <div class="flex-1 h-3 rounded-full bg-[#37464f] overflow-hidden">
+          <div class="progress-fill h-full rounded-full" style="width:${Math.min(100, (todayXp() / DAILY_GOAL) * 100)}%;background:#ffc800"></div>
+        </div>
+        <span class="text-xs font-extrabold text-[#ffc800] shrink-0">${todayXp()}/${DAILY_GOAL} ⚡${todayXp() >= DAILY_GOAL ? " ✅" : ""}</span>
+        ${state.hearts < MAX_HEARTS && minsToNextHeart() ? `<span class="text-xs font-bold text-[#8a9ba5] shrink-0" title="Los corazones se regeneran solos">❤️ +1 en ${minsToNextHeart()}m</span>` : ""}
+      </section>
+
+      ${(state.mistakes || []).length > 0 ? `
+      <button id="mistakesBtn" class="btn3d mt-3 w-full rounded-2xl border-2 border-[#ff4b4b] border-b-[#c93636] bg-[#ff4b4b]/10 px-4 py-3 font-extrabold text-[#ff4b4b] text-left">
+        🩹 Repasar mis errores (${state.mistakes.length}) — ¡conviértelos en aciertos!
+      </button>` : ""}
+
       <section class="mt-8 flex flex-col items-center">${nodes}</section>
 
       <div class="mt-10 text-center">
@@ -573,6 +709,9 @@ async function renderDashboard() {
     </main>`;
 
   document.getElementById("userChip").addEventListener("click", renderProfileSelect);
+  document.getElementById("leagueBtn").addEventListener("click", renderLeague);
+  const mistakesBtn = document.getElementById("mistakesBtn");
+  if (mistakesBtn) mistakesBtn.addEventListener("click", startMistakesLesson);
   app.querySelectorAll(".tab-btn").forEach((b) =>
     b.addEventListener("click", () => { activeSection = +b.dataset.sec; renderDashboard(); })
   );
@@ -589,8 +728,68 @@ async function renderDashboard() {
   });
 }
 
+/* ========================== LIGA FAMILIAR (🏆) =========================== */
+async function renderLeague() {
+  clearRegenTimer();
+  showLoading("Cargando la liga familiar…");
+  const wk = weekId();
+  let rows = null;
+  const sb = window.supabaseClient;
+  if (sb) {
+    try {
+      const { data, error } = await sb
+        .from("user_progress")
+        .select("user_name,xp_total,streak_count,progress");
+      if (!error && data) rows = data;
+    } catch (e) { /* modo local */ }
+  }
+  // Sin nube: mostrar solo el perfil actual con sus datos locales
+  if (!rows) {
+    rows = [{
+      user_name: currentUser.name, xp_total: state.xp, streak_count: state.streak,
+      progress: { week: { id: state.weekId, xp: state.weekXp } },
+    }];
+  }
+  const entries = rows.map((r) => {
+    const u = USERS.find((x) => x.name === r.user_name) || { icon: "👤", color: "#8a9ba5" };
+    const w = r.progress && r.progress.week;
+    return {
+      name: r.user_name, icon: u.icon, color: u.color,
+      week: w && w.id === wk ? (w.xp || 0) : 0,
+      total: r.xp_total || 0, streak: r.streak_count || 0,
+    };
+  }).sort((a, b) => b.week - a.week || b.total - a.total);
+  const medals = ["🥇", "🥈", "🥉", "4º"];
+
+  app.innerHTML = `
+    <header class="shrink-0 bg-[#131f24] border-b-2 border-[#37464f] px-4 py-3 flex items-center gap-3">
+      <button id="backBtn" class="text-[#52656d] hover:text-white text-2xl font-bold px-1">←</button>
+      <div class="text-xl font-extrabold text-[#ffc800]">🏆 Liga familiar</div>
+    </header>
+    <main class="scroll-area flex-1 px-4 py-6 max-w-xl w-full mx-auto">
+      <p class="text-xs text-[#52656d] font-bold uppercase tracking-widest mb-4">Semana ${esc(wk)} · XP de esta semana</p>
+      <div class="flex flex-col gap-3">
+        ${entries.map((e, i) => `
+          <div class="rounded-2xl border-2 p-4 flex items-center gap-4 ${e.name === currentUser.name ? "bg-[#202f36]" : ""}"
+            style="border-color:${e.name === currentUser.name ? e.color : "#37464f"}">
+            <span class="text-2xl w-8 text-center">${medals[i] || (i + 1) + "º"}</span>
+            <span class="text-3xl">${e.icon}</span>
+            <div class="flex-1">
+              <div class="font-extrabold" style="color:${e.color}">${esc(e.name)}</div>
+              <div class="text-xs font-bold text-[#8a9ba5]">⚡ ${e.total} XP totales · 🔥 ${e.streak}</div>
+            </div>
+            <div class="text-xl font-extrabold text-[#ffc800]">${e.week} ⚡</div>
+          </div>`).join("")}
+      </div>
+      <p class="mt-6 text-center text-xs text-[#52656d] font-semibold">La liga se reinicia cada lunes. ¡A por el 🥇!</p>
+    </main>`;
+  document.getElementById("backBtn").addEventListener("click", renderDashboard);
+}
+
 /* ============================== LECCIÓN ================================== */
 function startLesson(section, unit) {
+  clearRegenTimer();
+  if (applyHeartRegen()) persist();
   if (state.hearts <= 0) { renderGameOver(); return; }
   const done = lessonsDoneId(unit.id);
   const review = done >= unit.lessons.length;
@@ -598,10 +797,14 @@ function startLesson(section, unit) {
   session = {
     section, unit, lesson, review,
     idx: 0, correct: 0, wrong: 0,
-    // _qid: id estable del ejercicio (posición original en el JSON), usado
-    // para localizar su audio aunque la cola se baraje o re-encole.
+    // _qid: id estable (posición en el JSON); _audio: ruta del MP3;
+    // _ref: identidad para el repaso de errores.
     exercises: lesson.kind === "exercises"
-      ? shuffle(lesson.exercises.map((e, i) => Object.assign({ _qid: i + 1 }, e)))
+      ? shuffle(lesson.exercises.map((e, i) => Object.assign({
+          _qid: i + 1,
+          _audio: `audio/unit_${unit.id}/lesson_${lesson.index}/q_${i + 1}.mp3`,
+          _ref: { sec: section.index, u: unit.id, l: lesson.index, q: i + 1 },
+        }, e)))
       : null,
     // Total de ejercicios ÚNICOS: la barra avanza por ACIERTOS sobre este
     // total. Los fallos se re-encolan al final (estilo Duolingo).
@@ -853,13 +1056,18 @@ function showFeedback(correct, solution) {
 
   if (correct) {
     session.correct++;
+    sfx("ok");
+    removeMistake(ex._ref); // dominado: sale del repaso de errores
     qArea.classList.add("flash-ok");
     // Avance visual inmediato de la barra (proporcional a aciertos)
     const bar = app.querySelector(".progress-fill");
     if (bar) bar.style.width = (session.correct / session.total) * 100 + "%";
   } else {
     session.wrong++;
+    sfx("bad");
+    addMistake(ex._ref); // a la lista de repaso
     state.hearts = Math.max(0, state.hearts - 1);
+    if (!state.heartsTs) state.heartsTs = Date.now(); // arranca la regeneración
     persist();
     const hearts = document.getElementById("hearts");
     if (hearts) {
@@ -999,6 +1207,7 @@ function renderMatchGame() {
     if (ok) {
       session.correct++;
       matched++;
+      sfx("match");
       [a, b].forEach((c) => {
         c.classList.remove("opt-selected");
         c.classList.add("match-ok");
@@ -1017,6 +1226,7 @@ function renderMatchGame() {
       }
     } else {
       session.wrong++;
+      sfx("bad");
       [a, b].forEach((c) => {
         c.classList.remove("opt-selected");
         c.classList.add("match-bad");            // parpadeo rojo
@@ -1065,6 +1275,7 @@ function renderTimeUp() {
 
 /* ====================== LECCIÓN COMPLETADA / GAME OVER =================== */
 function finishLesson() {
+  if (session && session.isMistakes) { finishMistakesLesson(); return; }
   const unit = session.unit;
   const before = state.units[unit.id] || 0;
   const crownedNow = !session.review && before + 1 >= unit.lessons.length;
@@ -1075,7 +1286,7 @@ function finishLesson() {
   // Teoría: 5 XP fijos. Minijuego completado: bono DOBLE de XP.
   const base = isTheory ? 5 : session.review ? 5 : 10 + Math.max(0, 5 - session.wrong);
   const gained = isGame ? base * 2 : base;
-  state.xp += gained;
+  addXp(gained);
   touchStreak();
   persist();
 
@@ -1111,21 +1322,89 @@ function finishLesson() {
       </button>
     </main>`;
   document.getElementById("contBtn").addEventListener("click", renderDashboard);
+  sfx(crownedNow ? "win" : "ok");
+  if (crownedNow) confettiBurst();
+}
+
+/* Cierre de la lección de repaso de errores */
+function finishMistakesLesson() {
+  const gained = 10;
+  addXp(gained);
+  touchStreak();
+  persist();
+  const remaining = (state.mistakes || []).length;
+  app.innerHTML = `
+    <main class="scroll-area flex-1 flex flex-col items-center justify-center px-6 py-8 text-center">
+      <div class="pop-in text-7xl mb-4">🩹</div>
+      <h1 class="text-3xl font-extrabold mb-2 text-[#ff4b4b]">¡Errores repasados!</h1>
+      <p class="text-[#8a9ba5] font-bold mb-6">
+        ${remaining === 0 ? "Tu lista de errores está limpia. ¡Impresionante! ✨" : `Te quedan ${remaining} por dominar. ¡Cada vez menos!`}
+      </p>
+      <div class="rounded-2xl border-2 border-[#ffc800] px-6 py-4 mb-8">
+        <div class="text-xs font-extrabold uppercase text-[#ffc800]">XP ganados</div>
+        <div class="text-2xl font-extrabold text-[#ffc800]">⚡ +${gained}</div>
+      </div>
+      <button id="contBtn" class="btn3d w-full max-w-xs rounded-2xl px-8 py-3 font-extrabold uppercase text-[#131f24] bg-[#58cc02] border-[#46a302]">
+        Continuar
+      </button>
+    </main>`;
+  document.getElementById("contBtn").addEventListener("click", renderDashboard);
+  sfx(remaining === 0 ? "win" : "ok");
+  if (remaining === 0) confettiBurst();
+}
+
+/* Lección especial: reintentar los ejercicios fallados (hasta 10) */
+async function startMistakesLesson() {
+  if (state.hearts <= 0) { renderGameOver(); return; }
+  const refs = (state.mistakes || []).slice(0, 10);
+  if (!refs.length) { renderDashboard(); return; }
+  showLoading("Preparando tu repaso…");
+  const exercises = [];
+  try {
+    await loadManifest();
+    for (const r of refs) {
+      const sec = await loadSection(r.sec);
+      const unit = sec.units.find((u) => u.id === r.u);
+      const lesson = unit && unit.lessons[r.l - 1];
+      const ex = lesson && lesson.kind === "exercises" && lesson.exercises[r.q - 1];
+      if (ex) exercises.push(Object.assign({
+        _qid: r.q,
+        _audio: `audio/unit_${r.u}/lesson_${r.l}/q_${r.q}.mp3`,
+        _ref: r,
+      }, ex));
+    }
+  } catch (e) { showDataError(e, startMistakesLesson); return; }
+  if (!exercises.length) { state.mistakes = []; persist(); renderDashboard(); return; }
+  session = {
+    isMistakes: true,
+    section: { index: 0, color: "#ff4b4b", dark: "#c93636", tag: "Repaso" },
+    unit: { id: "mistakes", title: "Tus errores", lessons: [] },
+    lesson: { kind: "exercises", index: 0, title: "🩹 A la segunda va la vencida" },
+    review: false, idx: 0, correct: 0, wrong: 0,
+    exercises: shuffle(exercises),
+    total: exercises.length,
+  };
+  prefetchLessonAudio();
+  renderExercise();
 }
 
 function renderGameOver() {
   session = null;
+  clearRegenTimer();
+  sfx("bad");
+  const mins = minsToNextHeart();
   app.innerHTML = `
     <main class="scroll-area flex-1 flex flex-col items-center justify-center px-6 py-8 text-center">
       <div class="pop-in text-7xl mb-4">💔</div>
       <h1 class="text-3xl font-extrabold text-[#ff4b4b] mb-2">¡Derrota!</h1>
-      <p class="text-[#8a9ba5] font-bold mb-8 max-w-sm">
+      <p class="text-[#8a9ba5] font-bold mb-4 max-w-sm">
         Te has quedado sin corazones y la lección ha terminado. No pasa nada:
-        equivocarse es parte de aprender. Recupera tus vidas y vuelve a intentarlo.
+        equivocarse es parte de aprender.
       </p>
+      ${mins ? `<p class="font-extrabold text-[#ff9600] mb-6">⏳ Próximo ❤️ en ~${mins} min (se regeneran solos cada 30)</p>` : ""}
       <div class="flex flex-col gap-3 w-full max-w-xs">
         <button id="refillBtn" class="btn3d rounded-2xl px-8 py-3 font-extrabold uppercase text-white bg-[#ff4b4b] border-[#c93636]">
-          ❤️ Recuperar 5 vidas
+          ❤️ Recuperar 5 vidas ya
         </button>
         <button id="homeBtn" class="btn3d rounded-2xl px-8 py-3 font-extrabold uppercase text-[#8a9ba5] bg-[#131f24] border-2 border-[#37464f] border-b-[#2b3940]">
           Volver al inicio
@@ -1134,10 +1413,15 @@ function renderGameOver() {
     </main>`;
   document.getElementById("refillBtn").addEventListener("click", () => {
     state.hearts = MAX_HEARTS;
+    state.heartsTs = null;
     persist();
     renderDashboard();
   });
   document.getElementById("homeBtn").addEventListener("click", renderDashboard);
+  // Si se regenera un corazón mientras espera, volver al árbol automáticamente
+  regenTimer = setInterval(() => {
+    if (applyHeartRegen()) { persist(); renderDashboard(); }
+  }, 10000);
 }
 
 /* ================================ INICIO ================================= */
