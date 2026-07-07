@@ -22,10 +22,10 @@ const MAX_HEARTS = 5;
 const LESSONS_PER_UNIT = 5;   // toda unidad "ready" tiene exactamente 5 lecciones
 const DATA_BASE = "data/";
 const USERS = [
-  { name: "Antón",  icon: "🦁", color: "#58cc02" },
+  { name: "Antón",  icon: "🐧", color: "#58cc02" },
   { name: "Pepa",   icon: "🦄", color: "#ff86d0" },
   { name: "Lázaro", icon: "🦊", color: "#ff9600" },
-  { name: "Carlos", icon: "🐻", color: "#1cb0f6" },
+  { name: "Carlos", icon: "🦁", color: "#1cb0f6" },
 ];
 const CLIENT_ID = Math.random().toString(36).slice(2) + Date.now().toString(36);
 
