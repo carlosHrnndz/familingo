@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "section": {
+    "id": "s4",
+    "index": 4,
+    "tag": "B2",
+    "title": "Intermedio",
+    "color": "#ff9600",
+    "dark": "#cc7800",
+    "units": [
+      {
+        "id": "s4_u1",
+        "index": 1,
+        "title": "Política y sociedad",
+        "icon": "🏛️",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s4_u2",
+        "index": 2,
+        "title": "Economía",
+        "icon": "📈",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s4_u3",
+        "index": 3,
+        "title": "Ciencia",
+        "icon": "🔬",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s4_u4",
+        "index": 4,
+        "title": "Cultura y arte",
+        "icon": "🎭",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s4_u5",
+        "index": 5,
+        "title": "Voz pasiva",
+        "icon": "🔄",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s4_u6",
+        "index": 6,
+        "title": "Lenguaje formal",
+        "icon": "🖋️",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s4_u7",
+        "index": 7,
+        "title": "Modismos",
+        "icon": "🗣️",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s4_u8",
+        "index": 8,
+        "title": "Argumentación",
+        "icon": "⚖️",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s4_u9",
+        "index": 9,
+        "title": "Genitivo",
+        "icon": "🧩",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s4_u10",
+        "index": 10,
+        "title": "Discurso indirecto",
+        "icon": "💬",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s4_u11",
+        "index": 11,
+        "title": "Historia",
+        "icon": "🏺",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s4_u12",
+        "index": 12,
+        "title": "Literatura",
+        "icon": "📚",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s4_u13",
+        "index": 13,
+        "title": "Debate",
+        "icon": "🎤",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s4_u14",
+        "index": 14,
+        "title": "Repaso final B2",
+        "icon": "🏆",
+        "status": "coming_soon",
+        "lessons": []
+      }
+    ]
+  }
+}

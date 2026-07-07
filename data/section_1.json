@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "section": {
+    "id": "s1",
+    "index": 1,
+    "tag": "A1",
+    "title": "Principiante",
+    "color": "#58cc02",
+    "dark": "#46a302",
+    "units": [
+      {
+        "id": "s1_u1",
+        "index": 1,
+        "title": "Primeros Pasos",
+        "icon": "🚀",
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s1_u1_l1",
+            "index": 1,
+            "title": "Hola y adiós",
+            "kind": "exercises",
+            "exercises": [
+              { "type": "listening_match", "prompt": "Escucha y elige lo que oyes", "tts": "Hallo", "options": ["Hallo", "Hose", "Haus"], "answer": "Hallo" },
+              { "type": "translate_direct", "prompt": "Traduce: «Buenas noches»", "answer": "Gute Nacht", "accepted": ["gute nacht"] },
+              { "type": "word_bank", "prompt": "Construye: «Hola, ¿cómo estás?»", "words": ["Hallo", "wie", "geht", "es", "dir"], "distractors": ["Haus", "und"] },
+              { "type": "listening_match", "prompt": "Escucha y elige lo que oyes", "tts": "Tschüss", "options": ["Tschüss", "Tisch", "Tasche"], "answer": "Tschüss" },
+              { "type": "translate_direct", "prompt": "Traduce: «Buenos días» (por la mañana)", "answer": "Guten Morgen", "accepted": [] }
+            ]
+          },
+          {
+            "id": "s1_u1_l2",
+            "index": 2,
+            "title": "Me presento",
+            "kind": "exercises",
+            "exercises": [
+              { "type": "word_bank", "prompt": "Construye: «Me llamo Ana»", "words": ["Ich", "heiße", "Ana"], "distractors": ["bin", "du"] },
+              { "type": "translate_direct", "prompt": "Traduce: «Yo vengo de España»", "answer": "Ich komme aus Spanien", "accepted": [] },
+              { "type": "listening_match", "prompt": "Escucha y elige lo que oyes", "tts": "Wie heißt du?", "options": ["Wie heißt du?", "Wie alt bist du?", "Wer bist du?"], "answer": "Wie heißt du?" },
+              { "type": "word_bank", "prompt": "Construye: «Yo tengo diez años»", "words": ["Ich", "bin", "zehn", "Jahre", "alt"], "distractors": ["habe"] },
+              { "type": "translate_direct", "prompt": "Traduce: «¿De dónde vienes?»", "answer": "Woher kommst du?", "accepted": ["woher kommst du"] }
+            ]
+          },
+          {
+            "id": "s1_u1_l3",
+            "index": 3,
+            "title": "Gente y cosas",
+            "kind": "exercises",
+            "exercises": [
+              { "type": "select_image", "prompt": "Selecciona: «el hombre»", "options": [
+                { "id": "a", "image": "👨", "label": "der Mann" },
+                { "id": "b", "image": "👩", "label": "die Frau" },
+                { "id": "c", "image": "🧒", "label": "das Kind" },
+                { "id": "d", "image": "🐶", "label": "der Hund" }
+              ], "correct": "a" },
+              { "type": "select_image", "prompt": "Selecciona: «el perro»", "options": [
+                { "id": "a", "image": "🐱", "label": "die Katze" },
+                { "id": "b", "image": "🐶", "label": "der Hund" },
+                { "id": "c", "image": "🐦", "label": "der Vogel" },
+                { "id": "d", "image": "🐴", "label": "das Pferd" }
+              ], "correct": "b" },
+              { "type": "translate_direct", "prompt": "Traduce con artículo: «el agua»", "answer": "das Wasser", "accepted": ["wasser"] },
+              { "type": "word_bank", "prompt": "Construye: «Eso es un libro»", "words": ["Das", "ist", "ein", "Buch"], "distractors": ["eine", "Hund"] },
+              { "type": "select_image", "prompt": "Selecciona: «la casa»", "options": [
+                { "id": "a", "image": "🚗", "label": "das Auto" },
+                { "id": "b", "image": "🌳", "label": "der Baum" },
+                { "id": "c", "image": "🏠", "label": "das Haus" },
+                { "id": "d", "image": "🪑", "label": "der Stuhl" }
+              ], "correct": "c" }
+            ]
+          },
+          {
+            "id": "s1_u1_l4",
+            "index": 4,
+            "title": "Primeras frases",
+            "kind": "exercises",
+            "exercises": [
+              { "type": "word_bank", "prompt": "Construye: «Yo tengo un perro»", "words": ["Ich", "habe", "einen", "Hund"], "distractors": ["bin", "Katze"] },
+              { "type": "translate_direct", "prompt": "Traduce: «nosotros somos»", "answer": "wir sind", "accepted": [] },
+              { "type": "listening_match", "prompt": "Escucha y elige lo que oyes", "tts": "Danke", "options": ["Danke", "Decke", "Denken"], "answer": "Danke" },
+              { "type": "select_image", "prompt": "Selecciona: «la manzana»", "options": [
+                { "id": "a", "image": "🍎", "label": "der Apfel" },
+                { "id": "b", "image": "🍌", "label": "die Banane" },
+                { "id": "c", "image": "🍞", "label": "das Brot" },
+                { "id": "d", "image": "🧀", "label": "der Käse" }
+              ], "correct": "a" },
+              { "type": "word_bank", "prompt": "Construye: «Ella tiene un libro»", "words": ["Sie", "hat", "ein", "Buch"], "distractors": ["er", "hast"] }
+            ]
+          },
+          {
+            "id": "s1_u1_l5",
+            "index": 5,
+            "title": "Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              { "de": "Hallo", "es": "Hola" },
+              { "de": "Tschüss", "es": "Adiós" },
+              { "de": "Danke", "es": "Gracias" },
+              { "de": "Bitte", "es": "Por favor" },
+              { "de": "Ja", "es": "Sí" },
+              { "de": "Nein", "es": "No" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s1_u2",
+        "index": 2,
+        "title": "Números y Colores",
+        "icon": "🎨",
+        "status": "ready",
+        "lessons": [
+          {
+            "id": "s1_u2_l1",
+            "index": 1,
+            "title": "Del uno al cinco",
+            "kind": "exercises",
+            "exercises": [
+              { "type": "listening_match", "prompt": "Escucha y elige lo que oyes", "tts": "drei", "options": ["drei", "zwei", "dreißig"], "answer": "drei" },
+              { "type": "select_image", "prompt": "Selecciona: «el número tres»", "options": [
+                { "id": "a", "image": "1️⃣", "label": "eins" },
+                { "id": "b", "image": "3️⃣", "label": "drei" },
+                { "id": "c", "image": "5️⃣", "label": "fünf" },
+                { "id": "d", "image": "2️⃣", "label": "zwei" }
+              ], "correct": "b" },
+              { "type": "translate_direct", "prompt": "Traduce el número: «dos»", "answer": "zwei", "accepted": [] },
+              { "type": "word_bank", "prompt": "Construye: «Yo tengo dos hermanos»", "words": ["Ich", "habe", "zwei", "Brüder"], "distractors": ["drei", "Schwester"] },
+              { "type": "select_image", "prompt": "Selecciona: «el número cinco»", "options": [
+                { "id": "a", "image": "4️⃣", "label": "vier" },
+                { "id": "b", "image": "6️⃣", "label": "sechs" },
+                { "id": "c", "image": "5️⃣", "label": "fünf" },
+                { "id": "d", "image": "8️⃣", "label": "acht" }
+              ], "correct": "c" }
+            ]
+          },
+          {
+            "id": "s1_u2_l2",
+            "index": 2,
+            "title": "Del seis al diez",
+            "kind": "exercises",
+            "exercises": [
+              { "type": "listening_match", "prompt": "Escucha y elige lo que oyes", "tts": "sieben", "options": ["sieben", "neun", "zehn"], "answer": "sieben" },
+              { "type": "select_image", "prompt": "Selecciona: «el número ocho»", "options": [
+                { "id": "a", "image": "8️⃣", "label": "acht" },
+                { "id": "b", "image": "9️⃣", "label": "neun" },
+                { "id": "c", "image": "7️⃣", "label": "sieben" },
+                { "id": "d", "image": "6️⃣", "label": "sechs" }
+              ], "correct": "a" },
+              { "type": "translate_direct", "prompt": "Traduce el número: «nueve»", "answer": "neun", "accepted": [] },
+              { "type": "word_bank", "prompt": "Construye: «Nosotros tenemos diez dedos»", "words": ["Wir", "haben", "zehn", "Finger"], "distractors": ["neun", "Hände"] },
+              { "type": "translate_direct", "prompt": "Traduce el número: «siete»", "answer": "sieben", "accepted": [] }
+            ]
+          },
+          {
+            "id": "s1_u2_l3",
+            "index": 3,
+            "title": "Colores básicos",
+            "kind": "exercises",
+            "exercises": [
+              { "type": "select_image", "prompt": "Selecciona: «rojo»", "options": [
+                { "id": "a", "image": "🔵", "label": "blau" },
+                { "id": "b", "image": "🔴", "label": "rot" },
+                { "id": "c", "image": "🟢", "label": "grün" },
+                { "id": "d", "image": "🟡", "label": "gelb" }
+              ], "correct": "b" },
+              { "type": "listening_match", "prompt": "Escucha y elige lo que oyes", "tts": "blau", "options": ["blau", "braun", "grau"], "answer": "blau" },
+              { "type": "translate_direct", "prompt": "Traduce el color: «verde»", "answer": "grün", "accepted": ["gruen"] },
+              { "type": "word_bank", "prompt": "Construye: «El coche es negro»", "words": ["Das", "Auto", "ist", "schwarz"], "distractors": ["weiß", "rot"] },
+              { "type": "select_image", "prompt": "Selecciona: «amarillo»", "options": [
+                { "id": "a", "image": "🟠", "label": "orange" },
+                { "id": "b", "image": "⚪", "label": "weiß" },
+                { "id": "c", "image": "🟡", "label": "gelb" },
+                { "id": "d", "image": "🟣", "label": "lila" }
+              ], "correct": "c" }
+            ]
+          },
+          {
+            "id": "s1_u2_l4",
+            "index": 4,
+            "title": "Frases con colores y números",
+            "kind": "exercises",
+            "exercises": [
+              { "type": "word_bank", "prompt": "Construye: «El cielo es azul»", "words": ["Der", "Himmel", "ist", "blau"], "distractors": ["grün", "die"] },
+              { "type": "translate_direct", "prompt": "Traduce el color: «blanco»", "answer": "weiß", "accepted": ["weiss"] },
+              { "type": "select_image", "prompt": "Selecciona: «negro»", "options": [
+                { "id": "a", "image": "⚫", "label": "schwarz" },
+                { "id": "b", "image": "⚪", "label": "weiß" },
+                { "id": "c", "image": "🟤", "label": "braun" },
+                { "id": "d", "image": "🔴", "label": "rot" }
+              ], "correct": "a" },
+              { "type": "listening_match", "prompt": "Escucha y elige lo que oyes", "tts": "vier", "options": ["vier", "für", "wir"], "answer": "vier" },
+              { "type": "word_bank", "prompt": "Construye: «La flor es roja y amarilla»", "words": ["Die", "Blume", "ist", "rot", "und", "gelb"], "distractors": ["blau"] }
+            ]
+          },
+          {
+            "id": "s1_u2_l5",
+            "index": 5,
+            "title": "Minijuego: parejas",
+            "kind": "match_game",
+            "pairs": [
+              { "de": "eins", "es": "uno" },
+              { "de": "zwei", "es": "dos" },
+              { "de": "drei", "es": "tres" },
+              { "de": "rot", "es": "rojo" },
+              { "de": "blau", "es": "azul" },
+              { "de": "grün", "es": "verde" }
+            ]
+          }
+        ]
+      },
+      { "id": "s1_u3",  "index": 3,  "title": "Familia",          "icon": "👨‍👩‍👧", "status": "coming_soon", "lessons": [] },
+      { "id": "s1_u4",  "index": 4,  "title": "Comida y bebida",  "icon": "🍞", "status": "coming_soon", "lessons": [] },
+      { "id": "s1_u5",  "index": 5,  "title": "Animales",         "icon": "🐶", "status": "coming_soon", "lessons": [] },
+      { "id": "s1_u6",  "index": 6,  "title": "La casa",          "icon": "🏠", "status": "coming_soon", "lessons": [] },
+      { "id": "s1_u7",  "index": 7,  "title": "Días y meses",     "icon": "📅", "status": "coming_soon", "lessons": [] },
+      { "id": "s1_u8",  "index": 8,  "title": "Verbos básicos",   "icon": "⚡", "status": "coming_soon", "lessons": [] },
+      { "id": "s1_u9",  "index": 9,  "title": "Rutina diaria",    "icon": "⏰", "status": "coming_soon", "lessons": [] },
+      { "id": "s1_u10", "index": 10, "title": "Repaso final A1",  "icon": "🏆", "status": "coming_soon", "lessons": [] }
+    ]
+  }
+}

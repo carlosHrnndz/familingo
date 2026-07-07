@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "section": {
+    "id": "s3",
+    "index": 3,
+    "tag": "B1",
+    "title": "Intermedio Bajo",
+    "color": "#ce82ff",
+    "dark": "#a568cc",
+    "units": [
+      {
+        "id": "s3_u1",
+        "index": 1,
+        "title": "Viajes",
+        "icon": "✈️",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s3_u2",
+        "index": 2,
+        "title": "Trabajo",
+        "icon": "💼",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s3_u3",
+        "index": 3,
+        "title": "Educación",
+        "icon": "🎓",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s3_u4",
+        "index": 4,
+        "title": "Tecnología",
+        "icon": "💻",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s3_u5",
+        "index": 5,
+        "title": "Sentimientos",
+        "icon": "💜",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s3_u6",
+        "index": 6,
+        "title": "Präteritum",
+        "icon": "📜",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s3_u7",
+        "index": 7,
+        "title": "Konjunktiv II",
+        "icon": "🌠",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s3_u8",
+        "index": 8,
+        "title": "Medio ambiente",
+        "icon": "🌍",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s3_u9",
+        "index": 9,
+        "title": "Relaciones",
+        "icon": "🤝",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s3_u10",
+        "index": 10,
+        "title": "Subordinadas",
+        "icon": "🔗",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s3_u11",
+        "index": 11,
+        "title": "Medios de comunicación",
+        "icon": "📺",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s3_u12",
+        "index": 12,
+        "title": "Salud y deporte",
+        "icon": "🏃",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s3_u13",
+        "index": 13,
+        "title": "Cultura pop",
+        "icon": "🎧",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s3_u14",
+        "index": 14,
+        "title": "Repaso final B1",
+        "icon": "🏆",
+        "status": "coming_soon",
+        "lessons": []
+      }
+    ]
+  }
+}

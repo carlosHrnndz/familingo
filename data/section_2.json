@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "section": {
+    "id": "s2",
+    "index": 2,
+    "tag": "A2",
+    "title": "Elemental",
+    "color": "#1cb0f6",
+    "dark": "#1899d6",
+    "units": [
+      {
+        "id": "s2_u1",
+        "index": 1,
+        "title": "Rutina diaria",
+        "icon": "⏰",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s2_u2",
+        "index": 2,
+        "title": "Compras",
+        "icon": "🛒",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s2_u3",
+        "index": 3,
+        "title": "En la ciudad",
+        "icon": "🏙️",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s2_u4",
+        "index": 4,
+        "title": "Transporte",
+        "icon": "🚆",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s2_u5",
+        "index": 5,
+        "title": "El tiempo",
+        "icon": "🌦️",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s2_u6",
+        "index": 6,
+        "title": "Salud y cuerpo",
+        "icon": "🩺",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s2_u7",
+        "index": 7,
+        "title": "Ropa",
+        "icon": "👕",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s2_u8",
+        "index": 8,
+        "title": "Aficiones",
+        "icon": "⚽",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s2_u9",
+        "index": 9,
+        "title": "Pasado (Perfekt)",
+        "icon": "🕰️",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s2_u10",
+        "index": 10,
+        "title": "En el restaurante",
+        "icon": "🍽️",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s2_u11",
+        "index": 11,
+        "title": "La escuela",
+        "icon": "🏫",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s2_u12",
+        "index": 12,
+        "title": "Fiestas y tradiciones",
+        "icon": "🎉",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s2_u13",
+        "index": 13,
+        "title": "Planes de futuro",
+        "icon": "🔮",
+        "status": "coming_soon",
+        "lessons": []
+      },
+      {
+        "id": "s2_u14",
+        "index": 14,
+        "title": "Repaso final A2",
+        "icon": "🏆",
+        "status": "coming_soon",
+        "lessons": []
+      }
+    ]
+  }
+}
